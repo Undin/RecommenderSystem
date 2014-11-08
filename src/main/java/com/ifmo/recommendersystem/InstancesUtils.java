@@ -21,7 +21,7 @@ public class InstancesUtils {
     }
 
     public static Instances removeStringAttributes(Instances instances, boolean copy) {
-        if (hasStringAttribute(instances)) {
+        if (instances.checkForStringAttributes()) {
             if (copy) {
                 instances = new Instances(instances);
             }
@@ -32,14 +32,5 @@ public class InstancesUtils {
             }
         }
         return instances;
-    }
-
-    public static boolean hasStringAttribute(Instances instances) {
-        for (int i = 0; i < instances.numAttributes(); i++) {
-            if (instances.attribute(i).isString()) {
-                return true;
-            }
-        }
-        return false;
     }
 }
