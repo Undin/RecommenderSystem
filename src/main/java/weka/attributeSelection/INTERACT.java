@@ -396,7 +396,7 @@ public class INTERACT extends Fastfood{
     throws Exception {
     int count = 0;
 
-    INTERACTPack();
+//    INTERACTPack();
 
     for(int i=0;i<m_currentFeatureSet.length;i++)
     {
@@ -510,22 +510,22 @@ public class INTERACT extends Fastfood{
       throw new Exception("Consistency subset evaluator can't handle a "
                           +"numeric class attribute!");
     }
-    System.out.print(" finished.\n");
+//    System.out.print(" finished.\n");
     System.gc();
 
     m_numAttribs = m_trainInstances.numAttributes();
     m_numInstances = m_trainInstances.numInstances();
 
     m_times[0] = System.currentTimeMillis();
-    System.out.print("\nDiscretize Dataset...");
+//    System.out.print("\nDiscretize Dataset...");
     m_disTransform = new Discretize();
     m_disTransform.setUseBetterEncoding(true);
     m_disTransform.setInputFormat(m_trainInstances);
     m_trainInstances = Filter.useFilter(m_trainInstances, m_disTransform);
-    System.out.print(" finished.");
+//    System.out.print(" finished.");
     m_times[1] = System.currentTimeMillis();
-    System.out.print(" (" + (m_times[1] - m_times[0]) +
-                     ")\n");    
+//    System.out.print(" (" + (m_times[1] - m_times[0]) +
+//                     ")\n");
 
     System.gc();
 
@@ -586,11 +586,11 @@ public class INTERACT extends Fastfood{
   }
 
   private void fillHashTable(){
-    System.out.print("\nAllocate Hashtable one...");
+//    System.out.print("\nAllocate Hashtable one...");
     m_table = new Hashtable((int)(m_numInstances * 1.5));
-    System.out.print(" finished.\n");
+//    System.out.print(" finished.\n");
 
-    System.out.print("\nFill Hashtable one...");
+//    System.out.print("\nFill Hashtable one...");
     m_times[8] = System.currentTimeMillis();
     try{
       fillHashtableSubset(m_currentFeatureSet);
@@ -605,11 +605,11 @@ public class INTERACT extends Fastfood{
       m_trainInstances = null;
     }
     System.gc();
-    System.out.print(" finished. ("+(m_times[9]-m_times[8])+")\n");
+//    System.out.print(" finished. ("+(m_times[9]-m_times[8])+")\n");
 
-    System.out.print("\nAllocate Hashtable two...");
+//    System.out.print("\nAllocate Hashtable two...");
     m_tmpTable = new Hashtable((int)(m_numInstances * 1.5));
-    System.out.print(" finished.\n");
+//    System.out.print(" finished.\n");
   }
 
   /**
