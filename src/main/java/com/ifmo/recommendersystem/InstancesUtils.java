@@ -1,0 +1,45 @@
+package com.ifmo.recommendersystem;
+
+import weka.core.Attribute;
+import weka.core.Instances;
+import weka.core.converters.ConverterUtils;
+
+public class InstancesUtils {
+
+    private static final String CLASS_ATTRIBUTE_NAME = "class";
+
+    public static Instances createInstances(String filename, boolean removeStringAttributes) throws Exception {
+        Instances instances = ConverterUtils.DataSource.read(filename);
+        if (removeStringAttributes) {
+            instances = removeStringAttributes(instances, false);
+        }
+        Attribute attribute = instances.attribute(CLASS_ATTRIBUTE_NAME);
+        if (attribute != null) {
+            instances.setClassIndex(attribute.index());
+        }
+        return instances;
+    }
+
+    public static Instances removeStringAttributes(Instances instances, boolean copy) {
+        if (hasStringAttribute(instances)) {
+            if (copy) {
+                instances = new Instances(instances);
+            }
+            for (int i = instances.numAttributes() - 1; i >= 0; i--) {
+                if (instances.attribute(i).isString()) {
+                    instances.deleteAttributeAt(i);
+                }
+            }
+        }
+        return instances;
+    }
+
+    public static boolean hasStringAttribute(Instances instances) {
+        for (int i = 0; i < instances.numAttributes(); i++) {
+            if (instances.attribute(i).isString()) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
