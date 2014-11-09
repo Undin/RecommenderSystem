@@ -53,12 +53,12 @@ class JSONUtils {
         return objects;
     }
 
-    public static JSONArray earrMatrixToJSONArray(Matrix earrMatrix) {
-        List<JSONArray> rows = new ArrayList<>(earrMatrix.getRowDimension());
-        for (int i = 0; i < earrMatrix.getRowDimension(); i++) {
-            List<Double> row = new ArrayList<>(earrMatrix.getColumnDimension());
-            for (int j = 0; j < earrMatrix.getColumnDimension(); j++) {
-                row.add(earrMatrix.get(i, j));
+    public static JSONArray matrixToJSONArray(Matrix matrix) {
+        List<JSONArray> rows = new ArrayList<>(matrix.getRowDimension());
+        for (int i = 0; i < matrix.getRowDimension(); i++) {
+            List<Double> row = new ArrayList<>(matrix.getColumnDimension());
+            for (int j = 0; j < matrix.getColumnDimension(); j++) {
+                row.add(matrix.get(i, j));
             }
             rows.add(new JSONArray(row));
         }

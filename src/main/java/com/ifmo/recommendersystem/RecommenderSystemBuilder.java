@@ -65,7 +65,7 @@ public class RecommenderSystemBuilder {
                     put(JSONUtils.CLASSIFIER, classifier.toJSON()).
                     put(JSONUtils.ALGORITHMS, collectionToJSONArray(algorithms)).
                     put(JSONUtils.DATA_SETS, collectionToJSONArray(Arrays.asList(dataSetArray))).
-                    put(JSONUtils.EARR_MATRIX, earrMatrixToJSONArray(earrMatrix));
+                    put(JSONUtils.EARR_MATRIX, matrixToJSONArray(earrMatrix));
         }
         return result;
     }
