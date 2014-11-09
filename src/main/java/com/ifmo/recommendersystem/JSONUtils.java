@@ -64,4 +64,16 @@ class JSONUtils {
         }
         return new JSONArray(rows);
     }
+
+    public static Matrix jsonArrayToMatrix(JSONArray jsonArray) {
+        double[][] matrix = new double[jsonArray.length()][];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONArray row = jsonArray.getJSONArray(i);
+            matrix[i] = new double[row.length()];
+            for (int j = 0; j < row.length(); j++) {
+                matrix[i][j] = row.getDouble(j);
+            }
+        }
+        return new Matrix(matrix);
+    }
 }
