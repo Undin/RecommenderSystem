@@ -1,11 +1,14 @@
 package com.ifmo.recommendersystem;
 
+import org.json.JSONObject;
 import weka.core.Instances;
 import weka.core.matrix.Matrix;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static com.ifmo.recommendersystem.JSONUtils.*;
 
 public class RecommenderSystem {
 
@@ -48,7 +51,6 @@ public class RecommenderSystem {
                 earrCoef[i] += inverseDistances[j] * EARRMatrix.get(i, j);
             }
             earrCoef[i] /= inverseDistanceSum;
-
         }
         indexes = new Integer[algorithms.size()];
         Arrays.setAll(indexes, i -> i);
@@ -96,4 +98,14 @@ public class RecommenderSystem {
         normalizedMetaFeatures.add(new MetaFeatures(values));
         return normalizedMetaFeatures;
     }
+
+    public static final AbstractJSONCreator<RecommenderSystem> JSON_CREATOR = new AbstractJSONCreator<RecommenderSystem>() {
+        @Override
+        protected RecommenderSystem throwableFromJSON(JSONObject jsonObject) throws Exception {
+            List<FSSAlgorithm> algorithms = jsonArrayToObjectList(jsonObject.getJSONArray(ALGORITHMS), FSSAlgorithm.JSON_CREATOR);
+            List<DataSet> dataSets = jsonArrayToObjectList(jsonObject.getJSONArray(DATA_SETS), DataSet.JSON_CREATOR);
+            Matrix matrix  = jsonArrayToMatrix(jsonObject.getJSONArray(EARR_MATRIX));
+            return new RecommenderSystem(matrix, algorithms, dataSets);
+        }
+    };
 }
