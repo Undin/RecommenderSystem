@@ -2,7 +2,7 @@ package com.ifmo.recommendersystem;
 
 import org.json.JSONObject;
 
-public abstract class AbstractJSONCreator<T extends JSONConverted> implements JSONConverted.JSONCreator<T>  {
+public abstract class AbstractJSONCreator<T> implements JSONConverted.JSONCreator<T>  {
 
     @Override
     public T fromJSON(JSONObject jsonObject) {
