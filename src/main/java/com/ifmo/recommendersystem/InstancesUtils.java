@@ -20,6 +20,10 @@ public class InstancesUtils {
         return instances;
     }
 
+    public static Instances createInstances(String filename) throws Exception {
+        return createInstances(filename, false);
+    }
+
     public static Instances removeStringAttributes(Instances instances, boolean copy) {
         if (instances.checkForStringAttributes()) {
             if (copy) {
