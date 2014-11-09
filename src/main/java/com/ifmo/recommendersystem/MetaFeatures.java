@@ -73,7 +73,7 @@ public class MetaFeatures implements JSONConverted {
         if (dataSet.classIndex() < 0) {
             throw new IllegalArgumentException("data set must have class attribute");
         }
-        if (InstancesUtils.hasStringAttribute(dataSet)) {
+        if (dataSet.checkForStringAttributes()) {
             dataSet = InstancesUtils.removeStringAttributes(dataSet, true);
         }
         int classIndex = dataSet.classIndex();
