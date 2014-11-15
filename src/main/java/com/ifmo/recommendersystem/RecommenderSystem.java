@@ -12,7 +12,8 @@ import static com.ifmo.recommendersystem.JSONUtils.*;
 
 public class RecommenderSystem {
 
-    private static final int RECOMMEND_RESULT_SIZE = 3;
+    private static final int RECOMMEND_RESULT_SIZE = 1;
+    private static final int NEAREST_DATA_SET_NUMBER = 3;
 
     private Matrix EARRMatrix;
     private List<FSSAlgorithm> algorithms;
@@ -36,8 +37,8 @@ public class RecommenderSystem {
         }
     }
 
-    public List<FSSAlgorithm> recommend(Instances dataSet, int k) {
-        int number = Math.min(k, algorithms.size());
+    public List<FSSAlgorithm> recommend(Instances dataSet) {
+        int number = Math.min(NEAREST_DATA_SET_NUMBER, dataSets.size());
         MetaFeatures metaFeatures = MetaFeatures.extractMetaFeature(dataSet);
         double[] dist = dist(metaFeatures);
         Integer[] indexes = new Integer[dataSets.size()];
@@ -56,7 +57,7 @@ public class RecommenderSystem {
         Arrays.setAll(indexes, i -> i);
         Arrays.sort(indexes, (o1, o2) -> Double.compare(earrCoef[o2], earrCoef[o1]));
         List<FSSAlgorithm> result = new ArrayList<>();
-        for (int i = 0; i < RECOMMEND_RESULT_SIZE; i++) {
+        for (int i = 0; i < Math.min(RECOMMEND_RESULT_SIZE, algorithms.size()); i++) {
             result.add(algorithms.get(indexes[i]));
         }
         return result;
