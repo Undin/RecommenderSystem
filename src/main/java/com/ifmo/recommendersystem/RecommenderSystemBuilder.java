@@ -52,6 +52,7 @@ public class RecommenderSystemBuilder {
         try {
             latch.await();
             executor.shutdown();
+            System.out.println("end!");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -220,5 +221,16 @@ public class RecommenderSystemBuilder {
             dataSets.add(InstancesUtils.createInstances(jsonArray.getString(i), true));
         }
         return dataSets;
+    }
+
+    private static final String CONFIG_FILE_NAME = "config.json";
+    private static final String RESULT_FILE_NAME = "result.json";
+
+    public static void main(String[] args) throws Exception {
+        RecommenderSystemBuilder builder = RecommenderSystemBuilder.createFromConfig(CONFIG_FILE_NAME);
+        builder.build();
+        try (PrintWriter writer = new PrintWriter(RESULT_FILE_NAME)) {
+            writer.println(builder.getResultAsJSON().toString(4));
+        }
     }
 }
