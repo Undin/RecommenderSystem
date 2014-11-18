@@ -9,11 +9,6 @@ public class DataSet implements JSONConverted {
 
     private MetaFeatures metaFeatures;
 
-    public DataSet(Instances instances) {
-        this.name = instances.relationName();
-        this.metaFeatures = MetaFeatures.extractMetaFeature(instances);
-    }
-
     private DataSet(String name, MetaFeatures metaFeatures) {
         this.name = name;
         this.metaFeatures = metaFeatures;
@@ -30,6 +25,12 @@ public class DataSet implements JSONConverted {
     @Override
     public JSONObject toJSON() {
         return new JSONObject().put(JSONUtils.NAME, name).put(JSONUtils.META_FEATURES, metaFeatures.toJSON());
+    }
+
+    public static DataSet fromInstances(Instances instances) {
+        String name = instances.relationName();
+        MetaFeatures metaFeatures = MetaFeatures.extractMetaFeature(instances);
+        return new DataSet(name, metaFeatures);
     }
 
     public static final AbstractJSONCreator<DataSet> JSON_CREATOR = new AbstractJSONCreator<DataSet>() {
