@@ -7,9 +7,6 @@ import java.util.concurrent.CountDownLatch;
  */
 public abstract class AbstractTask implements Runnable {
 
-    public static final String EXTRACT_TYPE = "extract";
-    public static final String PERFORMANCE_TYPE = "performance";
-
     public static final String RESULT_DIRECTORY = "results";
 
     protected final String datasetPath;
@@ -26,14 +23,16 @@ public abstract class AbstractTask implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(">> " + getTaskType() + " task for " + datasetPath + " start");
+        System.out.println(">> DEBUG " + getTaskName() + " start");
+        long start = System.currentTimeMillis();
         runInternal();
+        long end = System.currentTimeMillis();
         if (latch != null) {
             latch.countDown();
         }
-        System.out.println("<< " + getTaskType() + " task for " + datasetPath + " end");
+        System.out.println("<< DEBUG " + getTaskName() + " end. time: " + (end - start));
     }
 
-    protected abstract String getTaskType();
+    protected abstract String getTaskName();
     protected abstract void runInternal();
 }
