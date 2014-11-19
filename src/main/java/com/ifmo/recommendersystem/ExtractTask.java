@@ -35,7 +35,7 @@ public class ExtractTask extends AbstractTask {
     }
 
     @Override
-    protected String getTaskType() {
-        return EXTRACT_TYPE;
+    protected String getTaskName() {
+        return "extract " + datasetPath;
     }
 }
