@@ -1,9 +1,13 @@
 package com.ifmo.recommendersystem;
 
+import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import weka.core.matrix.Matrix;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -69,6 +73,14 @@ class JSONUtils {
         return objects;
     }
 
+    public static List<String> jsonArrayToStringList(JSONArray jsonArray) {
+        List<String> objects = new ArrayList<>(jsonArray.length());
+        for (int i = 0; i < jsonArray.length(); i++) {
+            objects.add(jsonArray.getString(i));
+        }
+        return objects;
+    }
+
     public static JSONArray matrixToJSONArray(Matrix matrix) {
         List<JSONArray> rows = new ArrayList<>(matrix.getRowDimension());
         for (int i = 0; i < matrix.getRowDimension(); i++) {
@@ -91,5 +103,16 @@ class JSONUtils {
             }
         }
         return new Matrix(matrix);
+    }
+
+    public static JSONObject readJSONObject(String filename) {
+        try {
+            InputStream inputStream = new FileInputStream(filename);
+            String config = IOUtils.toString(inputStream);
+            return new JSONObject(config);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
