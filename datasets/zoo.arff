@@ -90,7 +90,7 @@
 @ATTRIBUTE tail {false, true}
 @ATTRIBUTE domestic {false, true}
 @ATTRIBUTE catsize {false, true}
-@ATTRIBUTE type { mammal, bird, reptile, fish, amphibian, insect, invertebrate }
+@ATTRIBUTE class { mammal, bird, reptile, fish, amphibian, insect, invertebrate }
 
 @DATA
 %
