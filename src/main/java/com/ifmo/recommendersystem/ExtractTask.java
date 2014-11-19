@@ -11,7 +11,7 @@ import java.io.PrintWriter;
  */
 public class ExtractTask extends AbstractTask {
 
-    private static final String META_FEATURES_DIRECTORY = "metaFeatures";
+    public static final String META_FEATURES_DIRECTORY = "metaFeatures";
 
     public ExtractTask(String datasetPath) {
         super(datasetPath);
