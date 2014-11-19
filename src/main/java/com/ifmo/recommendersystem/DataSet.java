@@ -24,7 +24,7 @@ public class DataSet implements JSONConverted {
 
     @Override
     public JSONObject toJSON() {
-        return new JSONObject().put(JSONUtils.NAME, name).put(JSONUtils.META_FEATURES, metaFeatures.toJSON());
+        return new JSONObject().put(JSONUtils.DATA_SET_NAME, name).put(JSONUtils.META_FEATURES, metaFeatures.toJSON());
     }
 
     public static DataSet fromInstances(Instances instances) {
@@ -36,7 +36,7 @@ public class DataSet implements JSONConverted {
     public static final AbstractJSONCreator<DataSet> JSON_CREATOR = new AbstractJSONCreator<DataSet>() {
         @Override
         protected DataSet throwableFromJSON(JSONObject jsonObject) throws Exception {
-            String name = jsonObject.getString(JSONUtils.NAME);
+            String name = jsonObject.getString(JSONUtils.DATA_SET_NAME);
             JSONObject metaFeatureObject = jsonObject.getJSONObject(JSONUtils.META_FEATURES);
             MetaFeatures metaFeatures = MetaFeatures.JSON_CREATOR.fromJSON(metaFeatureObject);
             return new DataSet(name, metaFeatures);

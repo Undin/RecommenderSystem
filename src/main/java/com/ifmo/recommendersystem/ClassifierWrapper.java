@@ -50,13 +50,13 @@ public class ClassifierWrapper implements JSONConverted {
 
     @Override
     public JSONObject toJSON() {
-        return JSONUtils.objectToJSON(classifier, options).put(JSONUtils.NAME, name);
+        return JSONUtils.objectToJSON(classifier, options).put(JSONUtils.CLASSIFIER_NAME, name);
     }
 
     public static final AbstractJSONCreator<ClassifierWrapper> JSON_CREATOR = new AbstractJSONCreator<ClassifierWrapper>() {
         @Override
         protected ClassifierWrapper throwableFromJSON(JSONObject jsonObject) throws Exception {
-            String name = jsonObject.getString(JSONUtils.NAME);
+            String name = jsonObject.getString(JSONUtils.CLASSIFIER_NAME);
             String classifierClassName = jsonObject.getString(JSONUtils.CLASS_NAME);
             String[] options = JSONUtils.readOptions(jsonObject);
             Classifier classifier = Classifier.forName(classifierClassName, options);

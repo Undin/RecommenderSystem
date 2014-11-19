@@ -19,11 +19,11 @@ public class FSSAlgorithm implements JSONConverted {
         }
     }
 
-    public final String name;
-    public final ASSearch algorithm;
-    public final String[] algorithmOptions;
-    public final ASEvaluation evaluator;
-    public final String[] evaluationOptions;
+    private final String name;
+    private final ASSearch algorithm;
+    private final String[] algorithmOptions;
+    private final ASEvaluation evaluator;
+    private final String[] evaluationOptions;
 
     private FSSAlgorithm(String name, ASSearch algorithm, String[] algorithmOptions,
                          ASEvaluation evaluator, String[] evaluationOptions) {
@@ -72,13 +72,13 @@ public class FSSAlgorithm implements JSONConverted {
     public JSONObject toJSON() {
         JSONObject search = objectToJSON(algorithm, algorithmOptions);
         JSONObject evaluation = objectToJSON(evaluator, evaluationOptions);
-        return new JSONObject().put(NAME, name).put(SEARCH, search).put(EVALUATION, evaluation);
+        return new JSONObject().put(ALGORITHM_NAME, name).put(SEARCH, search).put(EVALUATION, evaluation);
     }
 
     public static final AbstractJSONCreator<FSSAlgorithm> JSON_CREATOR = new AbstractJSONCreator<FSSAlgorithm>() {
         @Override
         protected FSSAlgorithm throwableFromJSON(JSONObject jsonObject) throws Exception {
-            String name = jsonObject.getString(NAME);
+            String name = jsonObject.getString(ALGORITHM_NAME);
             JSONObject search = jsonObject.getJSONObject(SEARCH);
             JSONObject evaluation = jsonObject.getJSONObject(EVALUATION);
             String algorithmClassName = search.getString(CLASS_NAME);
