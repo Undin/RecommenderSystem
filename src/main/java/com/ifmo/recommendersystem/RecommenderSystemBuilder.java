@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 import static com.ifmo.recommendersystem.JSONUtils.*;
 
@@ -25,23 +26,28 @@ public class RecommenderSystemBuilder {
         this.algorithms = algorithms;
         this.dataSets = dataSets;
         this.classifier = classifier;
-        this.executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        ((ThreadPoolExecutor)executor).setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardPolicy());
     }
 
     public void build() {
-        CountDownLatch latch = new CountDownLatch(dataSets.size() * 2);
+        long start = System.currentTimeMillis();
+        CountDownLatch latch = new CountDownLatch((algorithms.size() + 1) * dataSets.size());
         for (String location : dataSets) {
             ExtractTask extractTask = new ExtractTask(location);
-            PerformanceTask performanceTask = new PerformanceTask(location, algorithms, classifier);
             extractTask.setLatch(latch);
-            performanceTask.setLatch(latch);
             executor.submit(extractTask);
-            executor.submit(performanceTask);
+            for (FSSAlgorithm algorithm : algorithms) {
+                PerformanceTask performanceTask = new PerformanceTask(location, algorithm, classifier);
+                performanceTask.setLatch(latch);
+                executor.submit(performanceTask);
+            }
         }
         try {
             latch.await();
             executor.shutdown();
-            System.out.println("end!");
+            long end = System.currentTimeMillis();
+            System.out.println("FINISH. time = " + (end - start));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
