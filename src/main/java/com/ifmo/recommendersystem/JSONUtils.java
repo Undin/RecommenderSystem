@@ -9,17 +9,32 @@ import java.util.stream.Collectors;
 
 class JSONUtils {
 
+    public static final String ALGORITHM = "algorithm";
+    public static final String ALGORITHMS = "algorithms";
     public static final String ALPHA = "alpha";
     public static final String BETTA = "betta";
+    public static final String CLASS_NAME = "className";
     public static final String CLASSIFIER = "classifier";
-    public static final String ALGORITHMS = "algorithms";
     public static final String DATA_SETS = "dataSets";
-    public static final String SEARCH = "search";
-    public static final String EVALUATION = "evaluation";
-    public static final String OPTIONS = "options";
-    public static final String NAME = "name";
-    public static final String META_FEATURES = "metaFeatures";
+    public static final String DIRECTORY = "directory";
     public static final String EARR_MATRIX = "earrMatrix";
+    public static final String EVALUATION = "evaluation";
+    public static final String HIT_RATIO = "hitRatio";
+    public static final String LIST = "list";
+    public static final String MEAN_ACCURACY = "meanAccuracy";
+    public static final String MEAN_ATTRIBUTE_NUMBER = "meanAttributeNumber";
+    public static final String MEAN_HIT_RATIO = "meanHitRatio";
+    public static final String MEAN_RUNTIME = "meanRuntime";
+    public static final String META_FEATURES = "metaFeatures";
+    public static final String MEAN_RPR = "meanRPR";
+    public static final String NAME = "name";
+    public static final String OPT_ALGORITHM = "optAlgorithm";
+    public static final String OPT_ALGORITHM_SET = "optAlgorithmSet";
+    public static final String OPTIONS = "options";
+    public static final String RESULTS = "results";
+    public static final String RPR = "RPR";
+    public static final String SEARCH = "search";
+    public static final String SEPARATE_RESULT = "separateResult";
 
     public static String[] readOptions(JSONObject jsonObject) {
         if (jsonObject.has(OPTIONS)) {
@@ -35,7 +50,7 @@ class JSONUtils {
 
     public static JSONObject objectToJSON(Object object, String[] options) {
         return new JSONObject().
-                put(NAME, object.getClass().getCanonicalName()).
+                put(CLASS_NAME, object.getClass().getCanonicalName()).
                 put(OPTIONS, options == null ? Collections.emptyList() : Arrays.asList(options));
     }
 
