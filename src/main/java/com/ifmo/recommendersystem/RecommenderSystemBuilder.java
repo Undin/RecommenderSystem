@@ -1,6 +1,5 @@
 package com.ifmo.recommendersystem;
 
-import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -54,9 +53,7 @@ public class RecommenderSystemBuilder {
     }
 
     public static RecommenderSystemBuilder createFromConfig(String configFilename) throws Exception {
-        InputStream inputStream = new FileInputStream(configFilename);
-        String config = IOUtils.toString(inputStream);
-        JSONObject jsonObject = new JSONObject(config);
+        JSONObject jsonObject = JSONUtils.readJSONObject(configFilename);
         ClassifierWrapper classifier = ClassifierWrapper.JSON_CREATOR.fromJSON(jsonObject.getJSONObject(CLASSIFIER));
         List<FSSAlgorithm> algorithms = jsonArrayToObjectList(jsonObject.getJSONArray(ALGORITHMS), FSSAlgorithm.JSON_CREATOR);
 
