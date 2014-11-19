@@ -10,11 +10,14 @@ import java.util.stream.Collectors;
 class JSONUtils {
 
     public static final String ALGORITHM = "algorithm";
+    public static final String ALGORITHM_NAME = "algorithmName";
     public static final String ALGORITHMS = "algorithms";
     public static final String ALPHA = "alpha";
     public static final String BETTA = "betta";
     public static final String CLASS_NAME = "className";
     public static final String CLASSIFIER = "classifier";
+    public static final String CLASSIFIER_NAME = "classifierName";
+    public static final String DATA_SET_NAME = "dataSetName";
     public static final String DATA_SETS = "dataSets";
     public static final String DIRECTORY = "directory";
     public static final String EARR_MATRIX = "earrMatrix";
@@ -27,11 +30,9 @@ class JSONUtils {
     public static final String MEAN_RUNTIME = "meanRuntime";
     public static final String META_FEATURES = "metaFeatures";
     public static final String MEAN_RPR = "meanRPR";
-    public static final String NAME = "name";
     public static final String OPT_ALGORITHM = "optAlgorithm";
     public static final String OPT_ALGORITHM_SET = "optAlgorithmSet";
     public static final String OPTIONS = "options";
-    public static final String RESULTS = "results";
     public static final String RPR = "RPR";
     public static final String SEARCH = "search";
     public static final String SEPARATE_RESULT = "separateResult";
