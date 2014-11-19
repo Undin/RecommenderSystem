@@ -11,5 +11,6 @@ dependencies {
     compile 'nz.ac.waikato.cms.weka:weka-stable:3.6.11'
     compile 'org.json:json:20140107'
     compile 'org.apache.directory.studio:org.apache.commons.io:2.4'
+    compile 'net.sf.trove4j:trove4j:3.0.3'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
