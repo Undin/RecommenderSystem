@@ -7,12 +7,26 @@ import weka.core.Instances;
 
 public class ClassifierWrapper implements JSONConverted {
 
+    private final String name;
     private final Classifier classifier;
     private final String[] options;
 
-    private ClassifierWrapper(Classifier classifier, String[] options) {
+    private ClassifierWrapper(String name, Classifier classifier, String[] options) {
+        this.name = name;
         this.classifier = classifier;
         this.options = options;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Classifier getClassifier() {
+        return classifier;
+    }
+
+    public String[] getOptions() {
+        return options;
     }
 
     public double getAccuracy(Instances train, Instances test) {
@@ -36,16 +50,17 @@ public class ClassifierWrapper implements JSONConverted {
 
     @Override
     public JSONObject toJSON() {
-        return JSONUtils.objectToJSON(classifier, options);
+        return JSONUtils.objectToJSON(classifier, options).put(JSONUtils.NAME, name);
     }
 
     public static final AbstractJSONCreator<ClassifierWrapper> JSON_CREATOR = new AbstractJSONCreator<ClassifierWrapper>() {
         @Override
         protected ClassifierWrapper throwableFromJSON(JSONObject jsonObject) throws Exception {
-            String classifierClassName = jsonObject.getString(JSONUtils.NAME);
+            String name = jsonObject.getString(JSONUtils.NAME);
+            String classifierClassName = jsonObject.getString(JSONUtils.CLASS_NAME);
             String[] options = JSONUtils.readOptions(jsonObject);
             Classifier classifier = Classifier.forName(classifierClassName, options);
-            return new ClassifierWrapper(classifier, options);
+            return new ClassifierWrapper(name, classifier, options);
         }
     };
 }
