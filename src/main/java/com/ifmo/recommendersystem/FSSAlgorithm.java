@@ -5,6 +5,9 @@ import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
 import weka.core.Instances;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static com.ifmo.recommendersystem.JSONUtils.*;
 
 public class FSSAlgorithm implements JSONConverted {
@@ -75,6 +78,8 @@ public class FSSAlgorithm implements JSONConverted {
         return new JSONObject().put(ALGORITHM_NAME, name).put(SEARCH, search).put(EVALUATION, evaluation);
     }
 
+    private static final Map<String, FSSAlgorithm> ALGORITHM_MAP = new HashMap<>();
+
     public static final AbstractJSONCreator<FSSAlgorithm> JSON_CREATOR = new AbstractJSONCreator<FSSAlgorithm>() {
         @Override
         protected FSSAlgorithm throwableFromJSON(JSONObject jsonObject) throws Exception {
@@ -90,4 +95,13 @@ public class FSSAlgorithm implements JSONConverted {
             return new FSSAlgorithm(name, algorithm, algorithmOptions, evaluator, evaluationOptions);
         }
     };
+
+    public static void addAlgorithm(JSONObject jsonObject) {
+        FSSAlgorithm algorithm = JSON_CREATOR.fromJSON(jsonObject);
+        ALGORITHM_MAP.put(algorithm.getName(), algorithm);
+    }
+
+    public static FSSAlgorithm getAlgorithm(String name) {
+        return ALGORITHM_MAP.get(name);
+    }
 }
