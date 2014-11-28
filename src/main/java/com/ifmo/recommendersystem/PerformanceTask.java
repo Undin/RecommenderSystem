@@ -32,7 +32,8 @@ public class PerformanceTask extends AbstractTask {
     @Override
     protected void runInternal() {
         try {
-            Instances instances = InstancesUtils.createInstances(datasetPath, true);
+            Instances instances = InstancesUtils.createInstances(datasetPath, InstancesUtils.REMOVE_STRING_ATTRIBUTES |
+                    InstancesUtils.REMOVE_UNINFORMATIVE_ATTRIBUTES);
             Random random = new Random();
             double runtime = 0;
             double accuracy = 0;
@@ -55,7 +56,7 @@ public class PerformanceTask extends AbstractTask {
             accuracy /= ROUNDS * FOLDS;
             resultAttributeNumber /= ROUNDS * FOLDS;
 
-            PerformanceResult result = new PerformanceResult(instances.relationName(),
+            PerformanceResult result = new PerformanceResult(datasetName,
                     algorithm.getName(),
                     classifier.getName(),
                     accuracy,
@@ -65,9 +66,9 @@ public class PerformanceTask extends AbstractTask {
             String directoryPath = Utils.createPath(RESULT_DIRECTORY,
                     PERFORMANCE_DIRECTORY,
                     classifier.getName(),
-                    instances.relationName(),
+                    datasetName,
                     algorithm.getName());
-            String fileName = Utils.createName(classifier.getName(), instances.relationName(), algorithm.getName());
+            String fileName = Utils.createName(classifier.getName(), datasetName, algorithm.getName());
             File directory = new File(directoryPath);
             directory.mkdirs();
             try (PrintWriter writer = new PrintWriter(new File(directory, fileName + ".json"))) {

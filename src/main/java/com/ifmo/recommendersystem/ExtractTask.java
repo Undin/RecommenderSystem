@@ -20,8 +20,9 @@ public class ExtractTask extends AbstractTask {
     @Override
     protected void runInternal() {
         try {
-            Instances instances = InstancesUtils.createInstances(datasetPath, true);
-            DataSet dataSet = DataSet.fromInstances(instances);
+            Instances instances = InstancesUtils.createInstances(datasetPath, InstancesUtils.REMOVE_STRING_ATTRIBUTES |
+                    InstancesUtils.REMOVE_UNINFORMATIVE_ATTRIBUTES);
+            DataSet dataSet = DataSet.fromInstances(datasetName, instances);
             File directory = new File(RESULT_DIRECTORY, META_FEATURES_DIRECTORY);
             directory.mkdirs();
             try (PrintWriter writer = new PrintWriter(new File(directory, dataSet.getName() + ".json"))) {
