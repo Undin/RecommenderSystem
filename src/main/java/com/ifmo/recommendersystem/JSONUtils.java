@@ -3,7 +3,6 @@ package com.ifmo.recommendersystem;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import weka.core.matrix.Matrix;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,7 +12,6 @@ import java.util.stream.Collectors;
 
 class JSONUtils {
 
-    public static final String ALGORITHM = "algorithm";
     public static final String ALGORITHM_NAME = "algorithmName";
     public static final String ALGORITHMS = "algorithms";
     public static final String ALPHA = "alpha";
@@ -24,7 +22,6 @@ class JSONUtils {
     public static final String DATA_SET_NAME = "dataSetName";
     public static final String DATA_SETS = "dataSets";
     public static final String DIRECTORY = "directory";
-    public static final String EARR_MATRIX = "earrMatrix";
     public static final String EVALUATION = "evaluation";
     public static final String HIT_RATIO = "hitRatio";
     public static final String LIST = "list";
@@ -37,9 +34,12 @@ class JSONUtils {
     public static final String OPT_ALGORITHM = "optAlgorithm";
     public static final String OPT_ALGORITHM_SET = "optAlgorithmSet";
     public static final String OPTIONS = "options";
+    public static final String RECOMMENDED_ALGORITHM = "recommendedAlgorithm";
     public static final String RPR = "RPR";
     public static final String SEARCH = "search";
     public static final String SEPARATE_RESULT = "separateResult";
+    public static final String WORST_ALGORITHM = "worstAlgorithm";
+    public static final String WORST_RPR = "worstRPR";
 
     public static String[] readOptions(JSONObject jsonObject) {
         if (jsonObject.has(OPTIONS)) {
@@ -79,30 +79,6 @@ class JSONUtils {
             objects.add(jsonArray.getString(i));
         }
         return objects;
-    }
-
-    public static JSONArray matrixToJSONArray(Matrix matrix) {
-        List<JSONArray> rows = new ArrayList<>(matrix.getRowDimension());
-        for (int i = 0; i < matrix.getRowDimension(); i++) {
-            List<Double> row = new ArrayList<>(matrix.getColumnDimension());
-            for (int j = 0; j < matrix.getColumnDimension(); j++) {
-                row.add(matrix.get(i, j));
-            }
-            rows.add(new JSONArray(row));
-        }
-        return new JSONArray(rows);
-    }
-
-    public static Matrix jsonArrayToMatrix(JSONArray jsonArray) {
-        double[][] matrix = new double[jsonArray.length()][];
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONArray row = jsonArray.getJSONArray(i);
-            matrix[i] = new double[row.length()];
-            for (int j = 0; j < row.length(); j++) {
-                matrix[i][j] = row.getDouble(j);
-            }
-        }
-        return new Matrix(matrix);
     }
 
     public static JSONObject readJSONObject(String filename) {
