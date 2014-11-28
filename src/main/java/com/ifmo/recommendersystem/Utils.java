@@ -1,5 +1,7 @@
 package com.ifmo.recommendersystem;
 
+import com.google.common.base.Joiner;
+
 import java.io.File;
 
 /**
@@ -8,18 +10,10 @@ import java.io.File;
 public class Utils {
 
     public static String createPath(String... str) {
-        StringBuilder builder = new StringBuilder(str[0]);
-        for (int i = 1; i < str.length; i++) {
-            builder.append(File.separatorChar).append(str[i]);
-        }
-        return builder.toString();
+        return Joiner.on(File.separatorChar).join(str);
     }
 
     public static String createName(String... str) {
-        StringBuilder builder = new StringBuilder(str[0]);
-        for (int i = 1; i < str.length; i++) {
-            builder.append('_').append(str[i]);
-        }
-        return builder.toString();
+        return Joiner.on('_').join(str);
     }
 }
