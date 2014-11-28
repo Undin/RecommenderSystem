@@ -3,13 +3,13 @@ package com.ifmo.recommendersystem;
 import org.json.JSONObject;
 import weka.attributeSelection.InfoGainAttributeEval;
 import weka.core.*;
+import weka.filters.Filter;
+import weka.filters.supervised.attribute.Discretize;
 
 public class MetaFeatures implements JSONConverted {
 
     public static final int META_FEATURE_NUMBER = 13;
     
-    private static final double LOG_2 = Math.log(2);
-
     private static final String[] attributeDescription = new String[META_FEATURE_NUMBER];
     static {
         attributeDescription[0] = "Number of instances";
@@ -74,8 +74,10 @@ public class MetaFeatures implements JSONConverted {
             throw new IllegalArgumentException("data set must have class attribute");
         }
         if (dataSet.checkForStringAttributes()) {
-            dataSet = InstancesUtils.removeStringAttributes(dataSet, true);
+            dataSet = new Instances(dataSet);
+            dataSet.deleteStringAttributes();
         }
+
         int classIndex = dataSet.classIndex();
         int attributeNumber = dataSet.numAttributes() - 1;
         double[] values = new double[META_FEATURE_NUMBER];
@@ -84,29 +86,41 @@ public class MetaFeatures implements JSONConverted {
         values[2] = dataSet.numClasses();
         values[3] = values[0] / values[1];
         double[][] attributeValues = new double[attributeNumber][];
-        double[] classValues = null;
         int next = 0;
         for (int i = 0; i < dataSet.numAttributes(); i++) {
             if (i != classIndex) {
                 attributeValues[next] = dataSet.attributeToDoubleArray(i);
                 next++;
-            } else {
-                classValues = dataSet.attributeToDoubleArray(i);
             }
         }
-        values[4] = meanAttributeCorrelation(attributeValues);
         double[] mean = new double[attributeNumber];
         double[] standardDeviation = new double[attributeNumber];
         for (int i = 0; i < attributeNumber; i++) {
             mean[i] = MathUtils.mean(attributeValues[i]);
             standardDeviation[i] = Math.sqrt(MathUtils.variance(attributeValues[i], mean[i]));
         }
+        values[4] = meanAttributeCorrelation(attributeValues, mean, standardDeviation);
         values[5] = meanSkewness(attributeValues, mean, standardDeviation);
         values[6] = meanKurtosis(attributeValues, mean, standardDeviation);
-        double classEntropy = ContingencyTables.entropy(classValues);
-        double meanAttributeEntropy = meanAttributesEntropy(attributeValues);
-        values[7] = classEntropy / (Math.log(dataSet.numInstances()) / LOG_2);
-        values[8] = meanAttributeEntropy / ((Math.log(dataSet.numInstances()) / LOG_2));
+
+
+        Discretize discretize = new Discretize();
+        discretize.setUseBetterEncoding(true);
+        try {
+            discretize.setInputFormat(dataSet);
+            dataSet = Filter.useFilter(dataSet, discretize);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        attributeValues = new double[dataSet.numAttributes()][];
+        for (int i = 0; i < dataSet.numAttributes(); i++) {
+            attributeValues[i] = dataSet.attributeToDoubleArray(i);
+        }
+
+        EntropyResult classResult = entropy(attributeValues[dataSet.classIndex()], dataSet.classAttribute().numValues());
+        EntropyResult meanAttributeEntropy = meanAttributesEntropy(attributeValues, dataSet);
+        values[7] = classResult.normalizedEntropy;
+        values[8] = meanAttributeEntropy.normalizedEntropy;
         InfoGainAttributeEval infoGain = new InfoGainAttributeEval();
         try {
             infoGain.buildEvaluator(dataSet);
@@ -132,23 +146,22 @@ public class MetaFeatures implements JSONConverted {
         meanMutualInformation /= attributeNumber;
         values[9] = meanMutualInformation;
         values[10] = maxMutualInformation;
-        values[11] = classEntropy / meanMutualInformation;
-        values[12] = (meanAttributeEntropy - meanMutualInformation) / meanMutualInformation;
+        values[11] = classResult.entropy / meanMutualInformation;
+        values[12] = (meanAttributeEntropy.entropy - meanMutualInformation) / meanMutualInformation;
         return new MetaFeatures(values);
     }
 
-    private static double meanAttributeCorrelation(double[][] attributeValues) {
+    private static double meanAttributeCorrelation(double[][] attributeValues, double mean[], double[] standardDeviation) {
         double meanCorrelation = 0;
         int attributeNumber = attributeValues.length;
-        int valuesNumber = attributeValues[0].length;
-        for (double[] attributeValue1 : attributeValues) {
-            for (double[] attributeValue2 : attributeValues) {
-                meanCorrelation += weka.core.Utils.correlation(attributeValue1,
-                                                               attributeValue2,
-                                                               valuesNumber);
+        for (int i = 0; i < attributeNumber; i++) {
+            for (int j = i; j < attributeNumber; j++) {
+                meanCorrelation +=
+                        MathUtils.covariance(attributeValues[i], attributeValues[j], mean[i], mean[j]) /
+                        (standardDeviation[i] * standardDeviation[j]);
             }
         }
-        meanCorrelation /= attributeNumber * attributeNumber;
+        meanCorrelation /= (1 + attributeNumber) * attributeNumber / 2;
         return meanCorrelation;
     }
 
@@ -172,13 +185,52 @@ public class MetaFeatures implements JSONConverted {
         return meanKurtosis;
     }
 
-    private static double meanAttributesEntropy(double[][] attributeValues) {
+    private static EntropyResult meanAttributesEntropy(double[][] attributeValues, Instances instances) {
+        double meanEntropy = 0;
         double meanNormalizedEntropy = 0;
-        for (double[] attributeValue : attributeValues) {
-            meanNormalizedEntropy += ContingencyTables.entropy(attributeValue);
+        for (int i = 0; i < instances.numAttributes(); i++) {
+            if (i != instances.classIndex()) {
+                EntropyResult result = entropy(attributeValues[i], instances.attribute(i).numValues());
+                meanEntropy += result.entropy;
+                meanNormalizedEntropy += result.normalizedEntropy;
+            }
         }
-        meanNormalizedEntropy /= attributeValues[0].length;
-        return meanNormalizedEntropy;
+        meanEntropy /= instances.numAttributes() - 1;
+        meanNormalizedEntropy /= instances.numAttributes() - 1;
+        return new EntropyResult(meanEntropy, meanNormalizedEntropy);
+    }
+
+    private static EntropyResult entropy(double[] values, int numValues) {
+        double[] distribution = new double[numValues];
+        int count = 0;
+        for (double v : values) {
+            if (MathUtils.isCorrectValue(v)) {
+                distribution[(int) v]++;
+                count++;
+            }
+        }
+        for (int i = 0; i < distribution.length; i++) {
+            distribution[i] /= count;
+        }
+        return new EntropyResult(ContingencyTables.entropy(distribution), count);
+    }
+
+    private static class EntropyResult {
+
+        private static final double LOG_2 = Math.log(2);
+
+        public final double entropy;
+        public final double normalizedEntropy;
+
+        public EntropyResult(double entropy, int count) {
+            this.entropy = entropy;
+            this.normalizedEntropy = entropy / (Math.log(count) / LOG_2);
+        }
+
+        public EntropyResult(double entropy, double normalizedEntropy) {
+            this.entropy = entropy;
+            this.normalizedEntropy = normalizedEntropy;
+        }
     }
 
     public static final AbstractJSONCreator<MetaFeatures> JSON_CREATOR = new AbstractJSONCreator<MetaFeatures>() {
