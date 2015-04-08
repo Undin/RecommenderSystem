@@ -13,17 +13,23 @@ public class ExtractTask extends AbstractTask {
 
     public static final String META_FEATURES_DIRECTORY = "metaFeatures";
 
-    public ExtractTask(String datasetPath) {
-        super(datasetPath);
+    private final String metaFeatureSet;
+
+    private final String[] extractors;
+    private final Instances instances;
+
+    public ExtractTask(String datasetName, Instances instances, String metaFeatureSet, String[] extractors) {
+        super(datasetName);
+        this.metaFeatureSet = metaFeatureSet;
+        this.extractors = extractors;
+        this.instances = instances;
     }
 
     @Override
     protected void runInternal() {
         try {
-            Instances instances = InstancesUtils.createInstances(datasetPath, InstancesUtils.REMOVE_STRING_ATTRIBUTES |
-                    InstancesUtils.REMOVE_UNINFORMATIVE_ATTRIBUTES);
-            DataSet dataSet = DataSet.fromInstances(datasetName, instances);
-            File directory = new File(RESULT_DIRECTORY, META_FEATURES_DIRECTORY);
+            DataSet dataSet = DataSet.fromInstances(datasetName, extractors, instances);
+            File directory = new File(RESULT_DIRECTORY, META_FEATURES_DIRECTORY + File.pathSeparator + metaFeatureSet);
             directory.mkdirs();
             try (PrintWriter writer = new PrintWriter(new File(directory, dataSet.getName() + ".json"))) {
                 writer.print(dataSet.toJSON().toString(4));
@@ -37,6 +43,6 @@ public class ExtractTask extends AbstractTask {
 
     @Override
     protected String getTaskName() {
-        return "extract " + datasetPath;
+        return "extract " + datasetName;
     }
 }
