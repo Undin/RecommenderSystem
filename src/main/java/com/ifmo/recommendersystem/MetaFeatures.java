@@ -10,6 +10,41 @@ import java.util.Objects;
 
 public class MetaFeatures implements JSONConverted {
 
+    public static enum Set {
+        DEFAULT("Default",
+                new String[]{
+                        "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
+                        "com.ifmo.recommendersystem.metafeatures.general.NumberOfFeatures",
+                        "com.ifmo.recommendersystem.metafeatures.general.NumberOfClasses",
+                        "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+                        "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+                        "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
+                        "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+                        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
+                        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+                        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+                        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+                        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
+                        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+                });
+
+        private final String name;
+        private final String[] extractors;
+
+        Set(String name, String[] extractors) {
+            this.name = name;
+            this.extractors = extractors;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String[] getExtractors() {
+            return extractors;
+        }
+    }
+
     private final String[] extractorClassNames;
     private final double[] values;
 

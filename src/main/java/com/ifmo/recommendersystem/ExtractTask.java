@@ -13,22 +13,20 @@ public class ExtractTask extends AbstractTask {
 
     public static final String META_FEATURES_DIRECTORY = "metaFeatures";
 
-    private final String metaFeatureSet;
 
-    private final String[] extractors;
+    private final MetaFeatures.Set metaFeatureSet;
     private final Instances instances;
 
-    public ExtractTask(String datasetName, Instances instances, String metaFeatureSet, String[] extractors) {
+    public ExtractTask(String datasetName, Instances instances, MetaFeatures.Set metaFeatureSet) {
         super(datasetName);
         this.metaFeatureSet = metaFeatureSet;
-        this.extractors = extractors;
         this.instances = instances;
     }
 
     @Override
     protected void runInternal() {
         try {
-            DataSet dataSet = DataSet.fromInstances(datasetName, extractors, instances);
+            DataSet dataSet = DataSet.fromInstances(datasetName, instances, metaFeatureSet.getExtractors());
             File directory = new File(RESULT_DIRECTORY, META_FEATURES_DIRECTORY + File.pathSeparator + metaFeatureSet);
             directory.mkdirs();
             try (PrintWriter writer = new PrintWriter(new File(directory, dataSet.getName() + ".json"))) {
