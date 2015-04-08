@@ -12,9 +12,11 @@ import java.util.stream.Collectors;
 
 class JSONUtils {
 
+    public static final String ACCURACY = "accuracy";
     public static final String ALGORITHM_NAME = "algorithmName";
     public static final String ALGORITHMS = "algorithms";
     public static final String ALPHA = "alpha";
+    public static final String ATTRIBUTE_NUMBER = "attributeNumber";
     public static final String BETTA = "betta";
     public static final String CLASS_NAME = "className";
     public static final String CLASSIFIER = "classifier";
@@ -23,12 +25,10 @@ class JSONUtils {
     public static final String DATA_SETS = "dataSets";
     public static final String DIRECTORY = "directory";
     public static final String EVALUATION = "evaluation";
+    public static final String EXTRACTORS = "extractors";
     public static final String HIT_RATIO = "hitRatio";
     public static final String LIST = "list";
-    public static final String MEAN_ACCURACY = "meanAccuracy";
-    public static final String MEAN_ATTRIBUTE_NUMBER = "meanAttributeNumber";
     public static final String MEAN_HIT_RATIO = "meanHitRatio";
-    public static final String MEAN_RUNTIME = "meanRuntime";
     public static final String META_FEATURES = "metaFeatures";
     public static final String MEAN_RPR = "meanRPR";
     public static final String OPT_ALGORITHM = "optAlgorithm";
@@ -36,8 +36,11 @@ class JSONUtils {
     public static final String OPTIONS = "options";
     public static final String RECOMMENDED_ALGORITHM = "recommendedAlgorithm";
     public static final String RPR = "RPR";
+    public static final String RUNTIME = "runtime";
     public static final String SEARCH = "search";
     public static final String SEPARATE_RESULT = "separateResult";
+    public static final String TEST_NUMBER = "testNumber";
+    public static final String VALUES = "values";
     public static final String WORST_ALGORITHM = "worstAlgorithm";
     public static final String WORST_RPR = "worstRPR";
 
@@ -79,6 +82,14 @@ class JSONUtils {
             objects.add(jsonArray.getString(i));
         }
         return objects;
+    }
+
+    public static double[] jsonArrayToDoubleArray(JSONArray jsonArray) {
+        double[] array = new double[jsonArray.length()];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            array[i] = jsonArray.getDouble(i);
+        }
+        return array;
     }
 
     public static JSONObject readJSONObject(String filename) {
