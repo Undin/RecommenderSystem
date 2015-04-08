@@ -1,6 +1,5 @@
 package com.ifmo.recommendersystem;
 
-import java.io.File;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -10,16 +9,12 @@ public abstract class AbstractTask implements Runnable {
 
     public static final String RESULT_DIRECTORY = "results";
 
-    protected final String datasetPath;
     protected final String datasetName;
 
     protected CountDownLatch latch;
 
-    protected AbstractTask(String datasetPath) {
-        this.datasetPath = datasetPath;
-        int startIdx = datasetPath.lastIndexOf(File.separatorChar);
-        int endIdx = datasetPath.lastIndexOf('.');
-        this.datasetName = datasetPath.substring(startIdx + 1, endIdx);
+    protected AbstractTask(String datasetName) {
+        this.datasetName = datasetName;
     }
 
     public void setLatch(CountDownLatch latch) {
@@ -28,8 +23,8 @@ public abstract class AbstractTask implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(">> DEBUG " + getTaskName() + " start");
         long start = System.currentTimeMillis();
+        System.out.println(">> DEBUG " + getTaskName() + " start " + start);
         runInternal();
         long end = System.currentTimeMillis();
         if (latch != null) {
