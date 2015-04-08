@@ -25,7 +25,6 @@ class JSONUtils {
     public static final String DATA_SETS = "dataSets";
     public static final String DIRECTORY = "directory";
     public static final String EVALUATION = "evaluation";
-    public static final String EXTRACTORS = "extractors";
     public static final String HIT_RATIO = "hitRatio";
     public static final String LIST = "list";
     public static final String MEAN_HIT_RATIO = "meanHitRatio";
@@ -39,6 +38,7 @@ class JSONUtils {
     public static final String RUNTIME = "runtime";
     public static final String SEARCH = "search";
     public static final String SEPARATE_RESULT = "separateResult";
+    public static final String SET_NAME = "setName";
     public static final String TEST_NUMBER = "testNumber";
     public static final String VALUES = "values";
     public static final String WORST_ALGORITHM = "worstAlgorithm";
