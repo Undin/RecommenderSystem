@@ -22,9 +22,9 @@ public class MeanLinearCorrelationCoefficient extends AbstractStatisticalExtract
         for (int i = 0; i < instances.numAttributes(); i++) {
             if (isNonClassNumericalAttribute(instances, i)) {
                 double[] values1 = instances.attributeToDoubleArray(i);
-                for (int j = i + 1; j < instances.numAttributes(); i++) {
+                for (int j = i + 1; j < instances.numAttributes(); j++) {
                     if (isNonClassNumericalAttribute(instances, j)) {
-                        double[] values2 = instances.attributeToDoubleArray(i);
+                        double[] values2 = instances.attributeToDoubleArray(j);
                         sum += StatisticalUtils.linearCorrelationCoefficient(values1, values2);
                         count++;
                     }
