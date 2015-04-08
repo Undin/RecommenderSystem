@@ -26,8 +26,8 @@ public class ExtractTask extends AbstractTask {
     @Override
     protected void runInternal() {
         try {
-            DataSet dataSet = DataSet.fromInstances(datasetName, instances, metaFeatureSet.getExtractors());
-            File directory = new File(RESULT_DIRECTORY, META_FEATURES_DIRECTORY + File.pathSeparator + metaFeatureSet);
+            DataSet dataSet = DataSet.fromInstances(datasetName, instances, metaFeatureSet);
+            File directory = new File(RESULT_DIRECTORY, Utils.createPath(META_FEATURES_DIRECTORY, metaFeatureSet.name()));
             directory.mkdirs();
             try (PrintWriter writer = new PrintWriter(new File(directory, dataSet.getName() + ".json"))) {
                 writer.print(dataSet.toJSON().toString(4));
