@@ -5,6 +5,8 @@ import weka.classifiers.Classifier;
 import weka.core.Instance;
 import weka.core.Instances;
 
+import java.util.Arrays;
+
 public class ClassifierWrapper implements JSONConverted {
 
     private final String name;
@@ -59,7 +61,7 @@ public class ClassifierWrapper implements JSONConverted {
             String name = jsonObject.getString(JSONUtils.CLASSIFIER_NAME);
             String classifierClassName = jsonObject.getString(JSONUtils.CLASS_NAME);
             String[] options = JSONUtils.readOptions(jsonObject);
-            Classifier classifier = Classifier.forName(classifierClassName, options);
+            Classifier classifier = Classifier.forName(classifierClassName, Arrays.copyOf(options, options.length));
             return new ClassifierWrapper(name, classifier, options);
         }
     };
