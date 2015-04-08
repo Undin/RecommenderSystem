@@ -27,8 +27,8 @@ public class DataSet implements JSONConverted {
         return new JSONObject().put(JSONUtils.DATA_SET_NAME, name).put(JSONUtils.META_FEATURES, metaFeatures.toJSON());
     }
 
-    public static DataSet fromInstances(String name, Instances instances) {
-        MetaFeatures metaFeatures = MetaFeatures.extractMetaFeature(instances);
+    public static DataSet fromInstances(String name, String[] extractorsClasses, Instances instances) {
+        MetaFeatures metaFeatures = MetaFeatures.extractMetaFeature(extractorsClasses, instances);
         return new DataSet(name, metaFeatures);
     }
 
