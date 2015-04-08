@@ -5,6 +5,9 @@ import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
 import weka.core.Instances;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,10 +44,10 @@ public class FSSAlgorithm implements JSONConverted {
         try {
             ASSearch search = ASSearch.makeCopies(algorithm, 1)[0];
             ASEvaluation evaluation = ASEvaluation.makeCopies(evaluator, 1)[0];
-            long start = System.currentTimeMillis();
+            Instant start = Instant.now();
             Instances resultInstances = InstancesUtils.selectAttributes(instances, search, evaluation);
-            long end = System.currentTimeMillis();
-            return new Result(resultInstances, end - start);
+            Instant end = Instant.now();
+            return new Result(resultInstances, Duration.between(start, end).toMillis());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -90,8 +93,8 @@ public class FSSAlgorithm implements JSONConverted {
             String evaluationClassName = evaluation.getString(CLASS_NAME);
             String[] algorithmOptions = readOptions(search);
             String[] evaluationOptions = readOptions(evaluation);
-            ASSearch algorithm = ASSearch.forName(algorithmClassName, algorithmOptions);
-            ASEvaluation evaluator = ASEvaluation.forName(evaluationClassName, evaluationOptions);
+            ASSearch algorithm = ASSearch.forName(algorithmClassName, Arrays.copyOf(algorithmOptions, algorithmOptions.length));
+            ASEvaluation evaluator = ASEvaluation.forName(evaluationClassName, Arrays.copyOf(evaluationOptions, evaluationOptions.length));
             return new FSSAlgorithm(name, algorithm, algorithmOptions, evaluator, evaluationOptions);
         }
     };
