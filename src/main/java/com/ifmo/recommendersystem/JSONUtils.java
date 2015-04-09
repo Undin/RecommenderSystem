@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
-class JSONUtils {
+public class JSONUtils {
 
     public static final String ACCURACY = "accuracy";
     public static final String ALGORITHM_NAME = "algorithmName";
