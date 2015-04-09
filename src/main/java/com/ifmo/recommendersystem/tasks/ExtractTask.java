@@ -1,5 +1,8 @@
-package com.ifmo.recommendersystem;
+package com.ifmo.recommendersystem.tasks;
 
+import com.ifmo.recommendersystem.DataSet;
+import com.ifmo.recommendersystem.MetaFeatures;
+import com.ifmo.recommendersystem.Utils;
 import weka.core.Instances;
 
 import java.io.File;
