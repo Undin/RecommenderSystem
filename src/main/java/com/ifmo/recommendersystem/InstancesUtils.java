@@ -1,5 +1,6 @@
 package com.ifmo.recommendersystem;
 
+import com.ifmo.recommendersystem.utils.StatisticalUtils;
 import gnu.trove.list.TIntList;
 import gnu.trove.list.array.TIntArrayList;
 import gnu.trove.set.TIntSet;
@@ -37,7 +38,7 @@ public class InstancesUtils {
                 if (removeStringAttributes && attr.isString()) {
                     removingAttributes.add(i);
                 }
-                if (removeUninformativeAttributes && MathUtils.variance(instances.attributeToDoubleArray(i)) == 0) {
+                if (removeUninformativeAttributes && StatisticalUtils.variance(instances.attributeToDoubleArray(i)) == 0) {
                     removingAttributes.add(i);
                 }
             }
