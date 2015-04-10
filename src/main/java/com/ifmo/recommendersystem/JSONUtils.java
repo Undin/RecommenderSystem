@@ -24,7 +24,9 @@ public class JSONUtils {
     public static final String DATA_SET_NAME = "dataSetName";
     public static final String DATA_SETS = "dataSets";
     public static final String DIRECTORY = "directory";
+    public static final String EVALUATE_PERFORMANCE = "evaluatePerformance";
     public static final String EVALUATION = "evaluation";
+    public static final String EXTRACT_META_FEATURES = "extractMetaFeatures";
     public static final String F1_MEASURE = "f1Measure";
     public static final String HIT_RATIO = "hitRatio";
     public static final String LIST = "list";
