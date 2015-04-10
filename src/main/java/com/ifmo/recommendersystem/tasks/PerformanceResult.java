@@ -14,16 +14,16 @@ public class PerformanceResult implements JSONConverted {
     public final String dataSetName;
     public final String algorithmName;
     public final String classifierName;
-    public final double accuracy;
+    public final double f1Measure;
     public final double runtime;
     public final double attributeNumber;
     public final int testNumber;
 
-    public PerformanceResult(String dataSetName, String algorithmName, String classifierName, double accuracy, double attributeNumber, double runtime, int testNumber) {
+    public PerformanceResult(String dataSetName, String algorithmName, String classifierName, double f1Measure, double attributeNumber, double runtime, int testNumber) {
         this.dataSetName = dataSetName;
         this.algorithmName = algorithmName;
         this.classifierName = classifierName;
-        this.accuracy = accuracy;
+        this.f1Measure = f1Measure;
         this.attributeNumber = attributeNumber;
         this.runtime = runtime;
         this.testNumber = testNumber;
@@ -35,7 +35,7 @@ public class PerformanceResult implements JSONConverted {
                 put(DATA_SET_NAME, dataSetName).
                 put(ALGORITHM_NAME, algorithmName).
                 put(CLASSIFIER_NAME, classifierName).
-                put(ACCURACY, accuracy).
+                put(F1_MEASURE, f1Measure).
                 put(ATTRIBUTE_NUMBER, attributeNumber).
                 put(RUNTIME, runtime).
                 put(TEST_NUMBER, testNumber);
@@ -47,7 +47,7 @@ public class PerformanceResult implements JSONConverted {
             String dataSetName = jsonObject.getString(DATA_SET_NAME);
             String algorithmName = jsonObject.getString(ALGORITHM_NAME);
             String classifierName = jsonObject.getString(CLASSIFIER_NAME);
-            double accuracy = jsonObject.getDouble(ACCURACY);
+            double accuracy = jsonObject.getDouble(F1_MEASURE);
             double attributeNumber = jsonObject.getDouble(ATTRIBUTE_NUMBER);
             double runtime = jsonObject.getDouble(RUNTIME);
             int testNumber = jsonObject.getInt(TEST_NUMBER);

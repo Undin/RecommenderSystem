@@ -1,30 +1,30 @@
 package com.ifmo.recommendersystem.tasks;
 
-import com.ifmo.recommendersystem.*;
+import com.ifmo.recommendersystem.ClassifierWrapper;
+import com.ifmo.recommendersystem.FSSAlgorithm;
+import com.ifmo.recommendersystem.InstancesUtils;
 import weka.core.Instances;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 import static java.util.Objects.requireNonNull;
 
 /**
  * Created by warrior on 18.11.14.
  */
-public class PerformanceTask extends AbstractTask {
+public class PerformanceTask implements Callable<List<PerformanceResult>> {
 
-    public static final String PERFORMANCE_DIRECTORY = "performance";
-
-    private final Instances train;
-    private final Instances test;
+    private final String datasetName;
     private final List<FSSAlgorithm> algorithms;
     private final ClassifierWrapper classifier;
     private final int testNumber;
+    private final Instances train;
+    private final Instances test;
 
     public PerformanceTask(String datasetName, int testNumber, Instances train, Instances test, List<FSSAlgorithm> algorithms, ClassifierWrapper classifier) {
-        super(datasetName);
+        this.datasetName = datasetName;
         this.train = requireNonNull(train);
         this.test = requireNonNull(test);
         this.algorithms = requireNonNull(algorithms);
@@ -33,40 +33,24 @@ public class PerformanceTask extends AbstractTask {
     }
 
     @Override
-    protected void runInternal() {
+    public List<PerformanceResult> call() {
+        List<PerformanceResult> results = new ArrayList<>();
         for (FSSAlgorithm algorithm : algorithms) {
             FSSAlgorithm.Result result = algorithm.subsetSelection(train);
             Instances selectedTrain = InstancesUtils.removeAttributes(train, result.instances);
             Instances selectedTest = InstancesUtils.removeAttributes(test, result.instances);
             long runtime = result.runtime;
             int resultAttributeNumber = selectedTrain.numAttributes() - 1;
-            double accuracy = classifier.getAccuracy(selectedTrain, selectedTest);
-            PerformanceResult performanceResult = new PerformanceResult(datasetName,
+            double f1Measure = classifier.getF1Measure(selectedTrain, selectedTest);
+            results.add(new PerformanceResult(datasetName,
                     algorithm.getName(),
                     classifier.getName(),
-                    accuracy,
+                    f1Measure,
                     resultAttributeNumber,
                     runtime,
-                    testNumber);
-            String directoryPath = Utils.createPath(RESULT_DIRECTORY,
-                    PERFORMANCE_DIRECTORY,
-                    classifier.getName(),
-                    datasetName,
-                    algorithm.getName());
-            String fileName = Utils.createName(classifier.getName(), datasetName, algorithm.getName(), String.valueOf(testNumber));
-            File directory = new File(directoryPath);
-            directory.mkdirs();
-            try (PrintWriter writer = new PrintWriter(new File(directory, fileName + ".json"))) {
-                writer.print(performanceResult.toJSON().toString(4));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
+                    testNumber));
+
         }
+        return results;
     }
-
-    @Override
-    protected String getTaskName() {
-        return "performance " + datasetName + " " + testNumber;
-    }
-
 }
