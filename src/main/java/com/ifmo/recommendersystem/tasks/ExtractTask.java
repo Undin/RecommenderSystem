@@ -1,6 +1,5 @@
 package com.ifmo.recommendersystem.tasks;
 
-import com.ifmo.recommendersystem.DataSet;
 import com.ifmo.recommendersystem.MetaFeatures;
 import weka.core.Instances;
 
@@ -9,7 +8,7 @@ import java.util.concurrent.Callable;
 /**
  * Created by warrior on 19.11.14.
  */
-public class ExtractTask implements Callable<DataSet> {
+public class ExtractTask implements Callable<ExtractResult> {
 
     private final String datasetName;
     private final MetaFeatures.Set metaFeatureSet;
@@ -22,7 +21,7 @@ public class ExtractTask implements Callable<DataSet> {
     }
 
     @Override
-    public DataSet call() {
-        return DataSet.fromInstances(datasetName, instances, metaFeatureSet);
+    public ExtractResult call() {
+        return ExtractResult.fromInstances(datasetName, instances, metaFeatureSet);
     }
 }

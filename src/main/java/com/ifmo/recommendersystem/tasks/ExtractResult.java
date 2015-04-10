@@ -1,16 +1,19 @@
-package com.ifmo.recommendersystem;
+package com.ifmo.recommendersystem.tasks;
 
+import com.ifmo.recommendersystem.AbstractJSONCreator;
+import com.ifmo.recommendersystem.JSONConverted;
+import com.ifmo.recommendersystem.MetaFeatures;
 import com.ifmo.recommendersystem.utils.JSONUtils;
 import org.json.JSONObject;
 import weka.core.Instances;
 
-public class DataSet implements JSONConverted {
+public class ExtractResult implements JSONConverted {
 
     private final String name;
 
     private MetaFeatures metaFeatures;
 
-    private DataSet(String name, MetaFeatures metaFeatures) {
+    private ExtractResult(String name, MetaFeatures metaFeatures) {
         this.name = name;
         this.metaFeatures = metaFeatures;
     }
@@ -28,18 +31,18 @@ public class DataSet implements JSONConverted {
         return new JSONObject().put(JSONUtils.DATA_SET_NAME, name).put(JSONUtils.META_FEATURES, metaFeatures.toJSON());
     }
 
-    public static DataSet fromInstances(String name, Instances instances, MetaFeatures.Set metaFeatureSet) {
+    public static ExtractResult fromInstances(String name, Instances instances, MetaFeatures.Set metaFeatureSet) {
         MetaFeatures metaFeatures = MetaFeatures.extractMetaFeature(metaFeatureSet, instances);
-        return new DataSet(name, metaFeatures);
+        return new ExtractResult(name, metaFeatures);
     }
 
-    public static final AbstractJSONCreator<DataSet> JSON_CREATOR = new AbstractJSONCreator<DataSet>() {
+    public static final AbstractJSONCreator<ExtractResult> JSON_CREATOR = new AbstractJSONCreator<ExtractResult>() {
         @Override
-        protected DataSet throwableFromJSON(JSONObject jsonObject) throws Exception {
+        protected ExtractResult throwableFromJSON(JSONObject jsonObject) throws Exception {
             String name = jsonObject.getString(JSONUtils.DATA_SET_NAME);
             JSONObject metaFeatureObject = jsonObject.getJSONObject(JSONUtils.META_FEATURES);
             MetaFeatures metaFeatures = MetaFeatures.JSON_CREATOR.fromJSON(metaFeatureObject);
-            return new DataSet(name, metaFeatures);
+            return new ExtractResult(name, metaFeatures);
         }
     };
 }
