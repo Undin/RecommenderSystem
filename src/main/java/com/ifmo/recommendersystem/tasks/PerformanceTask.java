@@ -3,6 +3,7 @@ package com.ifmo.recommendersystem.tasks;
 import com.ifmo.recommendersystem.ClassifierWrapper;
 import com.ifmo.recommendersystem.FSSAlgorithm;
 import com.ifmo.recommendersystem.utils.InstancesUtils;
+import com.ifmo.recommendersystem.utils.Pair;
 import weka.core.Instances;
 
 import java.util.ArrayList;
@@ -41,11 +42,12 @@ public class PerformanceTask implements Callable<List<PerformanceResult>> {
             Instances selectedTest = InstancesUtils.removeAttributes(test, result.instances);
             long runtime = result.runtime;
             int resultAttributeNumber = selectedTrain.numAttributes() - 1;
-            double f1Measure = classifier.getF1Measure(selectedTrain, selectedTest);
+            Pair<Double, Double> effectiveness = classifier.computeAccuracyAndF1Measure(selectedTrain, selectedTest);
             results.add(new PerformanceResult(datasetName,
                     algorithm.getName(),
                     classifier.getName(),
-                    f1Measure,
+                    effectiveness.first,
+                    effectiveness.second,
                     resultAttributeNumber,
                     runtime,
                     testNumber));

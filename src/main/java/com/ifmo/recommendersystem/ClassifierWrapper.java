@@ -1,6 +1,7 @@
 package com.ifmo.recommendersystem;
 
 import com.ifmo.recommendersystem.utils.JSONUtils;
+import com.ifmo.recommendersystem.utils.Pair;
 import org.json.JSONObject;
 import weka.classifiers.Classifier;
 import weka.core.Instance;
@@ -37,42 +38,30 @@ public class ClassifierWrapper implements JSONConverted {
         return JSONUtils.objectToJSON(classifier, options).put(JSONUtils.CLASSIFIER_NAME, name);
     }
 
-    public double getAccuracy(Instances train, Instances test) {
-        try {
-            Classifier localClassifier = Classifier.makeCopy(classifier);
-            localClassifier.buildClassifier(train);
-            double accuracy = 0;
-            for (int i = 0; i < test.numInstances(); i++) {
-                Instance instance = test.instance(i);
-                double classIndex = localClassifier.classifyInstance(instance);
-                if (classIndex == instance.classValue()) {
-                    accuracy += 1;
-                }
-            }
-            return accuracy / test.numInstances();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    public double getF1Measure(Instances train, Instances test) {
+    public Pair<Double, Double> computeAccuracyAndF1Measure(Instances train, Instances test) {
         int[][] confusionMatrix = new int[train.numClasses()][train.numClasses()];
+        double correct = 0;
+        int sum = 0;
         try {
             Classifier localClassifier = Classifier.makeCopy(classifier);
             localClassifier.buildClassifier(train);
             for (int i = 0; i < test.numInstances(); i++) {
                 Instance instance = test.instance(i);
                 if (!instance.classIsMissing()) {
-                    int classIndex = (int) localClassifier.classifyInstance(instance);
-                    confusionMatrix[classIndex][(int) instance.classValue()]++;
+                    sum++;
+                    int estimatedClassIndex = (int) localClassifier.classifyInstance(instance);
+                    int expectedClassIndex = (int) instance.classValue();
+                    if (estimatedClassIndex == expectedClassIndex) {
+                        correct++;
+                    }
+                    confusionMatrix[estimatedClassIndex][expectedClassIndex]++;
                 }
             }
-            return computeF1Measure(confusionMatrix);
+            return Pair.of(correct / sum, computeF1Measure(confusionMatrix));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return 0;
+        return Pair.of(0D, 0D);
     }
 
     public static double computeF1Measure(int[][] confusionMatrix) {
