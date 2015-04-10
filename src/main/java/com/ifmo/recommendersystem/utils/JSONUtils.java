@@ -1,5 +1,6 @@
-package com.ifmo.recommendersystem;
+package com.ifmo.recommendersystem.utils;
 
+import com.ifmo.recommendersystem.JSONConverted;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;

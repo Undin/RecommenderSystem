@@ -4,7 +4,7 @@ import com.ifmo.recommendersystem.AbstractJSONCreator;
 import com.ifmo.recommendersystem.JSONConverted;
 import org.json.JSONObject;
 
-import static com.ifmo.recommendersystem.JSONUtils.*;
+import static com.ifmo.recommendersystem.utils.JSONUtils.*;
 
 /**
  * Created by warrior on 20.11.14.

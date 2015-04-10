@@ -1,5 +1,6 @@
 package com.ifmo.recommendersystem;
 
+import com.ifmo.recommendersystem.utils.InstancesUtils;
 import org.json.JSONObject;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
@@ -11,7 +12,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.ifmo.recommendersystem.JSONUtils.*;
+import static com.ifmo.recommendersystem.utils.JSONUtils.*;
 
 public class FSSAlgorithm implements JSONConverted {
 

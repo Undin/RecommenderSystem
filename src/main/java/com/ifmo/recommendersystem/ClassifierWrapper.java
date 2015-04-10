@@ -1,5 +1,6 @@
 package com.ifmo.recommendersystem;
 
+import com.ifmo.recommendersystem.utils.JSONUtils;
 import org.json.JSONObject;
 import weka.classifiers.Classifier;
 import weka.core.Instance;

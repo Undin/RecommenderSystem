@@ -2,7 +2,7 @@ package com.ifmo.recommendersystem.tasks;
 
 import com.ifmo.recommendersystem.ClassifierWrapper;
 import com.ifmo.recommendersystem.FSSAlgorithm;
-import com.ifmo.recommendersystem.InstancesUtils;
+import com.ifmo.recommendersystem.utils.InstancesUtils;
 import weka.core.Instances;
 
 import java.util.ArrayList;

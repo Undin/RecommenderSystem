@@ -3,6 +3,8 @@ package com.ifmo.recommendersystem;
 import com.ifmo.recommendersystem.tasks.ExtractTask;
 import com.ifmo.recommendersystem.tasks.PerformanceResult;
 import com.ifmo.recommendersystem.tasks.PerformanceTask;
+import com.ifmo.recommendersystem.utils.InstancesUtils;
+import com.ifmo.recommendersystem.utils.JSONUtils;
 import com.ifmo.recommendersystem.utils.Pair;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -18,7 +20,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import static com.ifmo.recommendersystem.JSONUtils.*;
+import static com.ifmo.recommendersystem.utils.JSONUtils.*;
 
 public class RecommenderSystemBuilder {
 

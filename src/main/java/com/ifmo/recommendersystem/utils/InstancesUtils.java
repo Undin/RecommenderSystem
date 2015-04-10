@@ -1,4 +1,4 @@
-package com.ifmo.recommendersystem;
+package com.ifmo.recommendersystem.utils;
 
 import com.ifmo.recommendersystem.utils.StatisticalUtils;
 import gnu.trove.list.TIntList;

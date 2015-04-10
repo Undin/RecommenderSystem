@@ -1,6 +1,7 @@
 package com.ifmo.recommendersystem;
 
 import com.ifmo.recommendersystem.metafeatures.MetaFeatureExtractor;
+import com.ifmo.recommendersystem.utils.JSONUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import weka.core.Instances;
