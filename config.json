@@ -1,0 +1,171 @@
+{
+    "setName" : "DEFAULT",
+    "evaluatePerformance" : true,
+    "extractMetaFeatures" : true,
+    "classifier" : {
+        "classifierName" : "NaiveBayes",
+        "className" : "weka.classifiers.bayes.NaiveBayes",
+        "options" : []
+    },
+    "algorithms" : [
+        {
+            "algorithmName" : "CFS-SBS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "0"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-SFS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "1"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-BiS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "2"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-GS",
+            "search" : {
+                "className" : "weka.attributeSelection.GeneticSearch",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-LS",
+            "search" : {
+                "className" : "weka.attributeSelection.LinearForwardSelection",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-RS",
+            "search" : {
+                "className" : "weka.attributeSelection.RankSearch",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-SS",
+            "search" : {
+                "className" : "weka.attributeSelection.ScatterSearchV1",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "Cons-SBS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "0"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.ConsistencySubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "Cons-SFS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "1"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.ConsistencySubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "Cons-BiS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "2"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.ConsistencySubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "Cons-GS",
+            "search" : {
+                "className" : "weka.attributeSelection.GeneticSearch",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.ConsistencySubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "Cons-RS",
+            "search" : {
+                "className" : "weka.attributeSelection.RankSearch",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.ConsistencySubsetEval",
+                "options" : []
+            }
+        }
+    ],
+    "dataSets" : {
+        "directory" : "datasets",
+        "list" : [
+            "vowel.arff",
+            "white-clover.arff",
+            "wine.arff",
+            "zoo.arff"
+        ]
+    }
+}
