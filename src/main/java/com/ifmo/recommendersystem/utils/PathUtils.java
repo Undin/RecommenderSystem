@@ -1,11 +1,11 @@
-package com.ifmo.recommendersystem;
+package com.ifmo.recommendersystem.utils;
 
 import java.io.File;
 
 /**
  * Created by warrior on 19.11.14.
  */
-public class Utils {
+public class PathUtils {
 
     public static String createPath(String... str) {
         return String.join(File.separator, str);

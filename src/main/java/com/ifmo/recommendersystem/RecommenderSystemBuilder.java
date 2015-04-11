@@ -8,6 +8,7 @@ import com.ifmo.recommendersystem.tasks.PerformanceTask;
 import com.ifmo.recommendersystem.utils.InstancesUtils;
 import com.ifmo.recommendersystem.utils.JSONUtils;
 import com.ifmo.recommendersystem.utils.Pair;
+import com.ifmo.recommendersystem.utils.PathUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import weka.core.Instances;
@@ -119,12 +120,12 @@ public class RecommenderSystemBuilder {
             try {
                 List<PerformanceResult> resultList = future.get();
                 for (PerformanceResult result : resultList) {
-                    File directory = new File(Utils.createPath(PERFORMANCE_DIRECTORY,
+                    File directory = new File(PathUtils.createPath(PERFORMANCE_DIRECTORY,
                             result.classifierName,
                             result.dataSetName,
                             result.algorithmName));
                     directory.mkdirs();
-                    String fileName = Utils.createName(result.classifierName, result.dataSetName, result.algorithmName, String.valueOf(result.testNumber));
+                    String fileName = PathUtils.createName(result.classifierName, result.dataSetName, result.algorithmName, String.valueOf(result.testNumber));
                     try (PrintWriter writer = new PrintWriter(new File(directory, fileName + ".json"))) {
                         writer.print(result.toJSON().toString(4));
                     } catch (FileNotFoundException e) {
