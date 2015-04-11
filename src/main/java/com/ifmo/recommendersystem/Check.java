@@ -1,6 +1,7 @@
 package com.ifmo.recommendersystem;
 
 import com.ifmo.recommendersystem.utils.JSONUtils;
+import com.ifmo.recommendersystem.utils.PathUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -27,14 +28,15 @@ public class Check {
         List<String> dataSets = jsonArrayToStringList(datasetsObject.getJSONArray(LIST));
         String datasetDir = datasetsObject.getString(DIRECTORY);
 
-        String dir = Utils.createPath(RecommenderSystemBuilder.PERFORMANCE_DIRECTORY, classifier.getName());
+        String dir = PathUtils.createPath(RecommenderSystemBuilder.PERFORMANCE_DIRECTORY, classifier.getName());
         List<String> unreadyDatasets = new ArrayList<>();
         for (String dataset : dataSets) {
+            dataset = dataset.replace(".arff", "");
             boolean ready = true;
             for (FSSAlgorithm algorithm : algorithms) {
-                File d = new File(dir, Utils.createPath(dataset, algorithm.getName()));
+                File d = new File(dir, PathUtils.createPath(dataset, algorithm.getName()));
                 for (int i = 0; i < 50 && ready; i++) {
-                    String name = Utils.createName(classifier.getName(), dataset, algorithm.getName(), String.valueOf(i)) + ".json";
+                    String name = PathUtils.createName(classifier.getName(), dataset, algorithm.getName(), String.valueOf(i)) + ".json";
                     File res = new File(d, name);
                     if (!res.exists()) {
                         ready = false;
@@ -45,7 +47,7 @@ public class Check {
                 }
             }
             if (!ready) {
-                unreadyDatasets.add(dataset);
+                unreadyDatasets.add("\"" + dataset + ".arff\"");
             }
         }
         System.out.println(String.join(",\n", unreadyDatasets));
