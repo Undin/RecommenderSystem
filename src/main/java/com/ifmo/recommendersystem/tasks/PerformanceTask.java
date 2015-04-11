@@ -6,6 +6,9 @@ import com.ifmo.recommendersystem.utils.InstancesUtils;
 import com.ifmo.recommendersystem.utils.Pair;
 import weka.core.Instances;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.concurrent.Callable;
 
 import static java.util.Objects.requireNonNull;
@@ -33,12 +36,25 @@ public class PerformanceTask implements Callable<PerformanceResult> {
 
     @Override
     public PerformanceResult call() {
+        Instant start = Instant.now();
+        System.out.format(">> [%s] %s-%d %s\n",
+                start.atZone(ZoneId.of("UTC+3")).toLocalTime().toString(),
+                datasetName,
+                testNumber,
+                algorithm.getName());
         FSSAlgorithm.Result result = algorithm.subsetSelection(train);
         Instances selectedTrain = InstancesUtils.removeAttributes(train, result.instances);
         Instances selectedTest = InstancesUtils.removeAttributes(test, result.instances);
         long runtime = result.runtime;
         int resultAttributeNumber = selectedTrain.numAttributes() - 1;
         Pair<Double, Double> effectiveness = classifier.computeAccuracyAndF1Measure(selectedTrain, selectedTest);
+        Instant end = Instant.now();
+        System.out.format("<< [%s] %s-%d %s. exec time: %d\n",
+                end.atZone(ZoneId.of("UTC+3")).toLocalTime().toString(),
+                datasetName,
+                testNumber,
+                algorithm.getName(),
+                Duration.between(start, end).toMillis());
         return new PerformanceResult(datasetName,
                 algorithm.getName(),
                 classifier.getName(),

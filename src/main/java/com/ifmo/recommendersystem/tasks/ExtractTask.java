@@ -3,6 +3,9 @@ package com.ifmo.recommendersystem.tasks;
 import com.ifmo.recommendersystem.metafeatures.MetaFeatureExtractor;
 import weka.core.Instances;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.concurrent.Callable;
 
 /**
@@ -22,6 +25,18 @@ public class ExtractTask implements Callable<ExtractResult> {
 
     @Override
     public ExtractResult call() {
-        return ExtractResult.fromInstances(datasetName, instances, extractor);
+        Instant start = Instant.now();
+        System.out.format(">> [%s] %s %s\n",
+                start.atZone(ZoneId.of("UTC+3")).toLocalTime().toString(),
+                datasetName,
+                extractor.getName());
+        ExtractResult result = ExtractResult.fromInstances(datasetName, instances, extractor);
+        Instant end = Instant.now();
+        System.out.format("<< [%s] %s %s. exec time: %d\n",
+                end.atZone(ZoneId.of("UTC+3")).toLocalTime().toString(),
+                datasetName,
+                extractor.getName(),
+                Duration.between(start, end).toMillis());
+        return result;
     }
 }
