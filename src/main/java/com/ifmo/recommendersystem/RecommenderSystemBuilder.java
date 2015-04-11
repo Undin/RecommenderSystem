@@ -17,10 +17,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 import static com.ifmo.recommendersystem.utils.JSONUtils.*;
@@ -69,6 +66,7 @@ public class RecommenderSystemBuilder {
             }
         }
         ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        ((ThreadPoolExecutor) executor).setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardPolicy());
         if (extractMetaFeatures) {
             extractMetaFeatures(executor, instancesList);
         }
