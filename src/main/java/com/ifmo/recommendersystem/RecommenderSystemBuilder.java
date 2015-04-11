@@ -104,33 +104,34 @@ public class RecommenderSystemBuilder {
     }
 
     private void evaluatePerformance(ExecutorService executor, List<Pair<String, Instances>> instancesList) {
-        List<Future<List<PerformanceResult>>> futurePerformanceResults = new ArrayList<>();
+        List<Future<PerformanceResult>> futurePerformanceResults = new ArrayList<>();
         for (Pair<String, Instances> p : instancesList) {
             Instances instances = new Instances(p.second);
             for (int i = 0; i < ROUNDS; i++) {
                 instances.randomize(random);
                 for (int j = 0; j < FOLDS; j++) {
+                    int testNumber = i * FOLDS + j;
                     Instances train = instances.trainCV(FOLDS, j);
                     Instances test = instances.testCV(FOLDS, j);
-                    futurePerformanceResults.add(executor.submit(new PerformanceTask(p.first, i * FOLDS + j, train, test, algorithms, classifier)));
+                    algorithms.stream()
+                            .map(alg -> executor.submit(new PerformanceTask(p.first, testNumber, train, test, alg, classifier)))
+                            .forEach(futurePerformanceResults::add);
                 }
             }
         }
-        for (Future<List<PerformanceResult>> future : futurePerformanceResults) {
+        for (Future<PerformanceResult> future : futurePerformanceResults) {
             try {
-                List<PerformanceResult> resultList = future.get();
-                for (PerformanceResult result : resultList) {
-                    File directory = new File(PathUtils.createPath(PERFORMANCE_DIRECTORY,
-                            result.classifierName,
-                            result.dataSetName,
-                            result.algorithmName));
-                    directory.mkdirs();
-                    String fileName = PathUtils.createName(result.classifierName, result.dataSetName, result.algorithmName, String.valueOf(result.testNumber));
-                    try (PrintWriter writer = new PrintWriter(new File(directory, fileName + ".json"))) {
-                        writer.print(result.toJSON().toString(4));
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    }
+                PerformanceResult result = future.get();
+                File directory = new File(PathUtils.createPath(PERFORMANCE_DIRECTORY,
+                        result.classifierName,
+                        result.dataSetName,
+                        result.algorithmName));
+                directory.mkdirs();
+                String fileName = PathUtils.createName(result.classifierName, result.dataSetName, result.algorithmName, String.valueOf(result.testNumber));
+                try (PrintWriter writer = new PrintWriter(new File(directory, fileName + ".json"))) {
+                    writer.print(result.toJSON().toString(4));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
                 }
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
@@ -173,7 +174,7 @@ public class RecommenderSystemBuilder {
         return dataSets;
     }
 
-    private static final String CONFIG_FILE_NAME = "internal_config.json";
+    private static final String CONFIG_FILE_NAME = "config.json";
 
     public static void main(String[] args) throws Exception {
         RecommenderSystemBuilder builder = RecommenderSystemBuilder.createFromConfig(CONFIG_FILE_NAME);
