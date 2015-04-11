@@ -1,5 +1,6 @@
 package com.ifmo.recommendersystem;
 
+import com.ifmo.recommendersystem.tasks.ExtractResult;
 import com.ifmo.recommendersystem.tasks.ExtractTask;
 import com.ifmo.recommendersystem.tasks.PerformanceResult;
 import com.ifmo.recommendersystem.tasks.PerformanceTask;
@@ -8,8 +9,6 @@ import com.ifmo.recommendersystem.utils.JSONUtils;
 import com.ifmo.recommendersystem.utils.Pair;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import rx.Observable;
-import rx.schedulers.Schedulers;
 import weka.core.Instances;
 
 import java.io.File;
@@ -18,6 +17,10 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 import static com.ifmo.recommendersystem.utils.JSONUtils.*;
@@ -65,36 +68,38 @@ public class RecommenderSystemBuilder {
                 e.printStackTrace();
             }
         }
+        ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         if (extractMetaFeatures) {
-            extractMetaFeatures(instancesList);
+            extractMetaFeatures(executor, instancesList);
         }
         if (evaluatePerformance) {
-            evaluatePerformance(instancesList);
+            evaluatePerformance(executor, instancesList);
+        }
+        executor.shutdown();
+    }
+
+    private void extractMetaFeatures(ExecutorService executor, List<Pair<String, Instances>> instances) {
+        List<Future<ExtractResult>> futureExtractResults = instances.stream()
+                .map(p -> executor.submit(new ExtractTask(p.first, p.second, meteFeatureSet)))
+                .collect(Collectors.toList());
+        for (Future<ExtractResult> future : futureExtractResults) {
+            try {
+                ExtractResult result = future.get();
+                File directory = new File(META_FEATURES_DIRECTORY, result.getMetaFeatures().getMetaFeatureSet().name());
+                directory.mkdirs();
+                try (PrintWriter writer = new PrintWriter(new File(directory, result.getName() + ".json"))) {
+                    writer.print(result.toJSON().toString(4));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    private void extractMetaFeatures(List<Pair<String, Instances>> instances) {
-        List<ExtractTask> extractTasks = instances.stream()
-                .map(p -> new ExtractTask(p.first, p.second, meteFeatureSet))
-                .collect(Collectors.toList());
-        Observable.from(extractTasks)
-                .observeOn(Schedulers.computation())
-                .map(ExtractTask::call)
-                .toBlocking()
-                .forEach(dataset -> {
-                    File directory = new File(META_FEATURES_DIRECTORY, dataset.getMetaFeatures().getMetaFeatureSet().name());
-                    directory.mkdirs();
-                    try (PrintWriter writer = new PrintWriter(new File(directory, dataset.getName() + ".json"))) {
-                        writer.print(dataset.toJSON().toString(4));
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    }
-                });
-
-    }
-
-    private void evaluatePerformance(List<Pair<String, Instances>> instancesList) {
-        List<PerformanceTask> performanceTasks = new ArrayList<>();
+    private void evaluatePerformance(ExecutorService executor, List<Pair<String, Instances>> instancesList) {
+        List<Future<List<PerformanceResult>>> futurePerformanceResults = new ArrayList<>();
         for (Pair<String, Instances> p : instancesList) {
             Instances instances = new Instances(p.second);
             for (int i = 0; i < ROUNDS; i++) {
@@ -102,30 +107,30 @@ public class RecommenderSystemBuilder {
                 for (int j = 0; j < FOLDS; j++) {
                     Instances train = instances.trainCV(FOLDS, j);
                     Instances test = instances.testCV(FOLDS, j);
-                    performanceTasks.add(new PerformanceTask(p.first, i * FOLDS + j, train, test, algorithms, classifier));
+                    futurePerformanceResults.add(executor.submit(new PerformanceTask(p.first, i * FOLDS + j, train, test, algorithms, classifier)));
                 }
             }
         }
-
-        Observable.from(performanceTasks)
-                .observeOn(Schedulers.computation())
-                .map(PerformanceTask::call)
-                .toBlocking()
-                .forEach(resultList -> {
-                    for (PerformanceResult result : resultList) {
-                        File directory = new File(Utils.createPath(PERFORMANCE_DIRECTORY,
-                                result.classifierName,
-                                result.dataSetName,
-                                result.algorithmName));
-                        directory.mkdirs();
-                        String fileName = Utils.createName(result.classifierName, result.dataSetName, result.algorithmName, String.valueOf(result.testNumber));
-                        try (PrintWriter writer = new PrintWriter(new File(directory, fileName + ".json"))) {
-                            writer.print(result.toJSON().toString(4));
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
-                        }
+        for (Future<List<PerformanceResult>> future : futurePerformanceResults) {
+            try {
+                List<PerformanceResult> resultList = future.get();
+                for (PerformanceResult result : resultList) {
+                    File directory = new File(Utils.createPath(PERFORMANCE_DIRECTORY,
+                            result.classifierName,
+                            result.dataSetName,
+                            result.algorithmName));
+                    directory.mkdirs();
+                    String fileName = Utils.createName(result.classifierName, result.dataSetName, result.algorithmName, String.valueOf(result.testNumber));
+                    try (PrintWriter writer = new PrintWriter(new File(directory, fileName + ".json"))) {
+                        writer.print(result.toJSON().toString(4));
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
                     }
-                });
+                }
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private String getDatasetName(String path) {
