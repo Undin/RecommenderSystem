@@ -16,7 +16,7 @@ public class NoiseSignalRatio extends AbstractDiscretizeExtractor {
 
     @Override
     public String getName() {
-        return null;
+        return NAME;
     }
 
     @Override
