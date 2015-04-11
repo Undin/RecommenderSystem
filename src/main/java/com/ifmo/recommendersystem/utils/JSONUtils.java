@@ -44,6 +44,7 @@ public class JSONUtils {
     public static final String SEPARATE_RESULT = "separateResult";
     public static final String SET_NAME = "setName";
     public static final String TEST_NUMBER = "testNumber";
+    public static final String VALUE = "value";
     public static final String VALUES = "values";
     public static final String WORST_ALGORITHM = "worstAlgorithm";
     public static final String WORST_RPR = "worstRPR";
