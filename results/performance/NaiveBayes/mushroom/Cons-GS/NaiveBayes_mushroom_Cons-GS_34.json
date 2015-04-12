@@ -1,0 +1,10 @@
+{
+    "testNumber": 34,
+    "dataSetName": "mushroom",
+    "f1Measure": 0.9041298632092943,
+    "accuracy": 0.9039408866995073,
+    "runtime": 1640,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

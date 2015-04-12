@@ -1,0 +1,10 @@
+{
+    "testNumber": 16,
+    "dataSetName": "shuttle-landing-control",
+    "f1Measure": 1,
+    "accuracy": 1,
+    "runtime": 0,
+    "algorithmName": "Cons-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 3
+}

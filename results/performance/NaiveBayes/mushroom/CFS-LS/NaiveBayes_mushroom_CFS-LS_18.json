@@ -1,0 +1,10 @@
+{
+    "testNumber": 18,
+    "dataSetName": "mushroom",
+    "f1Measure": 0.9770253587740108,
+    "accuracy": 0.9766009852216748,
+    "runtime": 109,
+    "algorithmName": "CFS-LS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

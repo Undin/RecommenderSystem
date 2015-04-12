@@ -1,0 +1,10 @@
+{
+    "testNumber": 47,
+    "dataSetName": "kr-vs-kp",
+    "f1Measure": 0.9236007272321648,
+    "accuracy": 0.9216300940438872,
+    "runtime": 186,
+    "algorithmName": "CFS-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 7
+}

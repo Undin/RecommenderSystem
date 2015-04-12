@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "balance-scale",
+    "f1Measure": 0.7527048967841404,
+    "accuracy": 0.9032258064516129,
+    "runtime": 5,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

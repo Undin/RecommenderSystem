@@ -1,0 +1,10 @@
+{
+    "testNumber": 7,
+    "dataSetName": "shuttle-landing-control",
+    "f1Measure": 0,
+    "accuracy": 0,
+    "runtime": 11,
+    "algorithmName": "CFS-LS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 2
+}

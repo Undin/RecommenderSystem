@@ -1,0 +1,10 @@
+{
+    "testNumber": 11,
+    "dataSetName": "kr-vs-kp",
+    "f1Measure": 0.8804957036459351,
+    "accuracy": 0.88125,
+    "runtime": 5121,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 23
+}

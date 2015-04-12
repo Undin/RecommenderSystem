@@ -1,0 +1,10 @@
+{
+    "testNumber": 47,
+    "dataSetName": "kdd_JapaneseVowels_test",
+    "f1Measure": 0.8474293882060722,
+    "accuracy": 0.8538732394366197,
+    "runtime": 236,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 11
+}

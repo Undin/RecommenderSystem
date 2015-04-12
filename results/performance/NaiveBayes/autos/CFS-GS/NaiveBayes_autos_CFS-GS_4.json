@@ -1,0 +1,10 @@
+{
+    "testNumber": 4,
+    "dataSetName": "autos",
+    "f1Measure": 0.5184757575757576,
+    "accuracy": 0.47619047619047616,
+    "runtime": 7,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 7
+}

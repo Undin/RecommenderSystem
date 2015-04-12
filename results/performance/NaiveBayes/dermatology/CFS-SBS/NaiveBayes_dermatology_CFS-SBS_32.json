@@ -1,0 +1,10 @@
+{
+    "testNumber": 32,
+    "dataSetName": "dermatology",
+    "f1Measure": 0.9629629629629629,
+    "accuracy": 0.9459459459459459,
+    "runtime": 20,
+    "algorithmName": "CFS-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 17
+}

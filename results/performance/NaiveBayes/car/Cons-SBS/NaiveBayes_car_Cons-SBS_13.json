@@ -1,0 +1,10 @@
+{
+    "testNumber": 13,
+    "dataSetName": "car",
+    "f1Measure": 0.7928241722583068,
+    "accuracy": 0.9075144508670521,
+    "runtime": 34,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 49,
+    "dataSetName": "lung-cancer",
+    "f1Measure": 0,
+    "accuracy": 0,
+    "runtime": 13,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 21
+}

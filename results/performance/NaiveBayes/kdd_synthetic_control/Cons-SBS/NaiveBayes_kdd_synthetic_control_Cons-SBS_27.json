@@ -1,0 +1,10 @@
+{
+    "testNumber": 27,
+    "dataSetName": "kdd_synthetic_control",
+    "f1Measure": 0.6609680940577172,
+    "accuracy": 0.65,
+    "runtime": 2929,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 15
+}

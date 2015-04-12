@@ -1,0 +1,10 @@
+{
+    "testNumber": 28,
+    "dataSetName": "spectf_train",
+    "f1Measure": 0.8873239436619719,
+    "accuracy": 0.875,
+    "runtime": 230,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

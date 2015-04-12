@@ -1,0 +1,10 @@
+{
+    "testNumber": 29,
+    "dataSetName": "anneal",
+    "f1Measure": 0.8556074819360473,
+    "accuracy": 0.8764044943820225,
+    "runtime": 18,
+    "algorithmName": "CFS-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

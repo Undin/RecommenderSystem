@@ -1,0 +1,10 @@
+{
+    "testNumber": 29,
+    "dataSetName": "squash-unstored",
+    "f1Measure": 0.47058823529411764,
+    "accuracy": 0.4,
+    "runtime": 6,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 8
+}

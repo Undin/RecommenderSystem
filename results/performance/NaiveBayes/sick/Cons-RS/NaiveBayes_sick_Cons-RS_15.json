@@ -1,0 +1,10 @@
+{
+    "testNumber": 15,
+    "dataSetName": "sick",
+    "f1Measure": 0.8321595587573655,
+    "accuracy": 0.9522546419098143,
+    "runtime": 130,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 25
+}

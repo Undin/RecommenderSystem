@@ -1,0 +1,10 @@
+{
+    "testNumber": 14,
+    "dataSetName": "ada_agnostic",
+    "f1Measure": 0.6977537415803824,
+    "accuracy": 0.8026315789473685,
+    "runtime": 385,
+    "algorithmName": "CFS-LS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 8
+}

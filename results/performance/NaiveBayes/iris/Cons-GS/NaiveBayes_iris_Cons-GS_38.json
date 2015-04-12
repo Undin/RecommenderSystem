@@ -1,0 +1,10 @@
+{
+    "testNumber": 38,
+    "dataSetName": "iris",
+    "f1Measure": 0.8666666666666667,
+    "accuracy": 0.8666666666666667,
+    "runtime": 1,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 3
+}

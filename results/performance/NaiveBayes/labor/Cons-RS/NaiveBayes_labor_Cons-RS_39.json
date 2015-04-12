@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "labor",
+    "f1Measure": 0.28571428571428575,
+    "accuracy": 0.4,
+    "runtime": 1,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 20,
+    "dataSetName": "white-clover",
+    "f1Measure": 0.588235294117647,
+    "accuracy": 0.7142857142857143,
+    "runtime": 10,
+    "algorithmName": "CFS-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 27,
+    "dataSetName": "segment",
+    "f1Measure": 0.7400325706533726,
+    "accuracy": 0.7619047619047619,
+    "runtime": 1306,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 8
+}

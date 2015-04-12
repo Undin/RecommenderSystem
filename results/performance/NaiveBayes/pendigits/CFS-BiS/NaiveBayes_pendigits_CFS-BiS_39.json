@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "pendigits",
+    "f1Measure": 0.8308034307888018,
+    "accuracy": 0.8252957233848953,
+    "runtime": 326,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 14
+}

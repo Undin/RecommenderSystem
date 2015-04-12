@@ -1,0 +1,10 @@
+{
+    "testNumber": 14,
+    "dataSetName": "sponge",
+    "f1Measure": 0.7761194029850746,
+    "accuracy": 0.875,
+    "runtime": 7,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 13,
+    "dataSetName": "grub-damage",
+    "f1Measure": 0.6516516516516516,
+    "accuracy": 0.6875,
+    "runtime": 5,
+    "algorithmName": "Cons-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

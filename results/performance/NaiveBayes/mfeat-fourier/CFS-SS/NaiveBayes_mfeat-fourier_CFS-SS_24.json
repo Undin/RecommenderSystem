@@ -1,0 +1,10 @@
+{
+    "testNumber": 24,
+    "dataSetName": "mfeat-fourier",
+    "f1Measure": 0.8144610562423147,
+    "accuracy": 0.8,
+    "runtime": 1163,
+    "algorithmName": "CFS-SS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 34
+}

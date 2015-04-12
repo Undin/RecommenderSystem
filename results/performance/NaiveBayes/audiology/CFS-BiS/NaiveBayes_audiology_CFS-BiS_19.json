@@ -1,0 +1,10 @@
+{
+    "testNumber": 19,
+    "dataSetName": "audiology",
+    "f1Measure": 0.6231699554423935,
+    "accuracy": 0.6818181818181818,
+    "runtime": 13,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 16
+}

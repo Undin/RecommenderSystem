@@ -1,0 +1,10 @@
+{
+    "testNumber": 18,
+    "dataSetName": "heart-statlog",
+    "f1Measure": 0.8240775816349724,
+    "accuracy": 0.8148148148148148,
+    "runtime": 5,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

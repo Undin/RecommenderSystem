@@ -1,0 +1,10 @@
+{
+    "testNumber": 15,
+    "dataSetName": "mfeat-fourier",
+    "f1Measure": 0.6176472655415003,
+    "accuracy": 0.61,
+    "runtime": 20966,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 19
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 13,
+    "dataSetName": "breast-w",
+    "f1Measure": 0.9713349713349714,
+    "accuracy": 0.9714285714285714,
+    "runtime": 7,
+    "algorithmName": "CFS-LS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

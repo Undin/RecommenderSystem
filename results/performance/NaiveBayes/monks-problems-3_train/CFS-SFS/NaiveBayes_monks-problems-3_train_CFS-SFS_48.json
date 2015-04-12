@@ -1,0 +1,10 @@
+{
+    "testNumber": 48,
+    "dataSetName": "monks-problems-3_train",
+    "f1Measure": 0.8285714285714285,
+    "accuracy": 0.8333333333333334,
+    "runtime": 0,
+    "algorithmName": "CFS-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 3
+}

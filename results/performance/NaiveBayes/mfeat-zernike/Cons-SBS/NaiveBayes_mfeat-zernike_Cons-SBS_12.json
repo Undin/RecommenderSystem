@@ -1,0 +1,10 @@
+{
+    "testNumber": 12,
+    "dataSetName": "mfeat-zernike",
+    "f1Measure": 0.7274584063133288,
+    "accuracy": 0.73,
+    "runtime": 6404,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 14
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 10,
+    "dataSetName": "ada_agnostic",
+    "f1Measure": 0.7437954648301156,
+    "accuracy": 0.811816192560175,
+    "runtime": 34795,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 28
+}

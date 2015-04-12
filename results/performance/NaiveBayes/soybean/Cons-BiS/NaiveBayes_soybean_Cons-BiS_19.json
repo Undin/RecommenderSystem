@@ -1,0 +1,10 @@
+{
+    "testNumber": 19,
+    "dataSetName": "soybean",
+    "f1Measure": 0.7617905930346143,
+    "accuracy": 0.8088235294117647,
+    "runtime": 340,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 12
+}

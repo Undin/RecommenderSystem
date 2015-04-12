@@ -1,0 +1,10 @@
+{
+    "testNumber": 27,
+    "dataSetName": "iris",
+    "f1Measure": 0.9106753812636165,
+    "accuracy": 0.8666666666666667,
+    "runtime": 1,
+    "algorithmName": "CFS-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 2
+}

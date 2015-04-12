@@ -1,0 +1,10 @@
+{
+    "testNumber": 12,
+    "dataSetName": "kdd_JapaneseVowels_train",
+    "f1Measure": 0.757028547484077,
+    "accuracy": 0.7686915887850467,
+    "runtime": 2689,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

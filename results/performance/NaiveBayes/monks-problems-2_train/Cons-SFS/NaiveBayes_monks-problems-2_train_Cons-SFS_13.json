@@ -1,0 +1,10 @@
+{
+    "testNumber": 13,
+    "dataSetName": "monks-problems-2_train",
+    "f1Measure": 0.34615384615384615,
+    "accuracy": 0.5294117647058824,
+    "runtime": 2,
+    "algorithmName": "Cons-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

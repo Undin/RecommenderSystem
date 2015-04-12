@@ -1,0 +1,10 @@
+{
+    "testNumber": 41,
+    "dataSetName": "hepatitis",
+    "f1Measure": 0.3846153846153846,
+    "accuracy": 0.625,
+    "runtime": 9,
+    "algorithmName": "CFS-SS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

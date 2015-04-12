@@ -1,0 +1,10 @@
+{
+    "testNumber": 33,
+    "dataSetName": "squash-unstored",
+    "f1Measure": 0.5,
+    "accuracy": 0.8,
+    "runtime": 5,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

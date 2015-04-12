@@ -1,0 +1,10 @@
+{
+    "testNumber": 42,
+    "dataSetName": "molecular-biology_promoters",
+    "f1Measure": 0.9140625,
+    "accuracy": 0.9090909090909091,
+    "runtime": 8,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

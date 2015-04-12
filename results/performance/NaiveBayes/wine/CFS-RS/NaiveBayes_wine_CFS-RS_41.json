@@ -1,0 +1,10 @@
+{
+    "testNumber": 41,
+    "dataSetName": "wine",
+    "f1Measure": 1,
+    "accuracy": 1,
+    "runtime": 5,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 41,
+    "dataSetName": "vowel",
+    "f1Measure": 0.601854193184485,
+    "accuracy": 0.5757575757575758,
+    "runtime": 21,
+    "algorithmName": "CFS-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

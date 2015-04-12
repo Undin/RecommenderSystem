@@ -1,0 +1,10 @@
+{
+    "testNumber": 7,
+    "dataSetName": "postoperative-patient-data",
+    "f1Measure": 0.5263157894736842,
+    "accuracy": 0.5555555555555556,
+    "runtime": 0,
+    "algorithmName": "CFS-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

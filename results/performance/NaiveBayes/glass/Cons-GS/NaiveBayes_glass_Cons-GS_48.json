@@ -1,0 +1,10 @@
+{
+    "testNumber": 48,
+    "dataSetName": "glass",
+    "f1Measure": 0.5787234042553191,
+    "accuracy": 0.5238095238095238,
+    "runtime": 10,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 7
+}

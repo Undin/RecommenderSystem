@@ -1,0 +1,10 @@
+{
+    "testNumber": 43,
+    "dataSetName": "spect_train",
+    "f1Measure": 1,
+    "accuracy": 1,
+    "runtime": 5,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 13
+}

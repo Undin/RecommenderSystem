@@ -1,0 +1,10 @@
+{
+    "testNumber": 37,
+    "dataSetName": "cmc",
+    "f1Measure": 0.5708506167529923,
+    "accuracy": 0.5918367346938775,
+    "runtime": 5,
+    "algorithmName": "CFS-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 3
+}

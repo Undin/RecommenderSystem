@@ -1,0 +1,10 @@
+{
+    "testNumber": 14,
+    "dataSetName": "lymph",
+    "f1Measure": 0.7222222222222222,
+    "accuracy": 0.7333333333333333,
+    "runtime": 23,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 7
+}

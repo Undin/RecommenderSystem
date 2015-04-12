@@ -1,0 +1,10 @@
+{
+    "testNumber": 37,
+    "dataSetName": "cylinder-bands",
+    "f1Measure": 0.6613053097345133,
+    "accuracy": 0.6666666666666666,
+    "runtime": 245,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 2
+}

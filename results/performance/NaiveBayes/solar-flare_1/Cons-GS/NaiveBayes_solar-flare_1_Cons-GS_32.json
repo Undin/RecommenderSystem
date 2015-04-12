@@ -1,0 +1,10 @@
+{
+    "testNumber": 32,
+    "dataSetName": "solar-flare_1",
+    "f1Measure": 0.6410167533217793,
+    "accuracy": 0.7272727272727273,
+    "runtime": 27,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

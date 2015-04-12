@@ -1,0 +1,10 @@
+{
+    "testNumber": 24,
+    "dataSetName": "eucalyptus",
+    "f1Measure": 0.5263725538373837,
+    "accuracy": 0.527027027027027,
+    "runtime": 13,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

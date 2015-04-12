@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "pasture",
+    "f1Measure": 0.5714285714285715,
+    "accuracy": 0.6666666666666666,
+    "runtime": 20,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 16,
+    "dataSetName": "hepatitis",
+    "f1Measure": 0.6481481481481483,
+    "accuracy": 0.8,
+    "runtime": 26,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 8
+}

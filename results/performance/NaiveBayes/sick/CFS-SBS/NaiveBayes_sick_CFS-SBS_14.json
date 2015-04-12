@@ -1,0 +1,10 @@
+{
+    "testNumber": 14,
+    "dataSetName": "sick",
+    "f1Measure": 0.8840775896584188,
+    "accuracy": 0.9761273209549072,
+    "runtime": 88,
+    "algorithmName": "CFS-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

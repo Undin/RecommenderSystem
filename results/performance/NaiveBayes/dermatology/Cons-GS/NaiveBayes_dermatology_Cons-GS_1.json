@@ -1,0 +1,10 @@
+{
+    "testNumber": 1,
+    "dataSetName": "dermatology",
+    "f1Measure": 0.8817069678000081,
+    "accuracy": 0.8648648648648649,
+    "runtime": 101,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 13
+}

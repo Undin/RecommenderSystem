@@ -1,0 +1,10 @@
+{
+    "testNumber": 34,
+    "dataSetName": "mfeat-zernike",
+    "f1Measure": 0.7531738952641059,
+    "accuracy": 0.755,
+    "runtime": 329,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 25
+}

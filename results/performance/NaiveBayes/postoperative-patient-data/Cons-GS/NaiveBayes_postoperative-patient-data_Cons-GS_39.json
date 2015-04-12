@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "postoperative-patient-data",
+    "f1Measure": 0.7567567567567567,
+    "accuracy": 0.7777777777777778,
+    "runtime": 4,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 7
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 24,
+    "dataSetName": "sonar",
+    "f1Measure": 0.6415487094088259,
+    "accuracy": 0.6190476190476191,
+    "runtime": 29,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 17
+}

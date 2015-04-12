@@ -1,0 +1,10 @@
+{
+    "testNumber": 29,
+    "dataSetName": "cylinder-bands",
+    "f1Measure": 0.7985286389910667,
+    "accuracy": 0.8148148148148148,
+    "runtime": 32,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

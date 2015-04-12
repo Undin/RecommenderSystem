@@ -1,0 +1,10 @@
+{
+    "testNumber": 0,
+    "dataSetName": "gina_prior",
+    "f1Measure": 0.826956496081981,
+    "accuracy": 0.8270893371757925,
+    "runtime": 24592,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 49
+}

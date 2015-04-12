@@ -1,0 +1,10 @@
+{
+    "testNumber": 23,
+    "dataSetName": "kdd_JapaneseVowels_test",
+    "f1Measure": 0.8423441819076841,
+    "accuracy": 0.8488576449912126,
+    "runtime": 4213,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 24,
+    "dataSetName": "zoo",
+    "f1Measure": 0.9303482587064678,
+    "accuracy": 0.9,
+    "runtime": 29,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

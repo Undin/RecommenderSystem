@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "mushroom",
+    "f1Measure": 0.9806504268463413,
+    "accuracy": 0.9802955665024631,
+    "runtime": 75,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

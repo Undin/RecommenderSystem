@@ -1,0 +1,10 @@
+{
+    "testNumber": 7,
+    "dataSetName": "glass",
+    "f1Measure": 0.3435160227613058,
+    "accuracy": 0.2857142857142857,
+    "runtime": 2,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 7
+}

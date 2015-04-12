@@ -1,0 +1,10 @@
+{
+    "testNumber": 32,
+    "dataSetName": "balance-scale",
+    "f1Measure": 0.7490261413843888,
+    "accuracy": 0.9047619047619048,
+    "runtime": 3,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 27,
+    "dataSetName": "breast-w",
+    "f1Measure": 0.913151364764268,
+    "accuracy": 0.9142857142857143,
+    "runtime": 39,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

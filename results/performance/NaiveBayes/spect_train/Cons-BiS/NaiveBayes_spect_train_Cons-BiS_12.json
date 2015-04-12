@@ -1,0 +1,10 @@
+{
+    "testNumber": 12,
+    "dataSetName": "spect_train",
+    "f1Measure": 0.8873239436619719,
+    "accuracy": 0.875,
+    "runtime": 24,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 8
+}

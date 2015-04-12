@@ -1,0 +1,10 @@
+{
+    "testNumber": 49,
+    "dataSetName": "postoperative-patient-data",
+    "f1Measure": 0.5263157894736842,
+    "accuracy": 0.5555555555555556,
+    "runtime": 4,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 8
+}

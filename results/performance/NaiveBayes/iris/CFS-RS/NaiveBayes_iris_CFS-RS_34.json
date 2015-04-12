@@ -1,0 +1,10 @@
+{
+    "testNumber": 34,
+    "dataSetName": "iris",
+    "f1Measure": 1,
+    "accuracy": 1,
+    "runtime": 1,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 2
+}

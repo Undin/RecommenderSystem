@@ -1,0 +1,10 @@
+{
+    "testNumber": 18,
+    "dataSetName": "autos",
+    "f1Measure": 0.3902580071174377,
+    "accuracy": 0.35,
+    "runtime": 130,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

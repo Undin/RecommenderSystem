@@ -1,0 +1,10 @@
+{
+    "testNumber": 42,
+    "dataSetName": "primary-tumor",
+    "f1Measure": 0.3773054907780369,
+    "accuracy": 0.4411764705882353,
+    "runtime": 10,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 11
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 1,
+    "dataSetName": "breast-cancer",
+    "f1Measure": 0.7465108417443377,
+    "accuracy": 0.7931034482758621,
+    "runtime": 3,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

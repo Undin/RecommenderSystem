@@ -1,0 +1,10 @@
+{
+    "testNumber": 30,
+    "dataSetName": "vowel",
+    "f1Measure": 0.6059853548840333,
+    "accuracy": 0.5959595959595959,
+    "runtime": 164,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 14,
+    "dataSetName": "diabetes",
+    "f1Measure": 0.7136775167061867,
+    "accuracy": 0.7402597402597403,
+    "runtime": 8,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

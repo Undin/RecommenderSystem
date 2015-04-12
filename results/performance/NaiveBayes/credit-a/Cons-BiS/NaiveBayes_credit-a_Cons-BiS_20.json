@@ -1,0 +1,10 @@
+{
+    "testNumber": 20,
+    "dataSetName": "credit-a",
+    "f1Measure": 0.8274328331386468,
+    "accuracy": 0.8260869565217391,
+    "runtime": 144,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 12
+}

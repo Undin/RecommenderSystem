@@ -1,0 +1,10 @@
+{
+    "testNumber": 24,
+    "dataSetName": "colic",
+    "f1Measure": 0.83469843633656,
+    "accuracy": 0.8648648648648649,
+    "runtime": 280,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 8
+}

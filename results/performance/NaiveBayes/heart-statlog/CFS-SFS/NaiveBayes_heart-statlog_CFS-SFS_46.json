@@ -1,0 +1,10 @@
+{
+    "testNumber": 46,
+    "dataSetName": "heart-statlog",
+    "f1Measure": 0.9230769230769231,
+    "accuracy": 0.9259259259259259,
+    "runtime": 5,
+    "algorithmName": "CFS-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 7
+}

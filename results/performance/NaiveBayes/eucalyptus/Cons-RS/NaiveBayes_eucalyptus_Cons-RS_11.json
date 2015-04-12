@@ -1,0 +1,10 @@
+{
+    "testNumber": 11,
+    "dataSetName": "eucalyptus",
+    "f1Measure": 0.4657670135023027,
+    "accuracy": 0.4189189189189189,
+    "runtime": 22,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 14
+}

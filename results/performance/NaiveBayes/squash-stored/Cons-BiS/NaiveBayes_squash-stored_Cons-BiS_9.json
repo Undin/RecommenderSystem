@@ -1,0 +1,10 @@
+{
+    "testNumber": 9,
+    "dataSetName": "squash-stored",
+    "f1Measure": 0.606060606060606,
+    "accuracy": 0.6,
+    "runtime": 6,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 3
+}

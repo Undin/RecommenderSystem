@@ -1,0 +1,10 @@
+{
+    "testNumber": 8,
+    "dataSetName": "cmc",
+    "f1Measure": 0.5049775065764119,
+    "accuracy": 0.4965986394557823,
+    "runtime": 60,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

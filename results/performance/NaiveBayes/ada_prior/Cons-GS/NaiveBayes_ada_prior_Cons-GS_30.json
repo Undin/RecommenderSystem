@@ -1,0 +1,10 @@
+{
+    "testNumber": 30,
+    "dataSetName": "ada_prior",
+    "f1Measure": 0.724358014236322,
+    "accuracy": 0.8052516411378556,
+    "runtime": 1084,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 11
+}

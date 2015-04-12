@@ -1,0 +1,10 @@
+{
+    "testNumber": 28,
+    "dataSetName": "diabetes",
+    "f1Measure": 0.726120781619962,
+    "accuracy": 0.7236842105263158,
+    "runtime": 30,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 8
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 40,
+    "dataSetName": "colic",
+    "f1Measure": 0.8742775484280724,
+    "accuracy": 0.8918918918918919,
+    "runtime": 4,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

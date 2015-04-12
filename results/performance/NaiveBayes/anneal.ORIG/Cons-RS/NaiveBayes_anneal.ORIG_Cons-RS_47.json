@@ -1,0 +1,10 @@
+{
+    "testNumber": 47,
+    "dataSetName": "anneal.ORIG",
+    "f1Measure": 0.7342201124132588,
+    "accuracy": 0.7444444444444445,
+    "runtime": 17,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 16
+}

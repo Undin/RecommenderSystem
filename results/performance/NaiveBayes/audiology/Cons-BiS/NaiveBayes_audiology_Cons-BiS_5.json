@@ -1,0 +1,10 @@
+{
+    "testNumber": 5,
+    "dataSetName": "audiology",
+    "f1Measure": 0.5543859649122806,
+    "accuracy": 0.6956521739130435,
+    "runtime": 165,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 12
+}

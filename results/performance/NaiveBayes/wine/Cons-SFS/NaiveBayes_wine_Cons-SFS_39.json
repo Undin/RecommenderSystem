@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "wine",
+    "f1Measure": 0.8923431203223949,
+    "accuracy": 0.8823529411764706,
+    "runtime": 10,
+    "algorithmName": "Cons-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}
