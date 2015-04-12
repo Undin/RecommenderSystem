@@ -1,0 +1,10 @@
+{
+    "testNumber": 11,
+    "dataSetName": "spectf_test",
+    "f1Measure": 0.7372881355932203,
+    "accuracy": 0.7037037037037037,
+    "runtime": 20,
+    "algorithmName": "CFS-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 18
+}

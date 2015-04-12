@@ -1,0 +1,10 @@
+{
+    "testNumber": 38,
+    "dataSetName": "lung-cancer",
+    "f1Measure": 0,
+    "accuracy": 0,
+    "runtime": 167,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

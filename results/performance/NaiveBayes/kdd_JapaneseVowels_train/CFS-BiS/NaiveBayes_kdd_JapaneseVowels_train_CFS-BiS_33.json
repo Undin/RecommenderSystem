@@ -1,0 +1,10 @@
+{
+    "testNumber": 33,
+    "dataSetName": "kdd_JapaneseVowels_train",
+    "f1Measure": 0.7738764453562762,
+    "accuracy": 0.780373831775701,
+    "runtime": 163,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 28,
+    "dataSetName": "hypothyroid",
+    "f1Measure": 0.8270197638254746,
+    "accuracy": 0.9602122015915119,
+    "runtime": 631,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 7
+}

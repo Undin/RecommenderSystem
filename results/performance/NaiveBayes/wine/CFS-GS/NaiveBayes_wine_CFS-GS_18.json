@@ -1,0 +1,10 @@
+{
+    "testNumber": 18,
+    "dataSetName": "wine",
+    "f1Measure": 0.9569041336851364,
+    "accuracy": 0.9411764705882353,
+    "runtime": 5,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 11
+}

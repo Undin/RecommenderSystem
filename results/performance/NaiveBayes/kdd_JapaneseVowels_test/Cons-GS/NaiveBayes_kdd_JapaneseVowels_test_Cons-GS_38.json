@@ -1,0 +1,10 @@
+{
+    "testNumber": 38,
+    "dataSetName": "kdd_JapaneseVowels_test",
+    "f1Measure": 0.8125229249801064,
+    "accuracy": 0.8169014084507042,
+    "runtime": 3534,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

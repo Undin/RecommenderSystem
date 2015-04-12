@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "ada_prior",
+    "f1Measure": 0.7071469575200919,
+    "accuracy": 0.7763157894736842,
+    "runtime": 47,
+    "algorithmName": "CFS-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 7
+}

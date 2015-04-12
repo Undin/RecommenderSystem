@@ -1,0 +1,10 @@
+{
+    "testNumber": 15,
+    "dataSetName": "trains",
+    "f1Measure": 1,
+    "accuracy": 1,
+    "runtime": 5,
+    "algorithmName": "CFS-SS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 2
+}

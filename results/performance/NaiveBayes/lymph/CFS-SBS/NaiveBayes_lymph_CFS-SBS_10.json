@@ -1,0 +1,10 @@
+{
+    "testNumber": 10,
+    "dataSetName": "lymph",
+    "f1Measure": 0.9152215799614644,
+    "accuracy": 0.8666666666666667,
+    "runtime": 3,
+    "algorithmName": "CFS-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 34,
+    "dataSetName": "autos",
+    "f1Measure": 0.708100558659218,
+    "accuracy": 0.6666666666666666,
+    "runtime": 8,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 7
+}

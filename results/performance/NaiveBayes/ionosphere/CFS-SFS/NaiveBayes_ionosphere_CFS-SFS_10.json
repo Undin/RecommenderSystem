@@ -1,0 +1,10 @@
+{
+    "testNumber": 10,
+    "dataSetName": "ionosphere",
+    "f1Measure": 0.90893760539629,
+    "accuracy": 0.9166666666666666,
+    "runtime": 22,
+    "algorithmName": "CFS-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 16
+}

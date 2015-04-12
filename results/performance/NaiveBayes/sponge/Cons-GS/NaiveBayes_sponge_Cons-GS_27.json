@@ -1,0 +1,10 @@
+{
+    "testNumber": 27,
+    "dataSetName": "sponge",
+    "f1Measure": 0.25,
+    "accuracy": 0.42857142857142855,
+    "runtime": 7,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

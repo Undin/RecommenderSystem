@@ -1,0 +1,10 @@
+{
+    "testNumber": 3,
+    "dataSetName": "spectf_test",
+    "f1Measure": 0.5580862996451872,
+    "accuracy": 0.6296296296296297,
+    "runtime": 21,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 28
+}

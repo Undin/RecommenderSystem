@@ -1,0 +1,10 @@
+{
+    "testNumber": 22,
+    "dataSetName": "breast-w",
+    "f1Measure": 1,
+    "accuracy": 1,
+    "runtime": 40,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

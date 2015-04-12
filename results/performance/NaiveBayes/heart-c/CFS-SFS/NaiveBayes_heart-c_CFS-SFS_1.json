@@ -1,0 +1,10 @@
+{
+    "testNumber": 1,
+    "dataSetName": "heart-c",
+    "f1Measure": 0.8062499999999999,
+    "accuracy": 0.8064516129032258,
+    "runtime": 4,
+    "algorithmName": "CFS-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

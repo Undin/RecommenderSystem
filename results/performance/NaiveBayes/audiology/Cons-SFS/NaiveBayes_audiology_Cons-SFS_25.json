@@ -1,0 +1,10 @@
+{
+    "testNumber": 25,
+    "dataSetName": "audiology",
+    "f1Measure": 0.5966334164588529,
+    "accuracy": 0.7391304347826086,
+    "runtime": 158,
+    "algorithmName": "Cons-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 13
+}

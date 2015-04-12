@@ -1,0 +1,10 @@
+{
+    "testNumber": 24,
+    "dataSetName": "squash-stored",
+    "f1Measure": 0.7058823529411765,
+    "accuracy": 0.6,
+    "runtime": 4,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

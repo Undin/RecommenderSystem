@@ -1,0 +1,10 @@
+{
+    "testNumber": 27,
+    "dataSetName": "solar-flare_1",
+    "f1Measure": 0.6869116128080271,
+    "accuracy": 0.65625,
+    "runtime": 18,
+    "algorithmName": "Cons-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

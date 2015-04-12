@@ -1,0 +1,10 @@
+{
+    "testNumber": 23,
+    "dataSetName": "anneal.ORIG",
+    "f1Measure": 0.5293819450171533,
+    "accuracy": 0.6888888888888889,
+    "runtime": 10,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 49,
+    "dataSetName": "solar-flare_2",
+    "f1Measure": 0.5348164106241698,
+    "accuracy": 0.6698113207547169,
+    "runtime": 6,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

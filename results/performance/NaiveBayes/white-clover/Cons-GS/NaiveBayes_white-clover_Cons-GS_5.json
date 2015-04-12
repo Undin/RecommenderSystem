@@ -1,0 +1,10 @@
+{
+    "testNumber": 5,
+    "dataSetName": "white-clover",
+    "f1Measure": 0.6153846153846154,
+    "accuracy": 0.6666666666666666,
+    "runtime": 18,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 8
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 43,
+    "dataSetName": "flags",
+    "f1Measure": 0.43213429256594726,
+    "accuracy": 0.65,
+    "runtime": 170,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 11
+}

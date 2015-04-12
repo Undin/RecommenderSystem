@@ -1,0 +1,10 @@
+{
+    "testNumber": 34,
+    "dataSetName": "labor",
+    "f1Measure": 0.8536585365853658,
+    "accuracy": 0.8333333333333334,
+    "runtime": 2,
+    "algorithmName": "CFS-LS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

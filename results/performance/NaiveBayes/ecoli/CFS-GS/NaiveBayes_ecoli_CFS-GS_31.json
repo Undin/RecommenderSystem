@@ -1,0 +1,10 @@
+{
+    "testNumber": 31,
+    "dataSetName": "ecoli",
+    "f1Measure": 0.8333333333333334,
+    "accuracy": 0.9705882352941176,
+    "runtime": 14,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

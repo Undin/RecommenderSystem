@@ -1,0 +1,10 @@
+{
+    "testNumber": 3,
+    "dataSetName": "monks-problems-1_test",
+    "f1Measure": 0.7948829141370338,
+    "accuracy": 0.7441860465116279,
+    "runtime": 9,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 3
+}

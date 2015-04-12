@@ -1,0 +1,10 @@
+{
+    "testNumber": 29,
+    "dataSetName": "heart-h",
+    "f1Measure": 0.7397596205669937,
+    "accuracy": 0.7586206896551724,
+    "runtime": 12,
+    "algorithmName": "Cons-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

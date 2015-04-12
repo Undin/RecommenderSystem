@@ -1,0 +1,10 @@
+{
+    "testNumber": 29,
+    "dataSetName": "mfeat-morphological",
+    "f1Measure": 0.6906758708152924,
+    "accuracy": 0.72,
+    "runtime": 36,
+    "algorithmName": "CFS-SS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

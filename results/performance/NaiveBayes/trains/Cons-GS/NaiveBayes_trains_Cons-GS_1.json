@@ -1,0 +1,10 @@
+{
+    "testNumber": 1,
+    "dataSetName": "trains",
+    "f1Measure": 0,
+    "accuracy": 0,
+    "runtime": 1,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 4
+}

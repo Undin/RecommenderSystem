@@ -1,0 +1,10 @@
+{
+    "testNumber": 8,
+    "dataSetName": "soybean",
+    "f1Measure": 0.9251572462519386,
+    "accuracy": 0.8676470588235294,
+    "runtime": 23,
+    "algorithmName": "CFS-LS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 22
+}

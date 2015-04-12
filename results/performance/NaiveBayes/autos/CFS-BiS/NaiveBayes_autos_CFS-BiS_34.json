@@ -1,0 +1,10 @@
+{
+    "testNumber": 34,
+    "dataSetName": "autos",
+    "f1Measure": 0.7197315385200395,
+    "accuracy": 0.6190476190476191,
+    "runtime": 6,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

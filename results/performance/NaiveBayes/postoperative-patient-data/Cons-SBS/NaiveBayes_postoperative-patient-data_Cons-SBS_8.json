@@ -1,0 +1,10 @@
+{
+    "testNumber": 8,
+    "dataSetName": "postoperative-patient-data",
+    "f1Measure": 0.64,
+    "accuracy": 0.8888888888888888,
+    "runtime": 2,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 8
+}

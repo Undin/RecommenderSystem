@@ -1,0 +1,10 @@
+{
+    "testNumber": 4,
+    "dataSetName": "spectrometer",
+    "f1Measure": 0.38099072602909523,
+    "accuracy": 0.3584905660377358,
+    "runtime": 673,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 75
+}

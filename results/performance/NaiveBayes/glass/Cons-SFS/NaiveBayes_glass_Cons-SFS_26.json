@@ -1,0 +1,10 @@
+{
+    "testNumber": 26,
+    "dataSetName": "glass",
+    "f1Measure": 0.4482496194824962,
+    "accuracy": 0.38095238095238093,
+    "runtime": 8,
+    "algorithmName": "Cons-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

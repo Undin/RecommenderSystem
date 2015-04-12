@@ -1,0 +1,10 @@
+{
+    "testNumber": 2,
+    "dataSetName": "ecoli",
+    "f1Measure": 0.7167630057803468,
+    "accuracy": 0.9411764705882353,
+    "runtime": 9,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

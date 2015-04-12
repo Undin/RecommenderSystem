@@ -1,0 +1,10 @@
+{
+    "testNumber": 19,
+    "dataSetName": "ionosphere",
+    "f1Measure": 0.7790927021696251,
+    "accuracy": 0.8571428571428571,
+    "runtime": 29,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 23
+}

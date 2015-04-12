@@ -1,0 +1,10 @@
+{
+    "testNumber": 3,
+    "dataSetName": "pasture",
+    "f1Measure": 1,
+    "accuracy": 1,
+    "runtime": 3,
+    "algorithmName": "CFS-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

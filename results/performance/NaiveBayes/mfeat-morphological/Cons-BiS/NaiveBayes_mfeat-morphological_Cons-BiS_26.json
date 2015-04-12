@@ -1,0 +1,10 @@
+{
+    "testNumber": 26,
+    "dataSetName": "mfeat-morphological",
+    "f1Measure": 0.7342739264840936,
+    "accuracy": 0.705,
+    "runtime": 66,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

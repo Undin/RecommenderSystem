@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "arrhythmia",
+    "f1Measure": 0.4424731348973305,
+    "accuracy": 0.7333333333333333,
+    "runtime": 584,
+    "algorithmName": "CFS-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 27
+}

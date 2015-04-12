@@ -1,0 +1,10 @@
+{
+    "testNumber": 7,
+    "dataSetName": "vehicle",
+    "f1Measure": 0.4747667236167695,
+    "accuracy": 0.40476190476190477,
+    "runtime": 34,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 18
+}

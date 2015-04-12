@@ -1,0 +1,10 @@
+{
+    "testNumber": 4,
+    "dataSetName": "dermatology",
+    "f1Measure": 1,
+    "accuracy": 1,
+    "runtime": 13,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 29
+}

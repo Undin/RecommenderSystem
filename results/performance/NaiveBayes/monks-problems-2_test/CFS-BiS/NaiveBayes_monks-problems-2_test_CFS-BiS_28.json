@@ -1,0 +1,10 @@
+{
+    "testNumber": 28,
+    "dataSetName": "monks-problems-2_test",
+    "f1Measure": 0.34848484848484856,
+    "accuracy": 0.5348837209302325,
+    "runtime": 1,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

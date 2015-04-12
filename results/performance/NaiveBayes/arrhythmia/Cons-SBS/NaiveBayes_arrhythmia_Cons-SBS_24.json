@@ -1,0 +1,10 @@
+{
+    "testNumber": 24,
+    "dataSetName": "arrhythmia",
+    "f1Measure": 0.5013844320161364,
+    "accuracy": 0.6222222222222222,
+    "runtime": 119822,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 25
+}

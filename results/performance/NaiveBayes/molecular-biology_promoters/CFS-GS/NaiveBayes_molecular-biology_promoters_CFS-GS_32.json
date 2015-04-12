@@ -1,0 +1,10 @@
+{
+    "testNumber": 32,
+    "dataSetName": "molecular-biology_promoters",
+    "f1Measure": 0.8166666666666667,
+    "accuracy": 0.8181818181818182,
+    "runtime": 19,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 14
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 5,
+    "dataSetName": "segment",
+    "f1Measure": 0.8403365807518828,
+    "accuracy": 0.8268398268398268,
+    "runtime": 782,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

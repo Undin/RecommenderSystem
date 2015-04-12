@@ -1,0 +1,10 @@
+{
+    "testNumber": 6,
+    "dataSetName": "spectrometer",
+    "f1Measure": 0.5175548321812173,
+    "accuracy": 0.6037735849056604,
+    "runtime": 642,
+    "algorithmName": "CFS-LS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 16
+}

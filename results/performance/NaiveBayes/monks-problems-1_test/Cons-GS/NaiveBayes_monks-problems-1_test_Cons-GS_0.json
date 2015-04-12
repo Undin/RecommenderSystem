@@ -1,0 +1,10 @@
+{
+    "testNumber": 0,
+    "dataSetName": "monks-problems-1_test",
+    "f1Measure": 0.7766497461928934,
+    "accuracy": 0.7272727272727273,
+    "runtime": 11,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 1
+}

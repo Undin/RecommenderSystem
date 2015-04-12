@@ -1,0 +1,10 @@
+{
+    "testNumber": 16,
+    "dataSetName": "primary-tumor",
+    "f1Measure": 0.44239957126078977,
+    "accuracy": 0.5294117647058824,
+    "runtime": 31,
+    "algorithmName": "Cons-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 16
+}

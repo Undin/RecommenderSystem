@@ -1,0 +1,10 @@
+{
+    "testNumber": 48,
+    "dataSetName": "colic.ORIG",
+    "f1Measure": 0.7397912060231184,
+    "accuracy": 0.7222222222222222,
+    "runtime": 12,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 2
+}

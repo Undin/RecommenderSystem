@@ -1,0 +1,10 @@
+{
+    "testNumber": 42,
+    "dataSetName": "hypothyroid",
+    "f1Measure": 0.8143567797555091,
+    "accuracy": 0.9708222811671088,
+    "runtime": 47,
+    "algorithmName": "CFS-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

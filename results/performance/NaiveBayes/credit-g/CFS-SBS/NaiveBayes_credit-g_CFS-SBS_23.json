@@ -1,0 +1,10 @@
+{
+    "testNumber": 23,
+    "dataSetName": "credit-g",
+    "f1Measure": 0.578297143293749,
+    "accuracy": 0.65,
+    "runtime": 19,
+    "algorithmName": "CFS-SBS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 3
+}

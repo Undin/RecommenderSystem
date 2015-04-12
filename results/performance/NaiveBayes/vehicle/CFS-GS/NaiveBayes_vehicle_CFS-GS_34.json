@@ -1,0 +1,10 @@
+{
+    "testNumber": 34,
+    "dataSetName": "vehicle",
+    "f1Measure": 0.5575584846448242,
+    "accuracy": 0.5176470588235295,
+    "runtime": 18,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

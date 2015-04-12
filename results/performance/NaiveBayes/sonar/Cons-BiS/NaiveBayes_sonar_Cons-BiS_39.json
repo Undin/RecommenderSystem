@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "sonar",
+    "f1Measure": 0.595959595959596,
+    "accuracy": 0.6,
+    "runtime": 170,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 13
+}

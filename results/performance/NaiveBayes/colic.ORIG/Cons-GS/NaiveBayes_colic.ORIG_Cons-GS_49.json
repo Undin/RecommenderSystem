@@ -1,0 +1,10 @@
+{
+    "testNumber": 49,
+    "dataSetName": "colic.ORIG",
+    "f1Measure": 0.6493506493506493,
+    "accuracy": 0.6666666666666666,
+    "runtime": 49,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

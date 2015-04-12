@@ -1,0 +1,10 @@
+{
+    "testNumber": 30,
+    "dataSetName": "heart-statlog",
+    "f1Measure": 0.7403364462861031,
+    "accuracy": 0.7407407407407407,
+    "runtime": 28,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

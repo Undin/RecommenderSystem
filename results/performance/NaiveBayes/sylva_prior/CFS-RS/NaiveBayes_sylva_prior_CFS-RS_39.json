@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "sylva_prior",
+    "f1Measure": 0.8875040367847202,
+    "accuracy": 0.965948575399583,
+    "runtime": 12125,
+    "algorithmName": "CFS-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 16
+}

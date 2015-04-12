@@ -1,0 +1,10 @@
+{
+    "testNumber": 43,
+    "dataSetName": "vote",
+    "f1Measure": 0.9073684210526316,
+    "accuracy": 0.9090909090909091,
+    "runtime": 76,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 10
+}

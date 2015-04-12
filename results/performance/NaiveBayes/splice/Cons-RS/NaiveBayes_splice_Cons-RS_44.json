@@ -1,0 +1,10 @@
+{
+    "testNumber": 44,
+    "dataSetName": "splice",
+    "f1Measure": 0.8817648453379968,
+    "accuracy": 0.8840125391849529,
+    "runtime": 416,
+    "algorithmName": "Cons-RS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

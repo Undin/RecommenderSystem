@@ -1,0 +1,10 @@
+{
+    "testNumber": 45,
+    "dataSetName": "credit-g",
+    "f1Measure": 0.6410172092513428,
+    "accuracy": 0.68,
+    "runtime": 405,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 14
+}

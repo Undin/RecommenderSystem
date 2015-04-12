@@ -1,0 +1,10 @@
+{
+    "testNumber": 9,
+    "dataSetName": "cmc",
+    "f1Measure": 0.4669370046584421,
+    "accuracy": 0.47619047619047616,
+    "runtime": 97,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

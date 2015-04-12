@@ -1,0 +1,10 @@
+{
+    "testNumber": 5,
+    "dataSetName": "segment",
+    "f1Measure": 0.9063740983438502,
+    "accuracy": 0.9047619047619048,
+    "runtime": 68,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

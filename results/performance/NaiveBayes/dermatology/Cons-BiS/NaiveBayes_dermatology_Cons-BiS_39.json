@@ -1,0 +1,10 @@
+{
+    "testNumber": 39,
+    "dataSetName": "dermatology",
+    "f1Measure": 0.9479166666666665,
+    "accuracy": 0.9444444444444444,
+    "runtime": 138,
+    "algorithmName": "Cons-BiS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

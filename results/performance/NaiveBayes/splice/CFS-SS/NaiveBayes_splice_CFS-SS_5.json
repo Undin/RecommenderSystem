@@ -1,0 +1,10 @@
+{
+    "testNumber": 5,
+    "dataSetName": "splice",
+    "f1Measure": 0.9737870562997872,
+    "accuracy": 0.9749216300940439,
+    "runtime": 234,
+    "algorithmName": "CFS-SS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 23
+}

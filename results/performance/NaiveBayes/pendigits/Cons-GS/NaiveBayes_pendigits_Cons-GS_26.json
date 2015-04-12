@@ -1,0 +1,10 @@
+{
+    "testNumber": 26,
+    "dataSetName": "pendigits",
+    "f1Measure": 0.7443405865742125,
+    "accuracy": 0.740673339399454,
+    "runtime": 10752,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 9
+}

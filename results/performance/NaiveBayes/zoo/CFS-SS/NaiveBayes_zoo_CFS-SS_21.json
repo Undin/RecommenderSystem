@@ -1,0 +1,10 @@
+{
+    "testNumber": 21,
+    "dataSetName": "zoo",
+    "f1Measure": 0.8333333333333334,
+    "accuracy": 0.9,
+    "runtime": 8,
+    "algorithmName": "CFS-SS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 11
+}

@@ -1,0 +1,10 @@
+{
+    "testNumber": 8,
+    "dataSetName": "breast-cancer",
+    "f1Measure": 0.7125726744186047,
+    "accuracy": 0.7857142857142857,
+    "runtime": 2,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

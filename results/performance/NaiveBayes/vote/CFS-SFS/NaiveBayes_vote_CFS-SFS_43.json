@@ -1,0 +1,10 @@
+{
+    "testNumber": 43,
+    "dataSetName": "vote",
+    "f1Measure": 0.9536842105263157,
+    "accuracy": 0.9545454545454546,
+    "runtime": 2,
+    "algorithmName": "CFS-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 5
+}

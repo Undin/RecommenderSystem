@@ -1,0 +1,10 @@
+{
+    "testNumber": 19,
+    "dataSetName": "grub-damage",
+    "f1Measure": 0.6545358649789029,
+    "accuracy": 0.6666666666666666,
+    "runtime": 5,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 6
+}

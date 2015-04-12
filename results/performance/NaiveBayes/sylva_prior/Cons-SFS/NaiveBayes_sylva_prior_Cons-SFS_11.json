@@ -1,0 +1,10 @@
+{
+    "testNumber": 11,
+    "dataSetName": "sylva_prior",
+    "f1Measure": 0.9136979209242759,
+    "accuracy": 0.9791666666666666,
+    "runtime": 120633,
+    "algorithmName": "Cons-SFS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 11
+}

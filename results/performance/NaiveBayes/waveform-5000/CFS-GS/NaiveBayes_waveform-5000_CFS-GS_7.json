@@ -1,0 +1,10 @@
+{
+    "testNumber": 7,
+    "dataSetName": "waveform-5000",
+    "f1Measure": 0.8095833712228387,
+    "accuracy": 0.79,
+    "runtime": 356,
+    "algorithmName": "CFS-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 20
+}
