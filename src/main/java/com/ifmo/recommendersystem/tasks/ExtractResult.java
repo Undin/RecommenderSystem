@@ -23,7 +23,7 @@ public class ExtractResult implements JSONConverted {
     }
 
     public String getMetaFeatureName() {
-        return metaFeature.getName();
+        return metaFeature.getExtractorClassName();
     }
 
     public String getDatasetName() {

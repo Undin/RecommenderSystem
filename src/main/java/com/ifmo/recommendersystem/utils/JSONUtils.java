@@ -34,7 +34,6 @@ public class JSONUtils {
     public static final String MEAN_HIT_RATIO = "meanHitRatio";
     public static final String META_FEATURE = "metaFeature";
     public static final String META_FEATURE_LIST = "metaFeatureList";
-    public static final String META_FEATURE_NAME = "metaFeatureName";
     public static final String MEAN_RPR = "meanRPR";
     public static final String OPT_ALGORITHM = "optAlgorithm";
     public static final String OPT_ALGORITHM_SET = "optAlgorithmSet";

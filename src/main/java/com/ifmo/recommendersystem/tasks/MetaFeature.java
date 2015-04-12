@@ -11,18 +11,15 @@ import org.json.JSONObject;
  */
 public class MetaFeature implements JSONConverted {
 
-    private final String name;
     private final String extractorClassName;
     private final double value;
 
     public MetaFeature(MetaFeatureExtractor extractor, double value) {
-        this.name = extractor.getClass().getSimpleName();
         this.extractorClassName = extractor.getClass().getCanonicalName();
         this.value = value;
     }
 
-    public MetaFeature(String name, String extractorClassName, double value) {
-        this.name = name;
+    public MetaFeature(String extractorClassName, double value) {
         this.extractorClassName = extractorClassName;
         this.value = value;
     }
@@ -31,9 +28,6 @@ public class MetaFeature implements JSONConverted {
         return extractorClassName;
     }
 
-    public String getName() {
-        return name;
-    }
 
     public double getValue() {
         return value;
@@ -42,7 +36,6 @@ public class MetaFeature implements JSONConverted {
     @Override
     public JSONObject toJSON() {
         return new JSONObject()
-                .put(JSONUtils.META_FEATURE_NAME, name)
                 .put(JSONUtils.CLASS_NAME, extractorClassName)
                 .put(JSONUtils.VALUE, value);
     }
@@ -50,8 +43,7 @@ public class MetaFeature implements JSONConverted {
     public static final AbstractJSONCreator<MetaFeature> JSON_CREATOR = new AbstractJSONCreator<MetaFeature>() {
         @Override
         protected MetaFeature throwableFromJSON(JSONObject jsonObject) throws Exception {
-            return new MetaFeature(jsonObject.getString(JSONUtils.META_FEATURE_NAME),
-                    jsonObject.getString(JSONUtils.CLASS_NAME),
+            return new MetaFeature(jsonObject.getString(JSONUtils.CLASS_NAME),
                     jsonObject.getDouble(JSONUtils.VALUE));
         }
     };
