@@ -16,7 +16,7 @@ public class NumberOfInstances extends MetaFeatureExtractor {
     }
 
     @Override
-    public double extract(Instances instances) {
+    public double extractValue(Instances instances) {
         return instances.numInstances();
     }
 }

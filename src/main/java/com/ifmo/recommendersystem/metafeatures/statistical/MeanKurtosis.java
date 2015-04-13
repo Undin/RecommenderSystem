@@ -16,7 +16,7 @@ public class MeanKurtosis extends AbstractStatisticalExtractor {
     }
 
     @Override
-    public double extract(Instances instances) {
+    public double extractValue(Instances instances) {
         int count = 0;
         double sum = 0;
         for (int i = 0; i < instances.numAttributes(); i++) {

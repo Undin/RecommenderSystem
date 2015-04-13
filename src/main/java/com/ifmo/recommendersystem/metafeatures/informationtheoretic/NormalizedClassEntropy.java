@@ -18,7 +18,7 @@ public class NormalizedClassEntropy extends AbstractDiscretizeExtractor {
     }
 
     @Override
-    protected double extractInternal(Instances instances) {
+    protected double extractValueInternal(Instances instances) {
         int classIndex = instances.classIndex();
         if (classIndex < 0) {
             throw new IllegalArgumentException("dataset hasn't class attribute");

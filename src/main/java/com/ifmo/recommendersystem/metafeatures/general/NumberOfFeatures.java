@@ -16,7 +16,7 @@ public class NumberOfFeatures extends MetaFeatureExtractor {
     }
 
     @Override
-    public double extract(Instances instances) {
+    public double extractValue(Instances instances) {
         return instances.classIndex() >= 0 ? instances.numAttributes() - 1 : instances.numAttributes();
     }
 }

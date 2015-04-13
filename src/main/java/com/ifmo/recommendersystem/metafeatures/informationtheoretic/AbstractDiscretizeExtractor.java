@@ -12,13 +12,13 @@ import weka.filters.supervised.attribute.Discretize;
 public abstract class AbstractDiscretizeExtractor extends MetaFeatureExtractor {
 
     @Override
-    public double extract(Instances instances) {
+    public double extractValue(Instances instances) {
         Discretize discretize = new Discretize();
         discretize.setUseBetterEncoding(true);
         try {
             discretize.setInputFormat(instances);
             instances = Filter.useFilter(instances, discretize);
-            return extractInternal(instances);
+            return extractValueInternal(instances);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -29,5 +29,5 @@ public abstract class AbstractDiscretizeExtractor extends MetaFeatureExtractor {
         return isNonClassAttributeWithType(instances, attributeIndex, Attribute.NOMINAL);
     }
 
-    protected abstract double extractInternal(Instances instances);
+    protected abstract double extractValueInternal(Instances instances);
 }

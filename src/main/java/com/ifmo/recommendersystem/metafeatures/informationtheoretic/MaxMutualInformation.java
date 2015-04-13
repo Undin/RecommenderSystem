@@ -17,7 +17,7 @@ public class MaxMutualInformation extends MetaFeatureExtractor {
     }
 
     @Override
-    public double extract(Instances instances) {
+    public double extractValue(Instances instances) {
         InfoGainAttributeEval infoGain = new InfoGainAttributeEval();
         try {
             infoGain.buildEvaluator(instances);

@@ -20,13 +20,13 @@ public class NoiseSignalRatio extends AbstractDiscretizeExtractor {
     }
 
     @Override
-    public double extract(Instances instances) {
-        meanMutualInformation = new MeanMutualInformation().extract(instances);
-        return super.extract(instances);
+    public double extractValue(Instances instances) {
+        meanMutualInformation = new MeanMutualInformation().extractValue(instances);
+        return super.extractValue(instances);
     }
 
     @Override
-    protected double extractInternal(Instances instances) {
+    protected double extractValueInternal(Instances instances) {
         double sum = 0;
         int count = 0;
         for (int i = 0; i < instances.numAttributes(); i++) {

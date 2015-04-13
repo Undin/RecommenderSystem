@@ -19,13 +19,13 @@ public class EquivalentNumberOfFeatures extends AbstractDiscretizeExtractor {
     }
 
     @Override
-    public double extract(Instances instances) {
-        meanMutualInformation = new MeanMutualInformation().extract(instances);
-        return super.extract(instances);
+    public double extractValue(Instances instances) {
+        meanMutualInformation = new MeanMutualInformation().extractValue(instances);
+        return super.extractValue(instances);
     }
 
     @Override
-    protected double extractInternal(Instances instances) {
+    protected double extractValueInternal(Instances instances) {
         int classIndex = instances.classIndex();
         if (classIndex < 0) {
             throw new IllegalArgumentException("dataset hasn't class attribute");

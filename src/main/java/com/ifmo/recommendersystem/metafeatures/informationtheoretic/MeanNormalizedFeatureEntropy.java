@@ -17,7 +17,7 @@ public class MeanNormalizedFeatureEntropy extends AbstractDiscretizeExtractor {
     }
 
     @Override
-    protected double extractInternal(Instances instances) {
+    protected double extractValueInternal(Instances instances) {
         double sum = 0;
         int count = 0;
         for (int i = 0; i < instances.numAttributes(); i++) {

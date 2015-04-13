@@ -38,8 +38,7 @@ public class ExtractResult implements JSONConverted {
     }
 
     public static ExtractResult fromInstances(String name, Instances instances, MetaFeatureExtractor extractor) {
-        double value = extractor.extract(instances);
-        return new ExtractResult(name, new MetaFeature(extractor, value));
+        return new ExtractResult(name, extractor.extract(instances));
     }
 
     public static final AbstractJSONCreator<ExtractResult> JSON_CREATOR = new AbstractJSONCreator<ExtractResult>() {

@@ -1,5 +1,6 @@
 package com.ifmo.recommendersystem.metafeatures;
 
+import com.ifmo.recommendersystem.tasks.MetaFeature;
 import weka.core.Attribute;
 import weka.core.Instances;
 
@@ -13,7 +14,12 @@ public abstract class MetaFeatureExtractor {
      * This method should return the result of computing value for meta feature with name.
      * Any specific arguments?
      */
-    public abstract double extract(Instances instances);
+    public MetaFeature extract(Instances instances) {
+        double value = extractValue(instances);
+        return new MetaFeature(this, value);
+    }
+
+    protected abstract double extractValue(Instances instances);
 
     protected boolean isNonClassAttributeWithType(Instances instances, int attributeIndex, int... types) {
         Attribute attribute = instances.attribute(attributeIndex);
