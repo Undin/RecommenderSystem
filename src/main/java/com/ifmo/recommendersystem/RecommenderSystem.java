@@ -1,8 +1,10 @@
 package com.ifmo.recommendersystem;
 
 import com.ifmo.recommendersystem.metafeatures.MetaFeatureExtractor;
+import com.ifmo.recommendersystem.tasks.ExtractResult;
 import com.ifmo.recommendersystem.tasks.MetaFeature;
 import com.ifmo.recommendersystem.tasks.PerformanceResult;
+import com.ifmo.recommendersystem.utils.Pair;
 import com.ifmo.recommendersystem.utils.PathUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -13,6 +15,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,15 +55,11 @@ public class RecommenderSystem {
     }
 
     private List<String> recommendInternal(List<Integer> dataSetIndexes, List<MetaFeature> metaFeatures, int expectedResultSize) {
-        List<List<MetaFeature>> subsetMetaFeaturesList = dataSetIndexes.stream()
-                .map(metaFeaturesList::get)
-                .collect(Collectors.toList());
-        List<Double> dist = dist(subsetMetaFeaturesList, metaFeatures);
-        int nearestDataSetNumber = Math.min(NEAREST_DATA_SET_NUMBER, datasets.size());
-        Integer[] indexes = new Integer[datasets.size()];
-        Arrays.setAll(indexes, i -> i);
-        Arrays.sort(indexes, (o1, o2) -> Double.compare(dist.get(o1), dist.get(o2)));
-
+        List<Double> dist = dist(metaFeaturesList, metaFeatures);
+        int nearestDataSetNumber = Math.min(NEAREST_DATA_SET_NUMBER, dataSetIndexes.size());
+        Integer[] indexes = dataSetIndexes.stream()
+                .sorted((o1, o2) -> Double.compare(dist.get(o1), dist.get(o2)))
+                .toArray(Integer[]::new);
         double[] inverseDistances = new double[nearestDataSetNumber];
         for (int i = 0; i < nearestDataSetNumber; i++) {
             inverseDistances[i] = 1 / dist.get(indexes[i]);
@@ -69,17 +68,17 @@ public class RecommenderSystem {
         double[] earrCoef = new double[algorithms.size()];
         for (int i = 0; i < algorithms.size(); i++) {
             for (int k = 0; k < nearestDataSetNumber; k++) {
-                int j = dataSetIndexes.get(indexes[k]);
+                int j = indexes[k];
                 earrCoef[i] += inverseDistances[k] * earrMatrix.get(i, j);
             }
             earrCoef[i] /= inverseDistanceSum;
         }
-        indexes = new Integer[algorithms.size()];
-        Arrays.setAll(indexes, i -> i);
-        Arrays.sort(indexes, (o1, o2) -> Double.compare(earrCoef[o2], earrCoef[o1]));
+        Integer[] algorithmIndexes = new Integer[algorithms.size()];
+        Arrays.setAll(algorithmIndexes, i -> i);
+        Arrays.sort(algorithmIndexes, (o1, o2) -> Double.compare(earrCoef[o2], earrCoef[o1]));
         List<String> result = new ArrayList<>();
         for (int i = 0; i < Math.min(expectedResultSize, algorithms.size()); i++) {
-            result.add(algorithms.get(indexes[i]));
+            result.add(algorithms.get(algorithmIndexes[i]));
         }
         return result;
     }
@@ -113,11 +112,27 @@ public class RecommenderSystem {
             double rpr = earrMatrix.get(recAlgIndex, dataIndex) / optEarr;
             double worstRpr = worstEarr / optEarr;
             meanRPR += rpr;
+
+            List<Pair<String, Double>> algorithmRpr = new ArrayList<>(algorithms.size());
+            for (int algIndex = 0; algIndex < algorithms.size(); algIndex++) {
+                String algName = algorithms.get(algIndex);
+                double algRpr = earrMatrix.get(algIndex, dataIndex) / optEarr;
+                algorithmRpr.add(Pair.of(algName, algRpr));
+            }
+            Collections.sort(algorithmRpr, (p1, p2) -> Double.compare(p2.second, p1.second));
+            JSONArray rprList = new JSONArray();
+            algorithmRpr.stream()
+                    .map(p -> new JSONObject()
+                            .put(ALGORITHM_NAME, p.first)
+                            .put(RPR, p.second))
+                    .sequential()
+                    .forEach(rprList::put);
             JSONObject resultObject = new JSONObject();
             resultObject.put(DATA_SET_NAME, datasets.get(dataIndex))
                     .put(RECOMMENDED_ALGORITHM, recAlgorithm)
                     .put(OPT_ALGORITHM, optAlgorithm)
                     .put(RPR, rpr)
+                    .put(RPR_LIST, rprList)
                     .put(WORST_RPR, worstRpr)
                     .put(WORST_ALGORITHM, worstAlgorithm);
             separateResult.put(resultObject);
@@ -199,7 +214,7 @@ public class RecommenderSystem {
                 String directoryName = PathUtils.createPath(RecommenderSystemBuilder.PERFORMANCE_DIRECTORY,
                         classifierName, datasetName, algorithmName);
                 for (int k = 0; k < testNumber; k++) {
-                    String resultFilename = PathUtils.createName(classifierName, algorithmName, String.valueOf(k)) + ".json";
+                    String resultFilename = PathUtils.createName(classifierName, datasetName, algorithmName, String.valueOf(k)) + ".json";
                     String resultFullPath = PathUtils.createPath(directoryName, resultFilename);
                     PerformanceResult result = PerformanceResult.JSON_CREATOR.fromJSON(readJSONObject(resultFullPath));
                     f1Measure[j] += result.f1Measure;
@@ -222,7 +237,7 @@ public class RecommenderSystem {
                         .map(featureName -> {
                             String path = PathUtils.createPath(RecommenderSystemBuilder.META_FEATURES_DIRECTORY,
                                     name, featureName) + ".json";
-                            return MetaFeature.JSON_CREATOR.fromJSON(readJSONObject(path));
+                            return ExtractResult.JSON_CREATOR.fromJSON(readJSONObject(path)).getMetaFeature();
                         })
                         .collect(Collectors.toList()))
                 .collect(Collectors.toList());
@@ -230,23 +245,23 @@ public class RecommenderSystem {
         return new RecommenderSystem(datasetNames, algorithms, extractors, metaFeaturesList, matrix);
     }
 
-    private static double[] calculateEARRCoefs(double alpha, double betta, double[] accuracy, double[] attributeNumber, double[] runtime) {
+    private static double[] calculateEARRCoefs(double alpha, double betta, double[] f1Measure, double[] attributeNumber, double[] runtime) {
         if (alpha < 0 || betta < 0) {
             throw new IllegalArgumentException("alpha must be >= 0 && betta must be >= 0");
         }
-        if (accuracy == null || runtime == null || attributeNumber == null) {
+        if (f1Measure == null || runtime == null || attributeNumber == null) {
             throw new IllegalArgumentException("arguments must be not null");
         }
-        if (accuracy.length != runtime.length || runtime.length != attributeNumber.length) {
+        if (f1Measure.length != runtime.length || runtime.length != attributeNumber.length) {
             throw new IllegalArgumentException("arguments must have same length");
         }
-        int len = accuracy.length;
+        int len = f1Measure.length;
         double[] eaarCoefs = new double[len];
         for (int i = 0; i < len; i++) {
             for (int j = 0; j < len; j++) {
                 if (i != j) {
-                    eaarCoefs[i] += (accuracy[i] / accuracy[j]) /
-                            (1 + alpha * Math.log(runtime[i] / runtime[j]) + betta * Math.log(attributeNumber[i] / attributeNumber[j]));
+                    eaarCoefs[i] += (f1Measure[i] / f1Measure[j]); //
+                            //(1 + alpha * Math.log(runtime[i] / runtime[j]) + betta * Math.log(attributeNumber[i] / attributeNumber[j]));
                 }
             }
             eaarCoefs[i] /= len - 1;

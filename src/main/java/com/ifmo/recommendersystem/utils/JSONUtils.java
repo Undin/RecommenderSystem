@@ -40,6 +40,7 @@ public class JSONUtils {
     public static final String OPTIONS = "options";
     public static final String RECOMMENDED_ALGORITHM = "recommendedAlgorithm";
     public static final String RPR = "RPR";
+    public static final String RPR_LIST = "prpList";
     public static final String RUNTIME = "runtime";
     public static final String SEARCH = "search";
     public static final String SEPARATE_RESULT = "separateResult";
