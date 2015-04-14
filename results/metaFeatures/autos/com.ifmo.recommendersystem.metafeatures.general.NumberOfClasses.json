@@ -1,0 +1,7 @@
+{
+    "dataSetName": "autos",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfClasses",
+        "value": 7
+    }
+}

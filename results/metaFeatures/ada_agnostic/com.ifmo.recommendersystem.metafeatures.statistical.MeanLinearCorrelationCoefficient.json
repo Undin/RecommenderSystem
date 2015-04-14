@@ -1,0 +1,7 @@
+{
+    "dataSetName": "ada_agnostic",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": -0.013735774892752971
+    }
+}

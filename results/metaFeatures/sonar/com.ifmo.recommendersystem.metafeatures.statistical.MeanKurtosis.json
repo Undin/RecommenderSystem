@@ -1,0 +1,7 @@
+{
+    "dataSetName": "sonar",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 5.1937054706265995
+    }
+}

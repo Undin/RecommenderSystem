@@ -1,0 +1,7 @@
+{
+    "dataSetName": "dermatology",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 10.764705882352942
+    }
+}

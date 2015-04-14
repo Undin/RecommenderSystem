@@ -1,0 +1,7 @@
+{
+    "dataSetName": "iris",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+        "value": -0.554301759048982
+    }
+}

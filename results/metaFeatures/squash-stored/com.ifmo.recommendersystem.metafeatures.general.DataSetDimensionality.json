@@ -1,0 +1,7 @@
+{
+    "dataSetName": "squash-stored",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 2.1666666666666665
+    }
+}

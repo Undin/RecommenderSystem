@@ -1,0 +1,7 @@
+{
+    "dataSetName": "breast-w",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 4.669235440377187
+    }
+}

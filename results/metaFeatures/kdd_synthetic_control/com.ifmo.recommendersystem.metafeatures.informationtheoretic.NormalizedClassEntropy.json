@@ -1,0 +1,7 @@
+{
+    "dataSetName": "kdd_synthetic_control",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
+        "value": 0.2800967910858656
+    }
+}

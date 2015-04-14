@@ -1,0 +1,7 @@
+{
+    "dataSetName": "zoo",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": -0.004242169283799142
+    }
+}

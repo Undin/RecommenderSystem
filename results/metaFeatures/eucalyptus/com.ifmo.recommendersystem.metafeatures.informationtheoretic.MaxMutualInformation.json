@@ -1,0 +1,7 @@
+{
+    "dataSetName": "eucalyptus",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "value": 0.640447946565367
+    }
+}

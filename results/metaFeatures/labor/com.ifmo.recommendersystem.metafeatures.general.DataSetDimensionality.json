@@ -1,0 +1,7 @@
+{
+    "dataSetName": "labor",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 3.5625
+    }
+}

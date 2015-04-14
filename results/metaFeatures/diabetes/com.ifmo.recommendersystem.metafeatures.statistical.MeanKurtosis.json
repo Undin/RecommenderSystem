@@ -1,0 +1,7 @@
+{
+    "dataSetName": "diabetes",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 5.749524196420431
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "colic",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 4.340831271689275
+    }
+}

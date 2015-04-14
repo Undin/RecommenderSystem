@@ -1,0 +1,7 @@
+{
+    "dataSetName": "iris",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
+        "value": 0.40947515496070885
+    }
+}

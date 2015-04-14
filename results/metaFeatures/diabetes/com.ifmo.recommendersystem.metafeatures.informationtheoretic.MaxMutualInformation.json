@@ -1,0 +1,7 @@
+{
+    "dataSetName": "diabetes",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "value": 0.19008254746083553
+    }
+}

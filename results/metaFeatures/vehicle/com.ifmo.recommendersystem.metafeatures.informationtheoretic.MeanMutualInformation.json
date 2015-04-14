@@ -1,0 +1,7 @@
+{
+    "dataSetName": "vehicle",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+        "value": 5.022662655173498
+    }
+}

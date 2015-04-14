@@ -1,0 +1,7 @@
+{
+    "dataSetName": "diabetes",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+        "value": 1.412544511305875
+    }
+}

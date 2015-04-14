@@ -1,0 +1,7 @@
+{
+    "dataSetName": "dermatology",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": 0.05507534775039362
+    }
+}

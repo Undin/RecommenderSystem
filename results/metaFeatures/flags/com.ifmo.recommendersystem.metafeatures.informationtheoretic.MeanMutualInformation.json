@@ -1,0 +1,7 @@
+{
+    "dataSetName": "flags",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+        "value": 7.3176934929320385
+    }
+}

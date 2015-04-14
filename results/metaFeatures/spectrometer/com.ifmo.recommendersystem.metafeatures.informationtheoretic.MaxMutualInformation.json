@@ -1,0 +1,7 @@
+{
+    "dataSetName": "spectrometer",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "value": 4.692031507986512
+    }
+}

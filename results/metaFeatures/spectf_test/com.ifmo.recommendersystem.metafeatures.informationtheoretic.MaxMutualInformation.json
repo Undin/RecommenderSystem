@@ -1,0 +1,7 @@
+{
+    "dataSetName": "spectf_test",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "value": 0.15339431776179824
+    }
+}

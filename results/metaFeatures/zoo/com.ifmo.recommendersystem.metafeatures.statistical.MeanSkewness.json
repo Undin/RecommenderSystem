@@ -1,0 +1,7 @@
+{
+    "dataSetName": "zoo",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
+        "value": 0.37280359164398236
+    }
+}

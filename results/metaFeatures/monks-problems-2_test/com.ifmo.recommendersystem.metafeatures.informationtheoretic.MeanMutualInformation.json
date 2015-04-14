@@ -1,0 +1,7 @@
+{
+    "dataSetName": "monks-problems-2_test",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+        "value": 0.019583683719793132
+    }
+}

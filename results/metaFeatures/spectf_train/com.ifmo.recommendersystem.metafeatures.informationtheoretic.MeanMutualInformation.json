@@ -1,0 +1,7 @@
+{
+    "dataSetName": "spectf_train",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+        "value": 2.98112179368606
+    }
+}

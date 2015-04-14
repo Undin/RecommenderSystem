@@ -1,0 +1,7 @@
+{
+    "dataSetName": "heart-statlog",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 20.76923076923077
+    }
+}

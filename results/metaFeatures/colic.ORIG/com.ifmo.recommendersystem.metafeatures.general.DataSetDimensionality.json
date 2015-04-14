@@ -1,0 +1,7 @@
+{
+    "dataSetName": "colic.ORIG",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 13.62962962962963
+    }
+}

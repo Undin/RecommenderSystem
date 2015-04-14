@@ -1,0 +1,7 @@
+{
+    "dataSetName": "glass",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+        "value": -0.7015603555998796
+    }
+}

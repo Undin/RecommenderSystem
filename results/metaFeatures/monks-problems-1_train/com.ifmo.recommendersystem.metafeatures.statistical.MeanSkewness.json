@@ -1,0 +1,7 @@
+{
+    "dataSetName": "monks-problems-1_train",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
+        "value": -0.03792076121970708
+    }
+}

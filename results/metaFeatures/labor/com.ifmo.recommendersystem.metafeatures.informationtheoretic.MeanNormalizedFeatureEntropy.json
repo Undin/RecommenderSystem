@@ -1,0 +1,7 @@
+{
+    "dataSetName": "labor",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.195633686924205
+    }
+}

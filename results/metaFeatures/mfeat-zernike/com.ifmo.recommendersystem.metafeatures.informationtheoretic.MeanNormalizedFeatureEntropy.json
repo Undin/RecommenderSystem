@@ -1,0 +1,7 @@
+{
+    "dataSetName": "mfeat-zernike",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.16543936632205847
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "kdd_JapaneseVowels_test",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 406.2142857142857
+    }
+}

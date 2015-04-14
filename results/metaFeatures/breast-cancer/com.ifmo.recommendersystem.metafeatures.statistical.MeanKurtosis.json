@@ -1,0 +1,7 @@
+{
+    "dataSetName": "breast-cancer",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 3.577691535634764
+    }
+}

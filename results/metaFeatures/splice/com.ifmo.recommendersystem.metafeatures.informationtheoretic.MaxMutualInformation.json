@@ -1,0 +1,7 @@
+{
+    "dataSetName": "splice",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "value": 1.4801700696136328
+    }
+}

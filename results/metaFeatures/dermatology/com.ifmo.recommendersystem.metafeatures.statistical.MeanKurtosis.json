@@ -1,0 +1,7 @@
+{
+    "dataSetName": "dermatology",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 5.45115573436016
+    }
+}

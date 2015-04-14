@@ -1,0 +1,7 @@
+{
+    "dataSetName": "colic",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.14270715705048576
+    }
+}

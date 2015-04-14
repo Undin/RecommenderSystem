@@ -1,0 +1,7 @@
+{
+    "dataSetName": "credit-g",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+        "value": 2.294632774477734
+    }
+}

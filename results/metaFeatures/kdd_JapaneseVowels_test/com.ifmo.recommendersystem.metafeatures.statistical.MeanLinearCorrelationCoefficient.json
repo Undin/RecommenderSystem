@@ -1,0 +1,7 @@
+{
+    "dataSetName": "kdd_JapaneseVowels_test",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": -0.043380068545344146
+    }
+}

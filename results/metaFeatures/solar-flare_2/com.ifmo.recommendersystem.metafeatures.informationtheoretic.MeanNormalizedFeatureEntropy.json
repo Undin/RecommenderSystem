@@ -1,0 +1,7 @@
+{
+    "dataSetName": "solar-flare_2",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.08109012584646533
+    }
+}

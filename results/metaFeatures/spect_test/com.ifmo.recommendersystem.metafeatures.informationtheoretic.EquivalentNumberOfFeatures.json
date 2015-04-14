@@ -1,0 +1,7 @@
+{
+    "dataSetName": "spect_test",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
+        "value": 0.9011923323418123
+    }
+}

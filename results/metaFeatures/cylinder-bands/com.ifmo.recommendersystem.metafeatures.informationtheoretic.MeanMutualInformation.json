@@ -1,0 +1,7 @@
+{
+    "dataSetName": "cylinder-bands",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+        "value": 2.53465313592819
+    }
+}

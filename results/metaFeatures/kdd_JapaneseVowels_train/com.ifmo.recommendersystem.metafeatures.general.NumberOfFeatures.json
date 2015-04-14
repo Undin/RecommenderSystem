@@ -1,0 +1,7 @@
+{
+    "dataSetName": "kdd_JapaneseVowels_train",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfFeatures",
+        "value": 14
+    }
+}

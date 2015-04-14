@@ -1,0 +1,7 @@
+{
+    "dataSetName": "hepatitis",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
+        "value": 0.6656066665647612
+    }
+}

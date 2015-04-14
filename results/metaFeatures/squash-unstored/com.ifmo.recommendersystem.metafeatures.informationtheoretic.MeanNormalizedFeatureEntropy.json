@@ -1,0 +1,7 @@
+{
+    "dataSetName": "squash-unstored",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.1523897961636517
+    }
+}

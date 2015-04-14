@@ -1,0 +1,7 @@
+{
+    "dataSetName": "ada_prior",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
+        "value": 1.6330698006249627
+    }
+}

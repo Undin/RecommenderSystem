@@ -1,0 +1,7 @@
+{
+    "dataSetName": "spectf_test",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
+        "value": 0.3567200376590204
+    }
+}

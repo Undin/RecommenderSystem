@@ -1,0 +1,7 @@
+{
+    "dataSetName": "waveform-5000",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.09675469047898441
+    }
+}

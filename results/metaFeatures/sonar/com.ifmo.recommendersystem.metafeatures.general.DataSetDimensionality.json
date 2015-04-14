@@ -1,0 +1,7 @@
+{
+    "dataSetName": "sonar",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 3.466666666666667
+    }
+}

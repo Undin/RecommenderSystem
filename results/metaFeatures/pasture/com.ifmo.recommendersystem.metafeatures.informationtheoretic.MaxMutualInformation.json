@@ -1,0 +1,7 @@
+{
+    "dataSetName": "pasture",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "value": 0.9235910725362514
+    }
+}

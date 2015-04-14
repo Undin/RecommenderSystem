@@ -1,0 +1,7 @@
+{
+    "dataSetName": "vote",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfClasses",
+        "value": 2
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "cylinder-bands",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 14.594594594594595
+    }
+}

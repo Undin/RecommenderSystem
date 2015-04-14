@@ -1,0 +1,7 @@
+{
+    "dataSetName": "hypothyroid",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+        "value": -0.2661972602875785
+    }
+}

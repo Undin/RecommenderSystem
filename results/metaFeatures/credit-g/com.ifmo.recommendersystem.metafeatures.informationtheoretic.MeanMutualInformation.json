@@ -1,0 +1,7 @@
+{
+    "dataSetName": "credit-g",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+        "value": 0.3256988731416466
+    }
+}

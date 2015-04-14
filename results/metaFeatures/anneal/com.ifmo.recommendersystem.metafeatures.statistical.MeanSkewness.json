@@ -1,0 +1,7 @@
+{
+    "dataSetName": "anneal",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
+        "value": 5.297337783671786
+    }
+}

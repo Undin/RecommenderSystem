@@ -1,0 +1,7 @@
+{
+    "dataSetName": "solar-flare_2",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "value": 1.0757588423040885
+    }
+}

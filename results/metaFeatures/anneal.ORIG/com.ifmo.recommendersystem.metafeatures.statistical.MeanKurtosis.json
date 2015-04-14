@@ -1,0 +1,7 @@
+{
+    "dataSetName": "anneal.ORIG",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 68.13841922103641
+    }
+}

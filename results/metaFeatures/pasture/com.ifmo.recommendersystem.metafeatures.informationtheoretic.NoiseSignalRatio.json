@@ -1,0 +1,7 @@
+{
+    "dataSetName": "pasture",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+        "value": -0.9076018421658247
+    }
+}

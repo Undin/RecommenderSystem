@@ -1,0 +1,7 @@
+{
+    "dataSetName": "arrhythmia",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+        "value": 13.97599640597265
+    }
+}

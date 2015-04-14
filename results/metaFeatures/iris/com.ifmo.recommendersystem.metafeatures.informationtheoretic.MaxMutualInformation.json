@@ -1,0 +1,7 @@
+{
+    "dataSetName": "iris",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "value": 1.4180029670231982
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "lymph",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+        "value": 2.4767918564072877
+    }
+}

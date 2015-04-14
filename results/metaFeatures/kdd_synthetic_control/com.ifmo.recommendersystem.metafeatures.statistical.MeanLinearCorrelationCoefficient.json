@@ -1,0 +1,7 @@
+{
+    "dataSetName": "kdd_synthetic_control",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": 0.4177951911319973
+    }
+}

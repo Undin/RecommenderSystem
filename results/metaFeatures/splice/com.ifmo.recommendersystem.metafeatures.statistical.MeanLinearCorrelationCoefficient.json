@@ -1,0 +1,7 @@
+{
+    "dataSetName": "splice",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": 0.01266931454174008
+    }
+}

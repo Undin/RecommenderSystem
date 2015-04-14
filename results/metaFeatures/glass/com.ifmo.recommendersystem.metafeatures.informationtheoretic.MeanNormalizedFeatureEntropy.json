@@ -1,0 +1,7 @@
+{
+    "dataSetName": "glass",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.1280831410616084
+    }
+}

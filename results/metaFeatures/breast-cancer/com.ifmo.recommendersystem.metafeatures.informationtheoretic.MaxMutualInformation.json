@@ -1,0 +1,7 @@
+{
+    "dataSetName": "breast-cancer",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "value": 0.07700985251661396
+    }
+}

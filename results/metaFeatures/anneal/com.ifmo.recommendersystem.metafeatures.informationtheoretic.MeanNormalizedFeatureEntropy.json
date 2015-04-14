@@ -1,0 +1,7 @@
+{
+    "dataSetName": "anneal",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.07261906416424148
+    }
+}

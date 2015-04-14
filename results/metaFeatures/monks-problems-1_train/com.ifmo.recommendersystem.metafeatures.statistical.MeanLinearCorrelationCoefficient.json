@@ -1,0 +1,7 @@
+{
+    "dataSetName": "monks-problems-1_train",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": 0.02275856946455248
+    }
+}

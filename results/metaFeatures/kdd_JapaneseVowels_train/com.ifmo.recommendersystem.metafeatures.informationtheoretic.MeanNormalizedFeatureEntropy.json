@@ -1,0 +1,7 @@
+{
+    "dataSetName": "kdd_JapaneseVowels_train",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.17584222921755832
+    }
+}

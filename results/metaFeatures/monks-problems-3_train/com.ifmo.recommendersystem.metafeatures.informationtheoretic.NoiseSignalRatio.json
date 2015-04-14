@@ -1,0 +1,7 @@
+{
+    "dataSetName": "monks-problems-3_train",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+        "value": 1.5640243404079262
+    }
+}

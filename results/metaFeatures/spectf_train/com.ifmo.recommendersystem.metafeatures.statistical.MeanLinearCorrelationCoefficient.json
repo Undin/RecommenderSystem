@@ -1,0 +1,7 @@
+{
+    "dataSetName": "spectf_train",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": 0.2143685871716873
+    }
+}

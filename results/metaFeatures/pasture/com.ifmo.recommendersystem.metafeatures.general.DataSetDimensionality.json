@@ -1,0 +1,7 @@
+{
+    "dataSetName": "pasture",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 1.7142857142857142
+    }
+}

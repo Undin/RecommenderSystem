@@ -1,0 +1,7 @@
+{
+    "dataSetName": "sylva_prior",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": -0.0048791336679326275
+    }
+}

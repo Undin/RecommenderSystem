@@ -1,0 +1,7 @@
+{
+    "dataSetName": "ada_prior",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 15.403578662901735
+    }
+}

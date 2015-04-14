@@ -1,0 +1,7 @@
+{
+    "dataSetName": "flags",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "value": 2.3216834315208676
+    }
+}

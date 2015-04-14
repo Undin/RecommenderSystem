@@ -1,0 +1,7 @@
+{
+    "dataSetName": "cmc",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 163.66666666666666
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "cmc",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.12474477899105521
+    }
+}

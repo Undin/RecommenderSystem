@@ -1,0 +1,7 @@
+{
+    "dataSetName": "waveform-5000",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": -0.006954156976447885
+    }
+}

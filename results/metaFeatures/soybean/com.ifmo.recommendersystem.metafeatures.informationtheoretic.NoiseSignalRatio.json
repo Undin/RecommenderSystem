@@ -1,0 +1,7 @@
+{
+    "dataSetName": "soybean",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+        "value": -0.9380165299193277
+    }
+}

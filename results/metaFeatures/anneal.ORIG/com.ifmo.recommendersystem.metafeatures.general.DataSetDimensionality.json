@@ -1,0 +1,7 @@
+{
+    "dataSetName": "anneal.ORIG",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 49.888888888888886
+    }
+}

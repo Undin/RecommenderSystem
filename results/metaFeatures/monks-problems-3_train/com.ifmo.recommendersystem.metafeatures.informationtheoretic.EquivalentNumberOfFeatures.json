@@ -1,0 +1,7 @@
+{
+    "dataSetName": "monks-problems-3_train",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
+        "value": 1.7615595973632718
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "heart-statlog",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
+        "value": 0.8350595402229368
+    }
+}

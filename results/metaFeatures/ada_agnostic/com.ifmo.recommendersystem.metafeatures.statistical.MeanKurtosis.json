@@ -1,0 +1,7 @@
+{
+    "dataSetName": "ada_agnostic",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 266.2694579637284
+    }
+}

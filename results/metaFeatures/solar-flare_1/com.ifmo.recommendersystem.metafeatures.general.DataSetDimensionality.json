@@ -1,0 +1,7 @@
+{
+    "dataSetName": "solar-flare_1",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 26.916666666666668
+    }
+}

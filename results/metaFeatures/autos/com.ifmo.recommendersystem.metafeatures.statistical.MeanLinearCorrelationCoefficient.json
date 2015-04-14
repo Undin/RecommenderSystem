@@ -1,0 +1,7 @@
+{
+    "dataSetName": "autos",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": 0.05189279857409405
+    }
+}

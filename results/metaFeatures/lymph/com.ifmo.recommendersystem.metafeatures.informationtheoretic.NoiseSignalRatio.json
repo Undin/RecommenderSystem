@@ -1,0 +1,7 @@
+{
+    "dataSetName": "lymph",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+        "value": -0.5699176552715606
+    }
+}

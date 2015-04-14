@@ -1,0 +1,7 @@
+{
+    "dataSetName": "heart-h",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 6.457187457636508
+    }
+}

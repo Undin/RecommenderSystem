@@ -1,0 +1,7 @@
+{
+    "dataSetName": "splice",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 52.295081967213115
+    }
+}

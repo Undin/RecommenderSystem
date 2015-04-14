@@ -1,0 +1,7 @@
+{
+    "dataSetName": "white-clover",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "value": 0.02247674539684884
+    }
+}

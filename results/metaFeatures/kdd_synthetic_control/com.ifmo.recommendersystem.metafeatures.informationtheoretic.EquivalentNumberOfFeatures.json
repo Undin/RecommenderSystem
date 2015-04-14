@@ -1,0 +1,7 @@
+{
+    "dataSetName": "kdd_synthetic_control",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
+        "value": 0.04514244655816537
+    }
+}

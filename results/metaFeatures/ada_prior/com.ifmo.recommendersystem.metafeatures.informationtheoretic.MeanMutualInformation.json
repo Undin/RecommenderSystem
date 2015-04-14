@@ -1,0 +1,7 @@
+{
+    "dataSetName": "ada_prior",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+        "value": 0.9515585791390895
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "sonar",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
+        "value": 0.12943800945193945
+    }
+}

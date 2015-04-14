@@ -1,0 +1,7 @@
+{
+    "dataSetName": "ecoli",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
+        "value": 0.2608034792929121
+    }
+}

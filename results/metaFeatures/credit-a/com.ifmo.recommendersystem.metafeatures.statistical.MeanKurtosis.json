@@ -1,0 +1,7 @@
+{
+    "dataSetName": "credit-a",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 22.936260398027216
+    }
+}

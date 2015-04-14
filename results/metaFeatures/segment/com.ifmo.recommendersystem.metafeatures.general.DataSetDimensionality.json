@@ -1,0 +1,7 @@
+{
+    "dataSetName": "segment",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 128.33333333333334
+    }
+}

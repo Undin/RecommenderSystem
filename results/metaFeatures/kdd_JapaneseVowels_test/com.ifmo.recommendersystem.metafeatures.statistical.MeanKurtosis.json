@@ -1,0 +1,7 @@
+{
+    "dataSetName": "kdd_JapaneseVowels_test",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "value": 2.7912354514767537
+    }
+}

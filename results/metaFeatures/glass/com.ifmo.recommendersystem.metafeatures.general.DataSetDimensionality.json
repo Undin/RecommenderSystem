@@ -1,0 +1,7 @@
+{
+    "dataSetName": "glass",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "value": 23.77777777777778
+    }
+}

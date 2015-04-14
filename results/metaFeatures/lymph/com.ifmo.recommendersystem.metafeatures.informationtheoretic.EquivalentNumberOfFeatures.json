@@ -1,0 +1,7 @@
+{
+    "dataSetName": "lymph",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
+        "value": 0.49567245579020464
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "shuttle-landing-control",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
+        "value": 0.2485225963445332
+    }
+}

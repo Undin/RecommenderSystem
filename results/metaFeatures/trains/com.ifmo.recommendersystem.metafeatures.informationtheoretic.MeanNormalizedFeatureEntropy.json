@@ -1,0 +1,7 @@
+{
+    "dataSetName": "trains",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "value": 0.37761555957895343
+    }
+}
