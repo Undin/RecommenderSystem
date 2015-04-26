@@ -82,6 +82,23 @@ public class FSSAlgorithm implements JSONConverted {
         return new JSONObject().put(ALGORITHM_NAME, name).put(SEARCH, search).put(EVALUATION, evaluation);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof FSSAlgorithm)) return false;
+
+        FSSAlgorithm algorithm = (FSSAlgorithm) o;
+
+        if (!name.equals(algorithm.name)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
     private static final Map<String, FSSAlgorithm> ALGORITHM_MAP = new HashMap<>();
 
     public static final AbstractJSONCreator<FSSAlgorithm> JSON_CREATOR = new AbstractJSONCreator<FSSAlgorithm>() {
