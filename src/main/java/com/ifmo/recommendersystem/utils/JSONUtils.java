@@ -99,13 +99,13 @@ public class JSONUtils {
     }
 
     public static JSONObject readJSONObject(String filename) {
-        try {
-            InputStream inputStream = new FileInputStream(filename);
+        JSONObject result = null;
+        try (InputStream inputStream = new FileInputStream(filename)) {
             String config = IOUtils.toString(inputStream);
-            return new JSONObject(config);
+            result = new JSONObject(config);
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
         }
+        return result;
     }
 }
