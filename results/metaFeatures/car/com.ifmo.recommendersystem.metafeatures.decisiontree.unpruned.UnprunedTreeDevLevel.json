@@ -1,0 +1,7 @@
+{
+    "dataSetName": "car",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
+        "value": 5.2738347844176285
+    }
+}

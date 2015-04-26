@@ -1,0 +1,7 @@
+{
+    "dataSetName": "shuttle-landing-control",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeNodeNumber",
+        "value": 9
+    }
+}

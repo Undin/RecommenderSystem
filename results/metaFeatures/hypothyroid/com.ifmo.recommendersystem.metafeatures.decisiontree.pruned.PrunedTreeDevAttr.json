@@ -1,0 +1,7 @@
+{
+    "dataSetName": "hypothyroid",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevAttr",
+        "value": 2.229848026709942
+    }
+}

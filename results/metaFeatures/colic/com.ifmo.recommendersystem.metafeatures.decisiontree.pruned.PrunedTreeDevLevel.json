@@ -1,0 +1,7 @@
+{
+    "dataSetName": "colic",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevLevel",
+        "value": 0.408248290463863
+    }
+}

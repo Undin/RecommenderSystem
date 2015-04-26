@@ -1,0 +1,7 @@
+{
+    "dataSetName": "diabetes",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
+        "value": 0.44019822749389304
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "iris",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
+        "value": 0.22360679774997896
+    }
+}

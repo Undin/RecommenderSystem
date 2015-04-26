@@ -1,0 +1,7 @@
+{
+    "dataSetName": "mfeat-morphological",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanLevel",
+        "value": 4.533333333333333
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "squash-stored",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanAttr",
+        "value": 10
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "dataSetName": "cmc",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevAttr",
+        "value": 45.348649373492925
+    }
+}

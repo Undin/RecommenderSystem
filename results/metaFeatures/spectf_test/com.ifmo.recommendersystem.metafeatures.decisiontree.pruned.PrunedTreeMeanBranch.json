@@ -1,0 +1,7 @@
+{
+    "dataSetName": "spectf_test",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanBranch",
+        "value": 7.818181818181818
+    }
+}

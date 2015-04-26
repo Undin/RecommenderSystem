@@ -1,0 +1,7 @@
+{
+    "dataSetName": "labor",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanBranch",
+        "value": 1.6666666666666667
+    }
+}

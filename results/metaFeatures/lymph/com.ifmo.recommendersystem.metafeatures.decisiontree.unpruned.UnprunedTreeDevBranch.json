@@ -1,0 +1,7 @@
+{
+    "dataSetName": "lymph",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
+        "value": 0.24459665626169488
+    }
+}

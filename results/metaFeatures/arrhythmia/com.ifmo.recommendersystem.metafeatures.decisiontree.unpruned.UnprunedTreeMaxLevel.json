@@ -1,0 +1,7 @@
+{
+    "dataSetName": "arrhythmia",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMaxLevel",
+        "value": 5
+    }
+}

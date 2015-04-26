@@ -1,0 +1,7 @@
+{
+    "dataSetName": "waveform-5000",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
+        "value": 3.8163520456435998
+    }
+}

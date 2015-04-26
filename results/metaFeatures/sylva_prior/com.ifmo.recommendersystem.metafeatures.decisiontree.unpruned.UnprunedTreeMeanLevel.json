@@ -1,0 +1,7 @@
+{
+    "dataSetName": "sylva_prior",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanLevel",
+        "value": 3.888888888888889
+    }
+}

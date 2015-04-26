@@ -1,0 +1,7 @@
+{
+    "dataSetName": "sponge",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
+        "value": 0.14824986333222023
+    }
+}

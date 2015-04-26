@@ -1,0 +1,7 @@
+{
+    "dataSetName": "breast-w",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanAttr",
+        "value": 11.5
+    }
+}

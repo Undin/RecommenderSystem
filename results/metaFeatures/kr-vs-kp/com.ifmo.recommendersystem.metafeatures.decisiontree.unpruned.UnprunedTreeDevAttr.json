@@ -1,0 +1,7 @@
+{
+    "dataSetName": "kr-vs-kp",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevAttr",
+        "value": 7.7781745930520225
+    }
+}

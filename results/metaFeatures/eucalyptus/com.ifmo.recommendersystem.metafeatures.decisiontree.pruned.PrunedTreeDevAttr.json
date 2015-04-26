@@ -1,0 +1,7 @@
+{
+    "dataSetName": "eucalyptus",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevAttr",
+        "value": 4.05277682583189
+    }
+}

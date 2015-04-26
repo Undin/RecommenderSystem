@@ -1,0 +1,7 @@
+{
+    "dataSetName": "trains",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevAttr",
+        "value": 0
+    }
+}

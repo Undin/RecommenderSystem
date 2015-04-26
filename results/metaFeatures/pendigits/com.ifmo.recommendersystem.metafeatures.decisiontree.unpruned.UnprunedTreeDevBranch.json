@@ -1,0 +1,7 @@
+{
+    "dataSetName": "pendigits",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
+        "value": 0.1767773057284673
+    }
+}

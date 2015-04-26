@@ -1,0 +1,7 @@
+{
+    "dataSetName": "breast-cancer",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMaxAttr",
+        "value": 2
+    }
+}

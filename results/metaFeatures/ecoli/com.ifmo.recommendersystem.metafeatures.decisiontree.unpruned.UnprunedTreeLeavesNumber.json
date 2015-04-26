@@ -1,0 +1,7 @@
+{
+    "dataSetName": "ecoli",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeLeavesNumber",
+        "value": 26
+    }
+}
