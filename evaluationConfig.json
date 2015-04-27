@@ -1,0 +1,276 @@
+{
+    "metaFeatureList" : [
+        "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
+        "com.ifmo.recommendersystem.metafeatures.general.NumberOfFeatures",
+        "com.ifmo.recommendersystem.metafeatures.general.NumberOfClasses",
+        "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
+        "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
+        "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
+        "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
+        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
+        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
+        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
+        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
+        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
+        "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevAttr",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevBranch",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevLevel",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeHeight",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeLeavesNumber",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMaxAttr",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMaxBranch",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMaxLevel",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanAttr",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanBranch",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanLevel",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMinAttr",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMinBranch",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeNodeNumber",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeWidth",
+
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevAttr",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeHeight",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeLeavesNumber",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMaxAttr",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMaxBranch",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMaxLevel",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanAttr",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanBranch",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanLevel",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMinAttr",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMinBranch",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeNodeNumber",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeWidth"
+    ],
+    "classifier" : {
+        "classifierName" : "NaiveBayes",
+        "className" : "weka.classifiers.bayes.NaiveBayes",
+        "options" : []
+    },
+    "algorithms" : [
+        {
+            "algorithmName" : "CFS-SBS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "0"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-SFS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "1"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-BiS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "2"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-GS",
+            "search" : {
+                "className" : "weka.attributeSelection.GeneticSearch",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-LS",
+            "search" : {
+                "className" : "weka.attributeSelection.LinearForwardSelection",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-RS",
+            "search" : {
+                "className" : "weka.attributeSelection.RankSearch",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "CFS-SS",
+            "search" : {
+                "className" : "weka.attributeSelection.ScatterSearchV1",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.CfsSubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "Cons-SFS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "1"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.ConsistencySubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "Cons-BiS",
+            "search" : {
+                "className" : "weka.attributeSelection.BestFirst",
+                "options" : [
+                    "-D",
+                    "2"
+                ]
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.ConsistencySubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "Cons-GS",
+            "search" : {
+                "className" : "weka.attributeSelection.GeneticSearch",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.ConsistencySubsetEval",
+                "options" : []
+            }
+        },
+        {
+            "algorithmName" : "Cons-RS",
+            "search" : {
+                "className" : "weka.attributeSelection.RankSearch",
+                "options" : []
+            },
+            "evaluation" : {
+                "className" : "weka.attributeSelection.ConsistencySubsetEval",
+                "options" : []
+            }
+        }
+    ],
+    "dataSets" : [
+        "ada_agnostic",
+        "ada_prior",
+        "anneal",
+        "anneal.ORIG",
+        "arrhythmia",
+        "audiology",
+        "autos",
+        "balance-scale",
+        "breast-cancer",
+        "breast-w",
+        "car",
+        "cmc",
+        "colic",
+        "colic.ORIG",
+        "credit-a",
+        "credit-g",
+        "cylinder-bands",
+        "dermatology",
+        "diabetes",
+        "ecoli",
+        "eucalyptus",
+        "flags",
+        "glass",
+        "grub-damage",
+        "heart-c",
+        "heart-h",
+        "heart-statlog",
+        "hepatitis",
+        "hypothyroid",
+        "ionosphere",
+        "iris",
+        "kdd_JapaneseVowels_test",
+        "kdd_JapaneseVowels_train",
+        "kdd_synthetic_control",
+        "kr-vs-kp",
+        "labor",
+        "lung-cancer",
+        "lymph",
+        "mfeat-fourier",
+        "mfeat-morphological",
+        "mfeat-zernike",
+        "molecular-biology_promoters",
+        "monks-problems-1_test",
+        "monks-problems-1_train",
+        "monks-problems-2_test",
+        "monks-problems-2_train",
+        "monks-problems-3_test",
+        "monks-problems-3_train",
+        "mushroom",
+        "pasture",
+        "pendigits",
+        "postoperative-patient-data",
+        "primary-tumor",
+        "segment",
+        "shuttle-landing-control",
+        "sick",
+        "solar-flare_1",
+        "solar-flare_2",
+        "sonar",
+        "soybean",
+        "spect_test",
+        "spect_train",
+        "spectf_test",
+        "spectf_train",
+        "spectrometer",
+        "splice",
+        "sponge",
+        "squash-stored",
+        "squash-unstored",
+        "sylva_prior",
+        "trains",
+        "vehicle",
+        "vote",
+        "vowel",
+        "waveform-5000",
+        "white-clover",
+        "wine",
+        "zoo",
+        "test_file"
+    ],
+    "directory" : "results",
+    "alpha" : 0,
+    "betta" : 0
+}
