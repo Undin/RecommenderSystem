@@ -1,16 +1,13 @@
 package com.ifmo.recommendersystem;
 
-import com.ifmo.recommendersystem.metafeatures.MetaFeatureExtractor;
+import com.ifmo.recommendersystem.config.BuildConfig;
 import com.ifmo.recommendersystem.tasks.ExtractResult;
 import com.ifmo.recommendersystem.tasks.ExtractTask;
 import com.ifmo.recommendersystem.tasks.PerformanceResult;
 import com.ifmo.recommendersystem.tasks.PerformanceTask;
 import com.ifmo.recommendersystem.utils.InstancesUtils;
-import com.ifmo.recommendersystem.utils.JSONUtils;
 import com.ifmo.recommendersystem.utils.Pair;
 import com.ifmo.recommendersystem.utils.PathUtils;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import weka.core.Instances;
 
 import java.io.File;
@@ -22,8 +19,6 @@ import java.util.Random;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
-import static com.ifmo.recommendersystem.utils.JSONUtils.*;
-
 public class RecommenderSystemBuilder {
 
     public static final String META_FEATURES_DIRECTORY = "results/metaFeatures";
@@ -32,33 +27,18 @@ public class RecommenderSystemBuilder {
     public final static int ROUNDS = 5;
     public final static int FOLDS = 10;
 
-    private final List<FSSAlgorithm> algorithms;
-    private final List<String> dataSets;
-    private final ClassifierWrapper classifier;
-    private final List<MetaFeatureExtractor> extractors;
-    private final boolean extractMetaFeatures;
-    private final boolean evaluatePerformance;
+    private final BuildConfig config;
 
     private final Random random = new Random();
 
-    private RecommenderSystemBuilder(List<FSSAlgorithm> algorithms,
-                                     ClassifierWrapper classifier,
-                                     List<String> dataSets,
-                                     List<MetaFeatureExtractor> extractors,
-                                     boolean extractMetaFeatures,
-                                     boolean evaluatePerformance) {
-        this.algorithms = algorithms;
-        this.dataSets = dataSets;
-        this.classifier = classifier;
-        this.extractors = extractors;
-        this.extractMetaFeatures = extractMetaFeatures;
-        this.evaluatePerformance = evaluatePerformance;
+    public RecommenderSystemBuilder(BuildConfig config) {
+        this.config = config;
     }
 
     public void build() {
-        List<Pair<String, Instances>> instancesList = new ArrayList<>(dataSets.size());
-        for (String path : dataSets) {
-            String datasetName = getDatasetName(path);
+        List<Pair<String, Instances>> instancesList = new ArrayList<>(config.getDatasets().size());
+        for (String datasetName : config.getDatasets()) {
+            String path = config.createPath(datasetName);
             try {
                 Instances instances = InstancesUtils.createInstances(path, InstancesUtils.REMOVE_STRING_ATTRIBUTES |
                         InstancesUtils.REMOVE_UNINFORMATIVE_ATTRIBUTES);
@@ -69,10 +49,10 @@ public class RecommenderSystemBuilder {
         }
         ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         ((ThreadPoolExecutor) executor).setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardPolicy());
-        if (extractMetaFeatures) {
+        if (config.extractMetaFeatures()) {
             extractMetaFeatures(executor, instancesList);
         }
-        if (evaluatePerformance) {
+        if (config.evaluatePerformance()) {
             evaluatePerformance(executor, instancesList);
         }
         executor.shutdown();
@@ -80,7 +60,7 @@ public class RecommenderSystemBuilder {
 
     private void extractMetaFeatures(ExecutorService executor, List<Pair<String, Instances>> instances) {
         List<Future<ExtractResult>> futureExtractResults = instances.stream()
-                .map(p -> extractors.stream()
+                .map(p -> config.getExtractors().stream()
                             .map(e -> executor.submit(new ExtractTask(p.first, p.second, e)))
                             .collect(Collectors.toList()))
                 .reduce(new ArrayList<>(), (acc, a) -> {
@@ -113,8 +93,8 @@ public class RecommenderSystemBuilder {
                     int testNumber = i * FOLDS + j;
                     Instances train = instances.trainCV(FOLDS, j);
                     Instances test = instances.testCV(FOLDS, j);
-                    algorithms.stream()
-                            .map(alg -> executor.submit(new PerformanceTask(p.first, testNumber, train, test, alg, classifier)))
+                    config.getAlgorithms().stream()
+                            .map(alg -> executor.submit(new PerformanceTask(p.first, testNumber, train, test, alg, config.getClassifier())))
                             .forEach(futurePerformanceResults::add);
                 }
             }
@@ -139,39 +119,8 @@ public class RecommenderSystemBuilder {
         }
     }
 
-    private String getDatasetName(String path) {
-        int startIdx = path.lastIndexOf(File.separatorChar);
-        int endIdx = path.lastIndexOf('.');
-        return path.substring(startIdx + 1, endIdx);
-    }
-
     public static RecommenderSystemBuilder createFromConfig(String configFilename) throws Exception {
-        JSONObject jsonObject = JSONUtils.readJSONObject(configFilename);
-        boolean extractMetaFeatures = jsonObject.getBoolean(EXTRACT_META_FEATURES);
-        boolean evaluatePerformance = jsonObject.getBoolean(EVALUATE_PERFORMANCE);
-        ClassifierWrapper classifier = ClassifierWrapper.JSON_CREATOR.fromJSON(jsonObject.getJSONObject(CLASSIFIER));
-        List<FSSAlgorithm> algorithms = jsonArrayToObjectList(jsonObject.getJSONArray(ALGORITHMS), FSSAlgorithm.JSON_CREATOR);
-        List<String> dataSetsLocation = createInstances(jsonObject.getJSONObject(DATA_SETS));
-        List<MetaFeatureExtractor> extractors = jsonArrayToStringList(jsonObject.getJSONArray(META_FEATURE_LIST)).stream()
-                .map(MetaFeatureExtractor::forName)
-                .collect(Collectors.toList());
-
-        return new RecommenderSystemBuilder(algorithms,
-                classifier,
-                dataSetsLocation,
-                extractors,
-                extractMetaFeatures,
-                evaluatePerformance);
-    }
-
-    private static List<String> createInstances(JSONObject jsonObject) throws Exception {
-        String directory = jsonObject.getString(JSONUtils.DIRECTORY);
-        JSONArray jsonArray = jsonObject.getJSONArray(JSONUtils.LIST);
-        List<String> dataSets = new ArrayList<>(jsonArray.length());
-        for (int i = 0; i < jsonArray.length(); i++) {
-            dataSets.add(directory + File.separator + jsonArray.getString(i));
-        }
-        return dataSets;
+        return new RecommenderSystemBuilder(new BuildConfig(configFilename));
     }
 
     private static final String CONFIG_FILE_NAME = "config.json";
