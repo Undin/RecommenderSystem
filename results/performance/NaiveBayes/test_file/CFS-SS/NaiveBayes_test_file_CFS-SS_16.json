@@ -1,0 +1,10 @@
+{
+    "testNumber": 16,
+    "dataSetName": "test_file",
+    "f1Measure": 0.5379575260572619,
+    "accuracy": 0.441747572815534,
+    "runtime": 5809,
+    "algorithmName": "CFS-SS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 28
+}

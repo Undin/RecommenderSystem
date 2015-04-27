@@ -1,0 +1,7 @@
+{
+    "dataSetName": "test_file",
+    "metaFeature": {
+        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeNodeNumber",
+        "value": 175
+    }
+}

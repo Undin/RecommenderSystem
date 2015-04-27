@@ -1,0 +1,10 @@
+{
+    "testNumber": 13,
+    "dataSetName": "test_file",
+    "f1Measure": 0.5506638737700721,
+    "accuracy": 0.6407766990291263,
+    "runtime": 485,
+    "algorithmName": "Cons-GS",
+    "classifierName": "NaiveBayes",
+    "attributeNumber": 34
+}
