@@ -3,6 +3,7 @@ package com.ifmo.recommendersystem;
 import com.ifmo.recommendersystem.utils.JSONUtils;
 import com.ifmo.recommendersystem.utils.Pair;
 import org.json.JSONObject;
+import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -43,7 +44,7 @@ public class ClassifierWrapper implements JSONConverted {
         double correct = 0;
         int sum = 0;
         try {
-            Classifier localClassifier = Classifier.makeCopy(classifier);
+            Classifier localClassifier = AbstractClassifier.makeCopy(classifier);
             localClassifier.buildClassifier(train);
             for (int i = 0; i < test.numInstances(); i++) {
                 Instance instance = test.instance(i);
@@ -116,7 +117,7 @@ public class ClassifierWrapper implements JSONConverted {
             String name = jsonObject.getString(JSONUtils.CLASSIFIER_NAME);
             String classifierClassName = jsonObject.getString(JSONUtils.CLASS_NAME);
             String[] options = JSONUtils.readOptions(jsonObject);
-            Classifier classifier = Classifier.forName(classifierClassName, Arrays.copyOf(options, options.length));
+            Classifier classifier = AbstractClassifier.forName(classifierClassName, Arrays.copyOf(options, options.length));
             return new ClassifierWrapper(name, classifier, options);
         }
     };
