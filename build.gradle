@@ -8,7 +8,14 @@ repositories {
 }
 
 dependencies {
-    compile 'nz.ac.waikato.cms.weka:weka-stable:3.6.12'
+    compile 'nz.ac.waikato.cms.weka:weka-dev:3.7.+'
+    compile 'nz.ac.waikato.cms.weka:attributeSelectionSearchMethods:1.0.7'
+    compile 'nz.ac.waikato.cms.weka:consistencySubsetEval:1.0.4'
+    compile 'nz.ac.waikato.cms.weka:fastCorrBasedFS:1.0.2'
+    compile 'nz.ac.waikato.cms.weka:linearForwardSelection:1.0.2'
+    compile 'nz.ac.waikato.cms.weka:probabilisticSignificanceAE:1.0.2'
+    compile 'nz.ac.waikato.cms.weka:tabuAndScatterSearch:1.0.2'
+
     compile 'org.json:json:20140107'
     compile 'org.apache.directory.studio:org.apache.commons.io:2.4'
     compile 'org.apache.commons:commons-math3:3.3'
