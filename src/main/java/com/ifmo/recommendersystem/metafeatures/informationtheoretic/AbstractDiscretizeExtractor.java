@@ -1,10 +1,9 @@
 package com.ifmo.recommendersystem.metafeatures.informationtheoretic;
 
 import com.ifmo.recommendersystem.metafeatures.MetaFeatureExtractor;
+import com.ifmo.recommendersystem.utils.InstancesUtils;
 import weka.core.Attribute;
 import weka.core.Instances;
-import weka.filters.Filter;
-import weka.filters.supervised.attribute.Discretize;
 
 /**
  * Created by warrior on 23.03.15.
@@ -13,14 +12,9 @@ public abstract class AbstractDiscretizeExtractor extends MetaFeatureExtractor {
 
     @Override
     public double extractValue(Instances instances) {
-        Discretize discretize = new Discretize();
-        discretize.setUseBetterEncoding(true);
-        try {
-            discretize.setInputFormat(instances);
-            instances = Filter.useFilter(instances, discretize);
-            return extractValueInternal(instances);
-        } catch (Exception e) {
-            e.printStackTrace();
+        Instances discretizeInstances = InstancesUtils.discretize(instances);
+        if (discretizeInstances != null) {
+            return extractValueInternal(discretizeInstances);
         }
         return 0;
     }
