@@ -12,6 +12,7 @@ import weka.core.Instances;
 import weka.core.converters.ConverterUtils;
 import weka.filters.Filter;
 import weka.filters.supervised.attribute.AttributeSelection;
+import weka.filters.supervised.attribute.Discretize;
 import weka.filters.unsupervised.attribute.Remove;
 
 import java.util.*;
@@ -59,6 +60,18 @@ public class InstancesUtils {
         try {
             filter.setInputFormat(instances);
             return Filter.useFilter(instances, filter);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static Instances discretize(Instances instances) {
+        Discretize discretize = new Discretize();
+        discretize.setUseBetterEncoding(true);
+        try {
+            discretize.setInputFormat(instances);
+            return Filter.useFilter(instances, discretize);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
