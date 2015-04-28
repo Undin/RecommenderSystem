@@ -109,7 +109,7 @@
             }
         },
         {
-            "algorithmName" : "INTERACT-D ",
+            "algorithmName" : "INTERACT-D",
             "search" : {
                 "className" : "weka.attributeSelection.INTERACT",
                 "options" : [
