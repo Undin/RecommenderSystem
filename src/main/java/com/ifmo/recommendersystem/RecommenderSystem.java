@@ -13,10 +13,7 @@ import weka.core.matrix.Matrix;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.ifmo.recommendersystem.utils.JSONUtils.*;
@@ -30,19 +27,24 @@ public class RecommenderSystem {
 
     private final List<String> algorithms;
     private final List<List<MetaFeature>> metaFeaturesList;
-    private final Matrix earrMatrix;
+    private final Map<String, Matrix> classifierNameToEarrMatrix;
 
-    public RecommenderSystem(EvaluationConfig config, List<List<MetaFeature>> metaFeaturesList, Matrix earrMatrix) {
+    public RecommenderSystem(EvaluationConfig config, List<List<MetaFeature>> metaFeaturesList, Map<String, Matrix> classifierNameToEarrMatrix) {
         this.config = config;
         this.algorithms = config.getAlgorithms()
                 .stream()
                 .map(FSSAlgorithm::getName)
                 .collect(Collectors.toList());
         this.metaFeaturesList = metaFeaturesList;
-        this.earrMatrix = earrMatrix;
+        this.classifierNameToEarrMatrix = classifierNameToEarrMatrix;
     }
 
-    public List<String> recommend(Instances dataSet) {
+    public EvaluationConfig getConfig() {
+        return config;
+    }
+
+    public List<String> recommend(Instances dataSet, ClassifierWrapper classifier) {
+        Matrix earrMatrix = classifierNameToEarrMatrix.get(classifier.getName());
         List<MetaFeature> metaFeatures = config.getExtractors().stream()
                 .map(e -> e.extract(dataSet))
                 .collect(Collectors.toList());
@@ -50,10 +52,10 @@ public class RecommenderSystem {
         for (int i = 0; i < metaFeaturesList.size(); i++) {
             indexes.add(i);
         }
-        return recommendInternal(indexes, metaFeatures, RECOMMEND_RESULT_SIZE);
+        return recommendInternal(indexes, metaFeatures, earrMatrix, RECOMMEND_RESULT_SIZE);
     }
 
-    private List<String> recommendInternal(List<Integer> dataSetIndexes, List<MetaFeature> metaFeatures, int expectedResultSize) {
+    private List<String> recommendInternal(List<Integer> dataSetIndexes, List<MetaFeature> metaFeatures, Matrix earrMatrix, int expectedResultSize) {
         List<Double> dist = dist(metaFeaturesList, metaFeatures);
         int nearestDataSetNumber = Math.min(NEAREST_DATA_SET_NUMBER, dataSetIndexes.size());
         Integer[] indexes = dataSetIndexes.stream()
@@ -82,7 +84,8 @@ public class RecommenderSystem {
         return result;
     }
 
-    public JSONObject evaluate() {
+    public JSONObject evaluate(ClassifierWrapper classifier) {
+        Matrix earrMatrix = classifierNameToEarrMatrix.get(classifier.getName());
         JSONObject result = new JSONObject();
         double meanRPR = 0;
         List<Integer> indexes = new ArrayList<>(config.getDatasets().size());
@@ -106,7 +109,7 @@ public class RecommenderSystem {
                 }
             }
             indexes.remove(Integer.valueOf(dataIndex));
-            String recAlgorithm = recommendInternal(indexes, metaFeaturesList.get(dataIndex), 1).get(0);
+            String recAlgorithm = recommendInternal(indexes, metaFeaturesList.get(dataIndex), earrMatrix, 1).get(0);
             int recAlgIndex = algorithms.indexOf(recAlgorithm);
             double rpr = earrMatrix.get(recAlgIndex, dataIndex) / optEarr;
             double worstRpr = worstEarr / optEarr;
@@ -192,39 +195,45 @@ public class RecommenderSystem {
         EvaluationConfig config = new EvaluationConfig(filename);
 
         int algorithmNumber = config.getAlgorithms().size();
-        String classifierName = config.getClassifier().getName();
+        Map<String, Matrix> classifierNameToMatrix = new HashMap<>();
 
-        Matrix matrix = new Matrix(algorithmNumber, config.getDatasets().size());
 
         double[] f1Measure = new double[algorithmNumber];
         double[] attributeNumber = new double[algorithmNumber];
         double[] runtime = new double[algorithmNumber];
         int testNumber = RecommenderSystemBuilder.FOLDS * RecommenderSystemBuilder.ROUNDS;
-        for (int i = 0; i < config.getDatasets().size(); i++) {
-            Arrays.fill(f1Measure, 0);
-            Arrays.fill(attributeNumber, 0);
-            Arrays.fill(runtime, 0);
-            String datasetName = config.getDatasets().get(i);
-            for (int j = 0; j < algorithmNumber; j++) {
-                String algorithmName = config.getAlgorithms().get(j).getName();
-                String directoryName = PathUtils.createPath(RecommenderSystemBuilder.PERFORMANCE_DIRECTORY,
-                        classifierName, datasetName, algorithmName);
-                for (int k = 0; k < testNumber; k++) {
-                    String resultFilename = PathUtils.createName(classifierName, datasetName, algorithmName, String.valueOf(k)) + ".json";
-                    String resultFullPath = PathUtils.createPath(directoryName, resultFilename);
-                    PerformanceResult result = PerformanceResult.JSON_CREATOR.fromJSON(readJSONObject(resultFullPath));
-                    f1Measure[j] += result.f1Measure;
-                    attributeNumber[j] += result.attributeNumber;
-                    runtime[j] += result.runtime;
+        for (ClassifierWrapper classifier : config.getClassifiers()) {
+            Matrix matrix = new Matrix(algorithmNumber, config.getDatasets().size());
+            String classifierName = classifier.getName();
+
+            for (int i = 0; i < config.getDatasets().size(); i++) {
+                Arrays.fill(f1Measure, 0);
+                Arrays.fill(attributeNumber, 0);
+                Arrays.fill(runtime, 0);
+                String datasetName = config.getDatasets().get(i);
+                for (int j = 0; j < algorithmNumber; j++) {
+                    String algorithmName = config.getAlgorithms().get(j).getName();
+                    String directoryName = PathUtils.createPath(RecommenderSystemBuilder.PERFORMANCE_DIRECTORY,
+                            classifierName, datasetName, algorithmName);
+                    for (int k = 0; k < testNumber; k++) {
+                        String resultFilename = PathUtils.createName(classifierName, datasetName, algorithmName, String.valueOf(k)) + ".json";
+                        String resultFullPath = PathUtils.createPath(directoryName, resultFilename);
+                        PerformanceResult result = PerformanceResult.JSON_CREATOR.fromJSON(readJSONObject(resultFullPath));
+                        f1Measure[j] += result.f1Measure;
+                        attributeNumber[j] += result.attributeNumber;
+                        runtime[j] += result.runtime;
+                    }
+                    f1Measure[j] /= testNumber;
+                    attributeNumber[j] /= testNumber;
+                    runtime[j] /= testNumber;
                 }
-                f1Measure[j] /= testNumber;
-                attributeNumber[j] /= testNumber;
-                runtime[j] /= testNumber;
+                double[] earrCoef = calculateEARRCoefs(config.getAlpha(), config.getBetta(), f1Measure, attributeNumber, runtime);
+                for (int j = 0; j < earrCoef.length; j++) {
+                    matrix.set(j, i, earrCoef[j]);
+                }
             }
-            double[] earrCoef = calculateEARRCoefs(config.getAlpha(), config.getBetta(), f1Measure, attributeNumber, runtime);
-            for (int j = 0; j < earrCoef.length; j++) {
-                matrix.set(j, i, earrCoef[j]);
-            }
+
+            classifierNameToMatrix.put(classifierName, matrix);
         }
 
         List<List<MetaFeature>> metaFeaturesList = config.getDatasets().stream()
@@ -237,7 +246,7 @@ public class RecommenderSystem {
                         .collect(Collectors.toList()))
                 .collect(Collectors.toList());
 
-        return new RecommenderSystem(config, metaFeaturesList, matrix);
+        return new RecommenderSystem(config, metaFeaturesList, classifierNameToMatrix);
     }
 
     private static double[] calculateEARRCoefs(double alpha, double betta, double[] f1Measure, double[] attributeNumber, double[] runtime) {
@@ -265,13 +274,16 @@ public class RecommenderSystem {
     }
 
     private static final String EVALUATION_CONFIG = "evaluationConfig.json";
-    private static final String EVALUATION_RESULT_FILE_NAME = "evaluationResult.json";
+    private static final String EVALUATION_RESULT_DIRECTORY = "evaluationResults";
 
     public static void main(String[] args) throws IOException {
         RecommenderSystem system = createFromConfig(EVALUATION_CONFIG);
-        JSONObject result = system.evaluate();
-        try (PrintWriter writer = new PrintWriter(EVALUATION_RESULT_FILE_NAME)) {
-            writer.println(result.toString(4));
+        EvaluationConfig config = system.getConfig();
+        for (ClassifierWrapper classifier : config.getClassifiers()) {
+            JSONObject result = system.evaluate(classifier);
+            try (PrintWriter writer = new PrintWriter(PathUtils.createPath(EVALUATION_RESULT_DIRECTORY, classifier.getName() + ".json"))) {
+                writer.println(result.toString(4));
+            }
         }
     }
 }
