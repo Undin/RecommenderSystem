@@ -1,6 +1,6 @@
 package com.ifmo.recommendersystem.utils;
 
-import weka.core.Instance;
+import weka.core.Utils;
 
 import java.util.Objects;
 
@@ -91,7 +91,7 @@ public class StatisticalUtils {
     }
 
     public static boolean isCorrectValue(double v) {
-        return !Instance.isMissingValue(v);
+        return !Utils.isMissingValue(v);
     }
 
     private static void checkSameLength(double[] values1, double[] values2) {

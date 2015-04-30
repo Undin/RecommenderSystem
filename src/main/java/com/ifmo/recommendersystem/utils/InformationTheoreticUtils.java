@@ -1,7 +1,7 @@
 package com.ifmo.recommendersystem.utils;
 
 import weka.core.ContingencyTables;
-import weka.core.Instance;
+import weka.core.Utils;
 
 /**
  * Created by warrior on 23.03.15.
@@ -27,7 +27,7 @@ public class InformationTheoreticUtils {
     }
 
     public static boolean isCorrectValue(double v) {
-        return !Instance.isMissingValue(v);
+        return !Utils.isMissingValue(v);
     }
 
     public static class EntropyResult {

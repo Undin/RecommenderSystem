@@ -16,6 +16,7 @@ public class WrappedC45DecisionTree extends C45PruneableClassifierTree {
     private static final float CF = 0.25F;
     private static final boolean RAISE_TREE = true;
     private static final boolean CLEANUP = true;
+    private static final boolean COLLAPSE_TREE = true;
 
     private final boolean pruneTree;
 
@@ -28,7 +29,7 @@ public class WrappedC45DecisionTree extends C45PruneableClassifierTree {
      * @throws Exception if something goes wrong
      */
     public WrappedC45DecisionTree(ModelSelection toSelectLocModel, boolean pruneTree) throws Exception {
-        super(toSelectLocModel, pruneTree, CF, RAISE_TREE, CLEANUP);
+        super(toSelectLocModel, pruneTree, CF, RAISE_TREE, CLEANUP, COLLAPSE_TREE);
         this.pruneTree = pruneTree;
     }
 
