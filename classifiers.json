@@ -1,0 +1,30 @@
+[
+    {
+        "classifierName" : "NaiveBayes",
+        "className" : "weka.classifiers.bayes.NaiveBayes",
+        "options" : []
+    },
+    {
+        "classifierName" : "C4.5",
+        "className" : "weka.classifiers.trees.J48",
+        "options" : []
+    },
+    {
+        "classifierName" : "PART",
+        "className" : "weka.classifiers.rules.PART",
+        "options" : []
+    },
+    {
+        "classifierName" : "BayesNet",
+        "className" : "weka.classifiers.bayes.BayesNet",
+        "options" : []
+    },
+    {
+        "classifierName" : "IB3",
+        "className" : "weka.classifiers.lazy.IBk",
+        "options" : [
+            "-K",
+            "3"
+        ]
+    }
+]
