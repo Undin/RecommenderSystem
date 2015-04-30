@@ -20,7 +20,7 @@ public class JSONUtils {
     public static final String ATTRIBUTE_NUMBER = "attributeNumber";
     public static final String BETTA = "betta";
     public static final String CLASS_NAME = "className";
-    public static final String CLASSIFIER = "classifier";
+    public static final String CLASSIFIERS = "classifiers";
     public static final String CLASSIFIER_NAME = "classifierName";
     public static final String DATA_SET_NAME = "dataSetName";
     public static final String DATA_SETS = "dataSets";
@@ -103,6 +103,17 @@ public class JSONUtils {
         try (InputStream inputStream = new FileInputStream(filename)) {
             String config = IOUtils.toString(inputStream);
             result = new JSONObject(config);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public static JSONArray readJSONArray(String filename) {
+        JSONArray result = null;
+        try (InputStream inputStream = new FileInputStream(filename)) {
+            String config = IOUtils.toString(inputStream);
+            result = new JSONArray(config);
         } catch (IOException e) {
             e.printStackTrace();
         }
