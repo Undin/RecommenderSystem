@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class RecommenderSystemBuilder {
 
     public static final String META_FEATURES_DIRECTORY = "results/metaFeatures";
-    public static final String PERFORMANCE_DIRECTORY = "results/performance";
+    public static final String PERFORMANCE_DIRECTORY = "results/test_performance";
 
     public final static int ROUNDS = 5;
     public final static int FOLDS = 10;
@@ -93,9 +93,11 @@ public class RecommenderSystemBuilder {
                     int testNumber = i * FOLDS + j;
                     Instances train = instances.trainCV(FOLDS, j);
                     Instances test = instances.testCV(FOLDS, j);
-                    config.getAlgorithms().stream()
-                            .map(alg -> executor.submit(new PerformanceTask(p.first, testNumber, train, test, alg, config.getClassifier())))
-                            .forEach(futurePerformanceResults::add);
+                    config.getClassifiers().stream()
+                            .forEach(classifier -> config.getAlgorithms().stream()
+                                    .map(alg -> executor.submit(new PerformanceTask(p.first, testNumber, train, test, alg, classifier)))
+                                    .forEach(futurePerformanceResults::add));
+
                 }
             }
         }

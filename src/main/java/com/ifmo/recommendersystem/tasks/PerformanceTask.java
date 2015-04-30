@@ -37,10 +37,11 @@ public class PerformanceTask implements Callable<PerformanceResult> {
     @Override
     public PerformanceResult call() {
         Instant start = Instant.now();
-        System.out.format(">> [%s] %s-%d %s\n",
+        System.out.format(">> [%s] %s-%d %s %s\n",
                 start.atZone(ZoneId.of("UTC+3")).toLocalTime().toString(),
                 datasetName,
                 testNumber,
+                classifier.getName(),
                 algorithm.getName());
         FSSAlgorithm.Result result = algorithm.subsetSelection(train);
         Instances selectedTrain = InstancesUtils.removeAttributes(train, result.instances);
@@ -49,10 +50,11 @@ public class PerformanceTask implements Callable<PerformanceResult> {
         int resultAttributeNumber = selectedTrain.numAttributes() - 1;
         Pair<Double, Double> effectiveness = classifier.computeAccuracyAndF1Measure(selectedTrain, selectedTest);
         Instant end = Instant.now();
-        System.out.format("<< [%s] %s-%d %s. exec time: %d\n",
+        System.out.format("<< [%s] %s-%d %s %s. exec time: %d\n",
                 end.atZone(ZoneId.of("UTC+3")).toLocalTime().toString(),
                 datasetName,
                 testNumber,
+                classifier.getName(),
                 algorithm.getName(),
                 Duration.between(start, end).toMillis());
         return new PerformanceResult(datasetName,
