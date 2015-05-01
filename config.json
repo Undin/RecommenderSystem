@@ -1,6 +1,7 @@
 {
+    "parallelism" : 4,
     "evaluatePerformance" : true,
-    "extractMetaFeatures" : true,
+    "extractMetaFeatures" : false,
     "directory" : "datasets",
     "metaFeatureList" : [
         "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
@@ -66,20 +67,13 @@
         "CFS-SS",
         "CFS-SWS",
         "CFS-TS",
-        "INTERACT-D",
-        "Cons-SFS ",
-        "Cons-SBS",
-        "Cons-BiS",
         "Cons-GS",
         "Cons-LS",
         "Cons-RS",
-        "Cons-SS",
         "Cons-SWS",
-        "INTERACT-C",
-        "Relief-F",
         "Signific"
     ],
     "dataSets" : [
-        "zoo"
+        "glass"
     ]
 }
