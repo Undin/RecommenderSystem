@@ -38,6 +38,7 @@ public class JSONUtils {
     public static final String OPT_ALGORITHM = "optAlgorithm";
     public static final String OPT_ALGORITHM_SET = "optAlgorithmSet";
     public static final String OPTIONS = "options";
+    public static final String PARALLELISM = "parallelism";
     public static final String RECOMMENDED_ALGORITHM = "recommendedAlgorithm";
     public static final String RPR = "RPR";
     public static final String RPR_LIST = "prpList";
