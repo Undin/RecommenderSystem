@@ -1,6 +1,8 @@
 package com.ifmo.recommendersystem.tasks;
 
 import com.ifmo.recommendersystem.AbstractJSONCreator;
+import com.ifmo.recommendersystem.ClassifierWrapper;
+import com.ifmo.recommendersystem.FSSAlgorithm;
 import com.ifmo.recommendersystem.JSONConverted;
 import org.json.JSONObject;
 
@@ -20,14 +22,25 @@ public class PerformanceResult implements JSONConverted {
     public final double attributeNumber;
     public final int testNumber;
 
-    public PerformanceResult(String dataSetName, String algorithmName, String classifierName, double accuracy, double f1Measure, double attributeNumber, double runtime, int testNumber) {
+    PerformanceResult(String dataSetName, int testNumber, FSSAlgorithm.Result fssResult, ClassifierWrapper.Result classifierResult) {
+        this.dataSetName = dataSetName;
+        this.testNumber = testNumber;
+        this.algorithmName = fssResult.algorithmName;
+        this.attributeNumber = fssResult.instances.numAttributes();
+        this.runtime = fssResult.runtime;
+        this.classifierName = classifierResult.classifierName;
+        this.accuracy = classifierResult.accuracy;
+        this.f1Measure = classifierResult.f1Measure;
+    }
+
+    private PerformanceResult(String dataSetName, String algorithmName, String classifierName, double accuracy, double f1Measure, double runtime, double attributeNumber, int testNumber) {
         this.dataSetName = dataSetName;
         this.algorithmName = algorithmName;
         this.classifierName = classifierName;
         this.accuracy = accuracy;
         this.f1Measure = f1Measure;
-        this.attributeNumber = attributeNumber;
         this.runtime = runtime;
+        this.attributeNumber = attributeNumber;
         this.testNumber = testNumber;
     }
 
