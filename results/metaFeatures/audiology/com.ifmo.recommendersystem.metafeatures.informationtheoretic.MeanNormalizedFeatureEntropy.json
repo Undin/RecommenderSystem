@@ -1,7 +1,0 @@
-{
-    "dataSetName": "audiology",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.04845667905073011
-    }
-}

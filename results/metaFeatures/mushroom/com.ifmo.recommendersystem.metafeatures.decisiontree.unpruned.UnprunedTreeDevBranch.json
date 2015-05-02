@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mushroom",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
-        "value": 0.3280836614171588
-    }
-}

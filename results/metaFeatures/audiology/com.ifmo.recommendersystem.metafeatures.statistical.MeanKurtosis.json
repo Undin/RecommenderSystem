@@ -1,7 +1,0 @@
-{
-    "dataSetName": "audiology",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 101.86370774985282
-    }
-}

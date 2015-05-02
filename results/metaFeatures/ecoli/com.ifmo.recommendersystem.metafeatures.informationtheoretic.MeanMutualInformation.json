@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ecoli",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 3.2324054298836837
-    }
-}

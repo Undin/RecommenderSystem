@@ -1,7 +1,0 @@
-{
-    "dataSetName": "grub-damage",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.26443038231717536
-    }
-}

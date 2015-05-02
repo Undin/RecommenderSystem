@@ -1,7 +1,0 @@
-{
-    "dataSetName": "test_file",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.17338513818917756
-    }
-}

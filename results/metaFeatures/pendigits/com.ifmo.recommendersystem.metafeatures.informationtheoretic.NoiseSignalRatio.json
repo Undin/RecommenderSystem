@@ -1,7 +1,0 @@
-{
-    "dataSetName": "pendigits",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": 4.811077089873057
-    }
-}

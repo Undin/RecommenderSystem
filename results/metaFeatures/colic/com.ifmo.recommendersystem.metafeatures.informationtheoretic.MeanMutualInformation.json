@@ -1,7 +1,0 @@
-{
-    "dataSetName": "colic",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 1.0561962453328957
-    }
-}

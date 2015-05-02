@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ionosphere",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 9.779591737490271
-    }
-}

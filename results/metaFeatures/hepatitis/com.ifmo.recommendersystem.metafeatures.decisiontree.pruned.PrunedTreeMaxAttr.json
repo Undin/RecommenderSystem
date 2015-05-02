@@ -1,7 +1,0 @@
-{
-    "dataSetName": "hepatitis",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMaxAttr",
-        "value": 7
-    }
-}

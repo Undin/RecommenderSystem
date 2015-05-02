@@ -1,7 +1,0 @@
-{
-    "dataSetName": "pendigits",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 2.4986391461097766
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "heart-statlog",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
-        "value": 0.07804572187161285
-    }
-}

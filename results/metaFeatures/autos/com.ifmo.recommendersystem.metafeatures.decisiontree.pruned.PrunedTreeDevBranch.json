@@ -1,7 +1,0 @@
-{
-    "dataSetName": "autos",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevBranch",
-        "value": 0.1923733644189561
-    }
-}

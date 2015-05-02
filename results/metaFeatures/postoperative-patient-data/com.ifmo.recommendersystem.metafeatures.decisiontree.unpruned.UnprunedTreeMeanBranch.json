@@ -1,7 +1,0 @@
-{
-    "dataSetName": "postoperative-patient-data",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanBranch",
-        "value": 4.035714285714286
-    }
-}

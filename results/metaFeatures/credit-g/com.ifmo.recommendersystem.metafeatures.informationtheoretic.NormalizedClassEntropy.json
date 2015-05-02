@@ -1,7 +1,0 @@
-{
-    "dataSetName": "credit-g",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.08843166519137384
-    }
-}

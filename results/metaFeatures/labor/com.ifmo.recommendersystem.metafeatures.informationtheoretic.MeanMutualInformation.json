@@ -1,7 +1,0 @@
-{
-    "dataSetName": "labor",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 1.3738395765950668
-    }
-}

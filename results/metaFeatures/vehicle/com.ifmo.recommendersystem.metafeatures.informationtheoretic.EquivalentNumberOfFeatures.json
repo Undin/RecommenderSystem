@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vehicle",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.3980093633155439
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "anneal",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.8065251286493464
-    }
-}

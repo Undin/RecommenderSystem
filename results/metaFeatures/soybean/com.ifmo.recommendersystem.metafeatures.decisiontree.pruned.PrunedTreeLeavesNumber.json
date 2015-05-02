@@ -1,7 +1,0 @@
-{
-    "dataSetName": "soybean",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeLeavesNumber",
-        "value": 61
-    }
-}

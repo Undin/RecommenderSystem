@@ -1,7 +1,0 @@
-{
-    "dataSetName": "wine",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 1.0151096200303136
-    }
-}

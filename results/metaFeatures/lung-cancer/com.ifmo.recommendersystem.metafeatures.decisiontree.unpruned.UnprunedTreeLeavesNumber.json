@@ -1,7 +1,0 @@
-{
-    "dataSetName": "lung-cancer",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeLeavesNumber",
-        "value": 12
-    }
-}

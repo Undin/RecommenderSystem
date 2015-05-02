@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spectrometer",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanLevel",
-        "value": 6.133333333333334
-    }
-}

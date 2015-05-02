@@ -1,7 +1,0 @@
-{
-    "dataSetName": "soybean",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanBranch",
-        "value": 6.297520661157025
-    }
-}

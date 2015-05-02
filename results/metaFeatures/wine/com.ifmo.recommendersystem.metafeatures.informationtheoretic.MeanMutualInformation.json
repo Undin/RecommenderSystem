@@ -1,7 +1,0 @@
-{
-    "dataSetName": "wine",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 6.803047198860345
-    }
-}

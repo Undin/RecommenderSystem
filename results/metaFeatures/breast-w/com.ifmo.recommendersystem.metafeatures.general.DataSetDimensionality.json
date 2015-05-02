@@ -1,7 +1,0 @@
-{
-    "dataSetName": "breast-w",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 77.66666666666667
-    }
-}

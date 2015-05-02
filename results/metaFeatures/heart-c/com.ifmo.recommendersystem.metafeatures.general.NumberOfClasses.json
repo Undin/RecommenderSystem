@@ -1,7 +1,0 @@
-{
-    "dataSetName": "heart-c",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfClasses",
-        "value": 5
-    }
-}

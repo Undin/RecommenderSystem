@@ -1,7 +1,0 @@
-{
-    "dataSetName": "iris",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMaxAttr",
-        "value": 2
-    }
-}

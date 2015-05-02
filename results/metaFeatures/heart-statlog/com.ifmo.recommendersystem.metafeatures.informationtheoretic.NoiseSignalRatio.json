@@ -1,7 +1,0 @@
-{
-    "dataSetName": "heart-statlog",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.3799279227497185
-    }
-}

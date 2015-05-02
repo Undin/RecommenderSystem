@@ -1,7 +1,0 @@
-{
-    "dataSetName": "flags",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.8105321882738902
-    }
-}

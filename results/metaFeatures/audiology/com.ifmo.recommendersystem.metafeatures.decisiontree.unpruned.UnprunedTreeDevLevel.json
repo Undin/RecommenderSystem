@@ -1,7 +1,0 @@
-{
-    "dataSetName": "audiology",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
-        "value": 0.4096263476838638
-    }
-}

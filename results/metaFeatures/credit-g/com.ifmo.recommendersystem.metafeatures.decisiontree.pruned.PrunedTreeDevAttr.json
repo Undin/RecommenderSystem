@@ -1,7 +1,0 @@
-{
-    "dataSetName": "credit-g",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevAttr",
-        "value": 20.506096654409877
-    }
-}

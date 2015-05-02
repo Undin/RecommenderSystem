@@ -1,7 +1,0 @@
-{
-    "dataSetName": "colic.ORIG",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanAttr",
-        "value": 0.5
-    }
-}

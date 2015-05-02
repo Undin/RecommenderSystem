@@ -1,7 +1,0 @@
-{
-    "dataSetName": "flags",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevAttr",
-        "value": 7.247800510837613
-    }
-}

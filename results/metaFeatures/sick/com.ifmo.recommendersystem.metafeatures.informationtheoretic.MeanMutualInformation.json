@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sick",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 0.3635500680694241
-    }
-}

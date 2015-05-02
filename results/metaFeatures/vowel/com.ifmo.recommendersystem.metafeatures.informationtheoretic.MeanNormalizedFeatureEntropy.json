@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vowel",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.1571874697538455
-    }
-}

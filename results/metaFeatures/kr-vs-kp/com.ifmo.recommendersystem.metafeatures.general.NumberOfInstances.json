@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kr-vs-kp",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
-        "value": 3196
-    }
-}

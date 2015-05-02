@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mfeat-fourier",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.129249051977212
-    }
-}

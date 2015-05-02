@@ -1,7 +1,0 @@
-{
-    "dataSetName": "labor",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanAttr",
-        "value": 6.5
-    }
-}

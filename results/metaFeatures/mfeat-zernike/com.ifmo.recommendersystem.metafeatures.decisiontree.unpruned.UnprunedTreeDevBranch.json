@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mfeat-zernike",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
-        "value": 0.2576598554568871
-    }
-}

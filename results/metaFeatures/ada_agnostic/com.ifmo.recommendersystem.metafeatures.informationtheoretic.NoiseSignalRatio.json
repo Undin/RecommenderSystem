@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ada_agnostic",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.5941245798535604
-    }
-}

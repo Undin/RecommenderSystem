@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vowel",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 76.15384615384616
-    }
-}

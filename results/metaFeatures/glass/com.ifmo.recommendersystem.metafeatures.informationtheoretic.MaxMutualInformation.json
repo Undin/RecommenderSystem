@@ -1,7 +1,0 @@
-{
-    "dataSetName": "glass",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.5661881698276636
-    }
-}

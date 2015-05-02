@@ -1,7 +1,0 @@
-{
-    "dataSetName": "trains",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 0.8061252084803662
-    }
-}

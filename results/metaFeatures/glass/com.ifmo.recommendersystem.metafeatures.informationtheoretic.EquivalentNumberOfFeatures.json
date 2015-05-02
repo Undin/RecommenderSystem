@@ -1,7 +1,0 @@
-{
-    "dataSetName": "glass",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.6550986922585486
-    }
-}

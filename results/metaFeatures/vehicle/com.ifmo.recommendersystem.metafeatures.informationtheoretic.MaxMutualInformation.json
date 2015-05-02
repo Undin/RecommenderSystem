@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vehicle",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.5710828765331981
-    }
-}

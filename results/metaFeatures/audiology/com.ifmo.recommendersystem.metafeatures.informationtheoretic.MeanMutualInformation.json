@@ -1,7 +1,0 @@
-{
-    "dataSetName": "audiology",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 9.34080841335691
-    }
-}

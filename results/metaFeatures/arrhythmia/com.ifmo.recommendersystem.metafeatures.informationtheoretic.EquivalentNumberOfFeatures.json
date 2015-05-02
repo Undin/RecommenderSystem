@@ -1,7 +1,0 @@
-{
-    "dataSetName": "arrhythmia",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.17182218930689136
-    }
-}

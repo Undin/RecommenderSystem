@@ -1,7 +1,0 @@
-{
-    "dataSetName": "white-clover",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeHeight",
-        "value": 6
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "primary-tumor",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
-        "value": 0.8938109820456137
-    }
-}

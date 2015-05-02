@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mushroom",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
-        "value": 8124
-    }
-}

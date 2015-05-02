@@ -1,7 +1,0 @@
-{
-    "dataSetName": "labor",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.6804644735534047
-    }
-}

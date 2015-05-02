@@ -1,7 +1,0 @@
-{
-    "dataSetName": "heart-h",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 24.5
-    }
-}

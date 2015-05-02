@@ -1,7 +1,0 @@
-{
-    "dataSetName": "heart-statlog",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMinBranch",
-        "value": 2
-    }
-}

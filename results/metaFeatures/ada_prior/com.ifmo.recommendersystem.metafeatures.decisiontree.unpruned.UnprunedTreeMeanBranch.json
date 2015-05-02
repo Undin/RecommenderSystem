@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ada_prior",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanBranch",
-        "value": 8.806770098730606
-    }
-}

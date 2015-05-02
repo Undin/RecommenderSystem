@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sponge",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.4774066425162877
-    }
-}

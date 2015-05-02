@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sylva_prior",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.18485108709796996
-    }
-}

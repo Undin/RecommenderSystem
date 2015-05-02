@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kdd_synthetic_control",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 2.4267979550442305
-    }
-}

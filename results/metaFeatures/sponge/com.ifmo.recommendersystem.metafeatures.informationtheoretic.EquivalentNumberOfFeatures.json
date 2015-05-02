@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sponge",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.1442235975467953
-    }
-}

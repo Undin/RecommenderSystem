@@ -1,7 +1,0 @@
-{
-    "dataSetName": "dermatology",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.16195884451870168
-    }
-}

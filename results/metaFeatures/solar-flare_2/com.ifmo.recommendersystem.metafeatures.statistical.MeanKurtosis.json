@@ -1,7 +1,0 @@
-{
-    "dataSetName": "solar-flare_2",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 50.93016721578885
-    }
-}

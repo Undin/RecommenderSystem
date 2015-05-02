@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vowel",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.9304608978985591
-    }
-}

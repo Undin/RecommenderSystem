@@ -1,7 +1,0 @@
-{
-    "dataSetName": "heart-h",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMinAttr",
-        "value": 0
-    }
-}

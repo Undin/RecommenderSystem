@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mfeat-zernike",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 0.7902368303069343
-    }
-}

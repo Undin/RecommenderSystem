@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sponge",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.6287286516186482
-    }
-}

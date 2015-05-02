@@ -1,7 +1,0 @@
-{
-    "dataSetName": "flags",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfClasses",
-        "value": 8
-    }
-}

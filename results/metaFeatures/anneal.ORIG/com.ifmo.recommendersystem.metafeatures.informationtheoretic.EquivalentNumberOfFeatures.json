@@ -1,7 +1,0 @@
-{
-    "dataSetName": "anneal.ORIG",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.7218863281185243
-    }
-}

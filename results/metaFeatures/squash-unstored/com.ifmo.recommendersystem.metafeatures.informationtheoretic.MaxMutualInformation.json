@@ -1,7 +1,0 @@
-{
-    "dataSetName": "squash-unstored",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.7651966444203977
-    }
-}

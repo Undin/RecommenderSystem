@@ -1,7 +1,0 @@
-{
-    "dataSetName": "credit-g",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
-        "value": 0.042139184585550424
-    }
-}

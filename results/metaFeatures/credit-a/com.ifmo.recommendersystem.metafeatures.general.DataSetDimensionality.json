@@ -1,7 +1,0 @@
-{
-    "dataSetName": "credit-a",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 46
-    }
-}

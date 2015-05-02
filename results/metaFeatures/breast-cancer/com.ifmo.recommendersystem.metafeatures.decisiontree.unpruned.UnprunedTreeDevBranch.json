@@ -1,7 +1,0 @@
-{
-    "dataSetName": "breast-cancer",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
-        "value": 0.09504947618599917
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sponge",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
-        "value": 76
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "wine",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.17170892153264355
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "lung-cancer",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 0.15973593405313782
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "balance-scale",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.14760907082710226
-    }
-}

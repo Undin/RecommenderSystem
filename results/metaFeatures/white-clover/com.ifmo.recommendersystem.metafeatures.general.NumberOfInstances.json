@@ -1,7 +1,0 @@
-{
-    "dataSetName": "white-clover",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
-        "value": 63
-    }
-}

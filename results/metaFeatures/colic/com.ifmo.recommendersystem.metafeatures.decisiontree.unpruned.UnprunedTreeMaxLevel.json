@@ -1,7 +1,0 @@
-{
-    "dataSetName": "colic",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMaxLevel",
-        "value": 11
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ionosphere",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": -0.58197292313373
-    }
-}

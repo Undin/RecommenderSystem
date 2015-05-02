@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spect_train",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeLeavesNumber",
-        "value": 7
-    }
-}

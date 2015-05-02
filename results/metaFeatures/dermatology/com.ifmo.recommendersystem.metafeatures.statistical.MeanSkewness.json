@@ -1,7 +1,0 @@
-{
-    "dataSetName": "dermatology",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 1.3993294713919486
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "hypothyroid",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 139.7037037037037
-    }
-}

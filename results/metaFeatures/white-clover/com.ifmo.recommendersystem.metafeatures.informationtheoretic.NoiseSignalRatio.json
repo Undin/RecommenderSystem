@@ -1,7 +1,0 @@
-{
-    "dataSetName": "white-clover",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.7839917896696706
-    }
-}

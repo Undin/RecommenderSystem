@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spectf_test",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfFeatures",
-        "value": 44
-    }
-}

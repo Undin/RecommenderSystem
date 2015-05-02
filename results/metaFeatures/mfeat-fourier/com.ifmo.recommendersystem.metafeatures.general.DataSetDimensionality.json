@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mfeat-fourier",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 26.31578947368421
-    }
-}

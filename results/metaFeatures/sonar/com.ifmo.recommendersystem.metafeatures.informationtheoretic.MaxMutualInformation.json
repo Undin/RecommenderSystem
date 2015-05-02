@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sonar",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.20136435794242047
-    }
-}

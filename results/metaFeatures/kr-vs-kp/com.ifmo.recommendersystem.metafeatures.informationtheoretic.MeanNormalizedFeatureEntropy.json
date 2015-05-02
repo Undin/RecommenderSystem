@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kr-vs-kp",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.05069109009391534
-    }
-}

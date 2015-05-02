@@ -1,7 +1,0 @@
-{
-    "dataSetName": "car",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 288
-    }
-}

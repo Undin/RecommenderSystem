@@ -1,7 +1,0 @@
-{
-    "dataSetName": "eucalyptus",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 38.73684210526316
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "solar-flare_2",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
-        "value": 1066
-    }
-}

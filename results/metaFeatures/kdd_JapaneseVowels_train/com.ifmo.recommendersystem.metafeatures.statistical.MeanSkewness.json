@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kdd_JapaneseVowels_train",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": -0.018479490405269687
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "wine",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 13.692307692307692
-    }
-}

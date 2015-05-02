@@ -1,7 +1,0 @@
-{
-    "dataSetName": "segment",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevAttr",
-        "value": 2.6427498905736395
-    }
-}

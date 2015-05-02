@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vehicle",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 8.115651135404608
-    }
-}

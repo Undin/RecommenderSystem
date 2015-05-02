@@ -1,7 +1,0 @@
-{
-    "dataSetName": "hepatitis",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
-        "value": 0.32394177193585005
-    }
-}

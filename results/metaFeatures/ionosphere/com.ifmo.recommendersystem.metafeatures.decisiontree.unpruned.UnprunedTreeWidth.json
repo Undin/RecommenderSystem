@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ionosphere",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeWidth",
-        "value": 6
-    }
-}

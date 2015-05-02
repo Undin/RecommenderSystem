@@ -1,7 +1,0 @@
-{
-    "dataSetName": "heart-c",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.21162779599109227
-    }
-}

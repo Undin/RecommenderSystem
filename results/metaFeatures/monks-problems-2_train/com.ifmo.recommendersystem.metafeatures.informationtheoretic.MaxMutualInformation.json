@@ -1,7 +1,0 @@
-{
-    "dataSetName": "monks-problems-2_train",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.017277176937918193
-    }
-}

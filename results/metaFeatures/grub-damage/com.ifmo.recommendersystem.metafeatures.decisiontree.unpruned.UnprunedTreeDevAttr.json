@@ -1,7 +1,0 @@
-{
-    "dataSetName": "grub-damage",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevAttr",
-        "value": 7.621242243449117
-    }
-}

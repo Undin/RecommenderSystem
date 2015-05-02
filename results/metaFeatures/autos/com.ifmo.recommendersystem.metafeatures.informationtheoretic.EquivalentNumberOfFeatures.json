@@ -1,7 +1,0 @@
-{
-    "dataSetName": "autos",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.26348579111272824
-    }
-}

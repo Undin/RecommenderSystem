@@ -1,7 +1,0 @@
-{
-    "dataSetName": "white-clover",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 2.032258064516129
-    }
-}

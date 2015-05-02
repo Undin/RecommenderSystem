@@ -1,7 +1,0 @@
-{
-    "dataSetName": "solar-flare_1",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
-        "value": 0.029582450313406818
-    }
-}

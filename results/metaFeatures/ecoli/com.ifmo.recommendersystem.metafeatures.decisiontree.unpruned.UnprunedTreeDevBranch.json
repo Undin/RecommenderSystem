@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ecoli",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
-        "value": 0.3947345748922744
-    }
-}

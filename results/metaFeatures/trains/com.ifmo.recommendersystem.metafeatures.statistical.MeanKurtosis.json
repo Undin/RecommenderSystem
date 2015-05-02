@@ -1,7 +1,0 @@
-{
-    "dataSetName": "trains",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 3.560949794527696
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "white-clover",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
-        "value": 0.4629100498862757
-    }
-}

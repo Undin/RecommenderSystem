@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ionosphere",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.11138877430855845
-    }
-}

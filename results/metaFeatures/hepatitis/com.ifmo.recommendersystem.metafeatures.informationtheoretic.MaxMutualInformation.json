@@ -1,7 +1,0 @@
-{
-    "dataSetName": "hepatitis",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.18245703740605412
-    }
-}

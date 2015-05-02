@@ -1,7 +1,0 @@
-{
-    "dataSetName": "lymph",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.4018838758618827
-    }
-}

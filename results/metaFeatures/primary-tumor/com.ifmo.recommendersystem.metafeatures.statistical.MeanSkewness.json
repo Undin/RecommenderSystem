@@ -1,7 +1,0 @@
-{
-    "dataSetName": "primary-tumor",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": -1.738462838902453
-    }
-}

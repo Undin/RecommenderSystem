@@ -1,7 +1,0 @@
-{
-    "dataSetName": "balance-scale",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
-        "value": 0
-    }
-}

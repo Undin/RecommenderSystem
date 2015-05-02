@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vote",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 1.3718592067459816
-    }
-}

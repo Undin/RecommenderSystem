@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mfeat-fourier",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevBranch",
-        "value": 0.4058716666822793
-    }
-}

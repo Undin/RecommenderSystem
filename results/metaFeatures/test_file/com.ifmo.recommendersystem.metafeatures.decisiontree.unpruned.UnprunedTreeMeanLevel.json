@@ -1,7 +1,0 @@
-{
-    "dataSetName": "test_file",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanLevel",
-        "value": 5.4375
-    }
-}

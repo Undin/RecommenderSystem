@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vowel",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevLevel",
-        "value": 2.232813146112891
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "lung-cancer",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 4.252004262749952
-    }
-}

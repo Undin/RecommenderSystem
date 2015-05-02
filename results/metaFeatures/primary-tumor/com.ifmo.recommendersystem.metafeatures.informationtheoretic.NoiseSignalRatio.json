@@ -1,7 +1,0 @@
-{
-    "dataSetName": "primary-tumor",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.737239388733883
-    }
-}

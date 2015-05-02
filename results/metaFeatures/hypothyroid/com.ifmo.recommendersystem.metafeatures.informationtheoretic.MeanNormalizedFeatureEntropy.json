@@ -1,7 +1,0 @@
-{
-    "dataSetName": "hypothyroid",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.04364624847247574
-    }
-}

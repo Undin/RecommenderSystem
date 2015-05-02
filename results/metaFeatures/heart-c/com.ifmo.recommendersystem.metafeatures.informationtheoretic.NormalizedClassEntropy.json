@@ -1,7 +1,0 @@
-{
-    "dataSetName": "heart-c",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.12061672011962184
-    }
-}

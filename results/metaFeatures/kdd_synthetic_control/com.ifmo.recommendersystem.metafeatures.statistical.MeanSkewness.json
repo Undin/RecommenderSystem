@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kdd_synthetic_control",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 0.0333635691671384
-    }
-}

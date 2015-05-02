@@ -1,7 +1,0 @@
-{
-    "dataSetName": "breast-w",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 1.4755888418135332
-    }
-}

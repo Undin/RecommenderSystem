@@ -1,7 +1,0 @@
-{
-    "dataSetName": "iris",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanAttr",
-        "value": 1.6666666666666667
-    }
-}

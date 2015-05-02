@@ -1,7 +1,0 @@
-{
-    "dataSetName": "pasture",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.3065735963827292
-    }
-}

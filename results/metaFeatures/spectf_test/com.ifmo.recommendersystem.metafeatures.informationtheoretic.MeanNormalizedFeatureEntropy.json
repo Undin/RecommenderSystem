@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spectf_test",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.06973352858202722
-    }
-}

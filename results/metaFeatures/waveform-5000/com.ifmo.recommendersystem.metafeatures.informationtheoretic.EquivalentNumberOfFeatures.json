@@ -1,7 +1,0 @@
-{
-    "dataSetName": "waveform-5000",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.13683094000469023
-    }
-}

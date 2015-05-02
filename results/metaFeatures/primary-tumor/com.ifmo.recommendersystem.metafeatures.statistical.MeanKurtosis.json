@@ -1,7 +1,0 @@
-{
-    "dataSetName": "primary-tumor",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 7.078633120255767
-    }
-}

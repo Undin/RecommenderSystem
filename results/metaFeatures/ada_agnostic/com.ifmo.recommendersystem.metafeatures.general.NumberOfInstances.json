@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ada_agnostic",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
-        "value": 4562
-    }
-}

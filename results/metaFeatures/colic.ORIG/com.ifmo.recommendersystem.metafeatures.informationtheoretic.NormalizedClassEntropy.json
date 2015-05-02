@@ -1,7 +1,0 @@
-{
-    "dataSetName": "colic.ORIG",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.10815624865515396
-    }
-}

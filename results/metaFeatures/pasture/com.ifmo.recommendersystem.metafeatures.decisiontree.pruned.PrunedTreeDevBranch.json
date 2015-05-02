@@ -1,7 +1,0 @@
-{
-    "dataSetName": "pasture",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevBranch",
-        "value": 0.33665016461206926
-    }
-}

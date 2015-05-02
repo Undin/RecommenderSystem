@@ -1,7 +1,0 @@
-{
-    "dataSetName": "squash-unstored",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 2.6591828351416096
-    }
-}

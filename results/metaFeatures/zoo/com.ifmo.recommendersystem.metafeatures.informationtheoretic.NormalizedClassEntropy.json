@@ -1,7 +1,0 @@
-{
-    "dataSetName": "zoo",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.35903931385880766
-    }
-}

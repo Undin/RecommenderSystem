@@ -1,5 +1,5 @@
 {
-    "parallelism" : 4,
+    "parallelism" : 12,
     "evaluatePerformance" : true,
     "extractMetaFeatures" : true,
     "directory" : "datasets",

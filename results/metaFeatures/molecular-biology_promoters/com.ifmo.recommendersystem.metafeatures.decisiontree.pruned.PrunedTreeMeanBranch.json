@@ -1,7 +1,0 @@
-{
-    "dataSetName": "molecular-biology_promoters",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanBranch",
-        "value": 2.3684210526315788
-    }
-}

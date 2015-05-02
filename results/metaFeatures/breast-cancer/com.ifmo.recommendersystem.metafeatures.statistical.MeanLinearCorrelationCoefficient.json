@@ -1,7 +1,0 @@
-{
-    "dataSetName": "breast-cancer",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
-        "value": -0.05420570985540466
-    }
-}

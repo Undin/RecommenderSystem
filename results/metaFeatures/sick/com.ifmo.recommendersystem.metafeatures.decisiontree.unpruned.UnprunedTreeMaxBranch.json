@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sick",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMaxBranch",
-        "value": 10
-    }
-}

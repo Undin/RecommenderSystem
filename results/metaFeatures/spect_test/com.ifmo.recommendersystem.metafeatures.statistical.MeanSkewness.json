@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spect_test",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 0.686977954426741
-    }
-}

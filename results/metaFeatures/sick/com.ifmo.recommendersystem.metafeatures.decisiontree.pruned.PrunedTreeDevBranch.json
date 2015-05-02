@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sick",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevBranch",
-        "value": 0.33760030249000655
-    }
-}

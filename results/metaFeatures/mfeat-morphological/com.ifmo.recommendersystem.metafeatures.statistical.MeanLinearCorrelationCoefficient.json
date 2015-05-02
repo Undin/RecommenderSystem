@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mfeat-morphological",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
-        "value": 0.14318459156666594
-    }
-}

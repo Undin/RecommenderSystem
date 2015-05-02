@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ecoli",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfFeatures",
-        "value": 7
-    }
-}

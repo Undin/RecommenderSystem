@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ecoli",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanBranch",
-        "value": 5.545454545454546
-    }
-}

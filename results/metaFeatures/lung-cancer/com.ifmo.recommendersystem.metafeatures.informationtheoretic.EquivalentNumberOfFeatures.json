@@ -1,7 +1,0 @@
-{
-    "dataSetName": "lung-cancer",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
-        "value": 0.18434899385995965
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "eucalyptus",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.23752495451448002
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spect_train",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevBranch",
-        "value": 0.4898979485566356
-    }
-}

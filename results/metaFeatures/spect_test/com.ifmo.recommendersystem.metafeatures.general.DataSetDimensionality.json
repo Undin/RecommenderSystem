@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spect_test",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 8.5
-    }
-}

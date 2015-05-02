@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vote",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.11110818253932886
-    }
-}

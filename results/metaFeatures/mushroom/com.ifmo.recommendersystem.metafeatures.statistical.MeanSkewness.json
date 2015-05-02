@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mushroom",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": -0.5672920599070957
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "postoperative-patient-data",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.1510058108271198
-    }
-}

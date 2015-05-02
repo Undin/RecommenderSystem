@@ -1,7 +1,0 @@
-{
-    "dataSetName": "lymph",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 0.7481987022047989
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sick",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 183.9226812571836
-    }
-}

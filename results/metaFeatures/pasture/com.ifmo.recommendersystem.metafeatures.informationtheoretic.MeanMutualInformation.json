@@ -1,7 +1,0 @@
-{
-    "dataSetName": "pasture",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 5.479128357261447
-    }
-}

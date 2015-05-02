@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ada_agnostic",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMaxBranch",
-        "value": 26
-    }
-}

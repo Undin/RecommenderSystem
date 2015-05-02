@@ -1,7 +1,0 @@
-{
-    "dataSetName": "breast-w",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMaxLevel",
-        "value": 4
-    }
-}

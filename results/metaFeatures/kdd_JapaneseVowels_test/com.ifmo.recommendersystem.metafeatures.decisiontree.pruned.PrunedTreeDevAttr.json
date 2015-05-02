@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kdd_JapaneseVowels_test",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevAttr",
-        "value": 5.1065045666178435
-    }
-}

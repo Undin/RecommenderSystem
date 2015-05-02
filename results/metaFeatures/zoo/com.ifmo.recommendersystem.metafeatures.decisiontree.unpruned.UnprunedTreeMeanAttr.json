@@ -1,7 +1,0 @@
-{
-    "dataSetName": "zoo",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanAttr",
-        "value": 1.2857142857142858
-    }
-}

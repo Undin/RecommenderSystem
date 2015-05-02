@@ -1,7 +1,0 @@
-{
-    "dataSetName": "splice",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 0.07588523841171739
-    }
-}

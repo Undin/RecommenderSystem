@@ -1,7 +1,0 @@
-{
-    "dataSetName": "car",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": 1.611065799973856
-    }
-}

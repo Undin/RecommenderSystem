@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vote",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": -0.13284380184970607
-    }
-}

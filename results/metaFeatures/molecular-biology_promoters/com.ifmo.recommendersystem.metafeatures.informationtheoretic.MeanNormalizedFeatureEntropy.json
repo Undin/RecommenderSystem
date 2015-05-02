@@ -1,7 +1,0 @@
-{
-    "dataSetName": "molecular-biology_promoters",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.3015453323557616
-    }
-}

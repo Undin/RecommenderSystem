@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sonar",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.8567648632721332
-    }
-}

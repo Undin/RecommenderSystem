@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spect_train",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 3.6363636363636362
-    }
-}

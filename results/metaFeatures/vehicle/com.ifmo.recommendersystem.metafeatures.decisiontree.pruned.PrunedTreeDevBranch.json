@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vehicle",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevBranch",
-        "value": 0.32905425729057886
-    }
-}

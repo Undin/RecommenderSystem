@@ -1,7 +1,0 @@
-{
-    "dataSetName": "trains",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
-        "value": -0.022307422655913525
-    }
-}

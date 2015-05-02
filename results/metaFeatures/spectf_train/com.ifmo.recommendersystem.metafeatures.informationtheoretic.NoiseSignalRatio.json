@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spectf_train",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.890930716509266
-    }
-}

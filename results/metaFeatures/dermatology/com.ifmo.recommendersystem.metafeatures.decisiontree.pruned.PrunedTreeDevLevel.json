@@ -1,7 +1,0 @@
-{
-    "dataSetName": "dermatology",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevLevel",
-        "value": 0.5194624816493196
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "glass",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanAttr",
-        "value": 4.285714285714286
-    }
-}

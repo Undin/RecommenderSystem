@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ada_agnostic",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 97.06382978723404
-    }
-}

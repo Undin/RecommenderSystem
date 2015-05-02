@@ -1,7 +1,0 @@
-{
-    "dataSetName": "molecular-biology_promoters",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 4.507691858613275
-    }
-}

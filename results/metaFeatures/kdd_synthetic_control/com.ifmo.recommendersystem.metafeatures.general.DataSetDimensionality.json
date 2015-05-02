@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kdd_synthetic_control",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 9.836065573770492
-    }
-}

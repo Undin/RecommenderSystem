@@ -1,7 +1,0 @@
-{
-    "dataSetName": "splice",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanAttr",
-        "value": 61.333333333333336
-    }
-}

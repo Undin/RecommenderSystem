@@ -1,7 +1,0 @@
-{
-    "dataSetName": "lymph",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanBranch",
-        "value": 3.9047619047619047
-    }
-}

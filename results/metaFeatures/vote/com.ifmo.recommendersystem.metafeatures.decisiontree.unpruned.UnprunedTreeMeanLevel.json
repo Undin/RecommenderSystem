@@ -1,7 +1,0 @@
-{
-    "dataSetName": "vote",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanLevel",
-        "value": 2
-    }
-}

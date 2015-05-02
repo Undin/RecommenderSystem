@@ -1,7 +1,0 @@
-{
-    "dataSetName": "solar-flare_1",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevBranch",
-        "value": 0.23751619268891092
-    }
-}

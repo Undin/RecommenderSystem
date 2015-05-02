@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mushroom",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.11486731459132946
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ada_prior",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.12027387379025664
-    }
-}

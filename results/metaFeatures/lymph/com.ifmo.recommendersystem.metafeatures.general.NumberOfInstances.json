@@ -1,7 +1,0 @@
-{
-    "dataSetName": "lymph",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
-        "value": 148
-    }
-}

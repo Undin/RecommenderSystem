@@ -1,7 +1,0 @@
-{
-    "dataSetName": "splice",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.12716958001868034
-    }
-}

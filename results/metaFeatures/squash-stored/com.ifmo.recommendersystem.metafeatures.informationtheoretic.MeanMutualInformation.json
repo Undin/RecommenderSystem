@@ -1,7 +1,0 @@
-{
-    "dataSetName": "squash-stored",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 4.501218002052659
-    }
-}

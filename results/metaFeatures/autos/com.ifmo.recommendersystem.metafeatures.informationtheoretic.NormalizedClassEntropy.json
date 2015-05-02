@@ -1,7 +1,0 @@
-{
-    "dataSetName": "autos",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.29591508661235727
-    }
-}

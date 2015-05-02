@@ -1,7 +1,0 @@
-{
-    "dataSetName": "molecular-biology_promoters",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
-        "value": 7.193955145659682E-4
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mfeat-morphological",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevAttr",
-        "value": 1.8287822299126937
-    }
-}

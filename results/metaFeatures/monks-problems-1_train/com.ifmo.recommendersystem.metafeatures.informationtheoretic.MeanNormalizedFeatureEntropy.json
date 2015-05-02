@@ -1,7 +1,0 @@
-{
-    "dataSetName": "monks-problems-1_train",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.2091691846426651
-    }
-}
