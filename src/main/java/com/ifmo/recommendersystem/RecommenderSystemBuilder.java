@@ -47,7 +47,7 @@ public class RecommenderSystemBuilder {
                 e.printStackTrace();
             }
         }
-        ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        ExecutorService executor = Executors.newFixedThreadPool(config.getParallelism());
         ((ThreadPoolExecutor) executor).setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardPolicy());
         if (config.extractMetaFeatures()) {
             extractMetaFeatures(executor, instancesList);
