@@ -99,7 +99,7 @@
     {
         "algorithmName" : "CFS-TS",
         "search" : {
-            "className" : "weka.attributeSelection.TabuSearch",
+            "className" : "weka.attributeSelection.FixedTabuSearch",
             "options" : []
         },
         "evaluation" : {
