@@ -1,13 +1,13 @@
 package com.ifmo.recommendersystem;
 
+import com.ifmo.recommendersystem.tasks.time.TimeManager;
+import com.ifmo.recommendersystem.tasks.time.Timestamp;
 import com.ifmo.recommendersystem.utils.InstancesUtils;
 import org.json.JSONObject;
 import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.ASSearch;
 import weka.core.Instances;
 
-import java.time.Duration;
-import java.time.Instant;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -45,10 +45,10 @@ public class FSSAlgorithm implements JSONConverted {
         try {
             ASSearch search = ASSearch.makeCopies(algorithm, 1)[0];
             ASEvaluation evaluation = ASEvaluation.makeCopies(evaluator, 1)[0];
-            Instant start = Instant.now();
+            Timestamp start = TimeManager.getInstance().getTimestamp();
             Instances resultInstances = InstancesUtils.selectAttributes(instances, search, evaluation);
-            Instant end = Instant.now();
-            return new Result(resultInstances, Duration.between(start, end).toMillis());
+            Timestamp end = TimeManager.getInstance().getTimestamp();
+            return new Result(resultInstances, TimeManager.between(start, end));
         } catch (Exception e) {
             e.printStackTrace();
         }
