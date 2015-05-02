@@ -17,10 +17,12 @@ import static com.ifmo.recommendersystem.utils.JSONUtils.*;
 public class FSSAlgorithm implements JSONConverted {
 
     public static class Result {
+        public final String algorithmName;
         public final Instances instances;
         public final long runtime;
 
-        public Result(Instances instances, long runtime) {
+        public Result(String algorithmName, Instances instances, long runtime) {
+            this.algorithmName = algorithmName;
             this.instances = instances;
             this.runtime = runtime;
         }
@@ -48,7 +50,7 @@ public class FSSAlgorithm implements JSONConverted {
             Timestamp start = TimeManager.getInstance().getTimestamp();
             Instances resultInstances = InstancesUtils.selectAttributes(instances, search, evaluation);
             Timestamp end = TimeManager.getInstance().getTimestamp();
-            return new Result(resultInstances, TimeManager.between(start, end));
+            return new Result(name, resultInstances, TimeManager.between(start, end));
         } catch (Exception e) {
             e.printStackTrace();
         }
