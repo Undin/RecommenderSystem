@@ -6,12 +6,12 @@ import weka.core.Instances;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
-import java.util.concurrent.Callable;
+import java.util.concurrent.RecursiveTask;
 
 /**
  * Created by warrior on 19.11.14.
  */
-public class ExtractTask implements Callable<ExtractResult> {
+public class ExtractTask extends RecursiveTask<ExtractResult> {
 
     private final String datasetName;
     private final MetaFeatureExtractor extractor;
@@ -24,19 +24,22 @@ public class ExtractTask implements Callable<ExtractResult> {
     }
 
     @Override
-    public ExtractResult call() {
+    protected ExtractResult compute() {
         Instant start = Instant.now();
         System.out.format(">> [%s] %s %s\n",
                 start.atZone(ZoneId.of("UTC+3")).toLocalTime().toString(),
                 datasetName,
                 extractor.getName());
+
         ExtractResult result = ExtractResult.fromInstances(datasetName, instances, extractor);
+
         Instant end = Instant.now();
         System.out.format("<< [%s] %s %s. exec time: %d\n",
                 end.atZone(ZoneId.of("UTC+3")).toLocalTime().toString(),
                 datasetName,
                 extractor.getName(),
                 Duration.between(start, end).toMillis());
+
         return result;
     }
 }
