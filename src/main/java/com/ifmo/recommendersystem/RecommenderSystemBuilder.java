@@ -96,10 +96,13 @@ public class RecommenderSystemBuilder {
                     config.getAlgorithms().stream()
                                     .map(alg -> executor.submit(new PerformanceTask(config.getClassifiers(), alg, p.first, train, test, testNumber)))
                             .forEach(futurePerformanceResults::add);
-
                 }
             }
+            printPerformanceResults(futurePerformanceResults);
         }
+    }
+
+    private void printPerformanceResults(List<Future<List<PerformanceResult>>> futurePerformanceResults) {
         for (Future<List<PerformanceResult>> future : futurePerformanceResults) {
             try {
                 List<PerformanceResult> results = future.get();
@@ -120,6 +123,7 @@ public class RecommenderSystemBuilder {
                 e.printStackTrace();
             }
         }
+        futurePerformanceResults.clear();
     }
 
     public static RecommenderSystemBuilder createFromConfig(String configFilename) throws Exception {
