@@ -41,6 +41,7 @@ public class InstancesUtils {
             }
             instances.setClassIndex(instances.numAttributes() - 1);
         }
+        instances.deleteWithMissingClass();
         boolean removeStringAttributes = (modifiedFlags & REMOVE_STRING_ATTRIBUTES) != 0;
         boolean removeUninformativeAttributes = (modifiedFlags & REMOVE_UNINFORMATIVE_ATTRIBUTES) != 0;
         if (removeStringAttributes || removeUninformativeAttributes) {
