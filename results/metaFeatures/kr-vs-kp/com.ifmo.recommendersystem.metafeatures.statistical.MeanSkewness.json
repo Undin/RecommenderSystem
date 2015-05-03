@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kr-vs-kp",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": -4.361920293715455
-    }
-}

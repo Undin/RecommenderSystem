@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ada_prior",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.15591799834524267
-    }
-}

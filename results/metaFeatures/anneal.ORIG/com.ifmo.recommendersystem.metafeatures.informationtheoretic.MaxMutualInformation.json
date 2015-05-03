@@ -1,7 +1,0 @@
-{
-    "dataSetName": "anneal.ORIG",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.42329363104802165
-    }
-}

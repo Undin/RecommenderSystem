@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kdd_synthetic_control",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.9623033827720108
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "car",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanBranch",
-        "value": 4.694656488549619
-    }
-}

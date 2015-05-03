@@ -1,7 +1,0 @@
-{
-    "dataSetName": "segment",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanNormalizedFeatureEntropy",
-        "value": 0.24258958149306245
-    }
-}

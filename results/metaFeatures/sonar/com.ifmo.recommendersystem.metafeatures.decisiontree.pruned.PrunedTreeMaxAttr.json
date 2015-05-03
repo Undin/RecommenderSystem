@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sonar",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMaxAttr",
-        "value": 11
-    }
-}

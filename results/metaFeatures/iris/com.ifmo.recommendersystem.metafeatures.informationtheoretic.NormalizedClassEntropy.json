@@ -1,7 +1,0 @@
-{
-    "dataSetName": "iris",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.21925608713979675
-    }
-}

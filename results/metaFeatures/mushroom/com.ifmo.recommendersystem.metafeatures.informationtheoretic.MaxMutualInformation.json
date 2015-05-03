@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mushroom",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.9060749773840016
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "cylinder-bands",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevAttr",
-        "value": 33.94112549695428
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "segment",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 1.6954387931631019
-    }
-}

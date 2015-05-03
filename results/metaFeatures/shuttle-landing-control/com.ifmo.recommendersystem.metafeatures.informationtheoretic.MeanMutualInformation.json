@@ -1,7 +1,0 @@
-{
-    "dataSetName": "shuttle-landing-control",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 0.5380692774223108
-    }
-}

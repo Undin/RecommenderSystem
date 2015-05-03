@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sonar",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevLevel",
-        "value": 0.5509731650193397
-    }
-}

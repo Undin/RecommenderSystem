@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kdd_synthetic_control",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 2.5849625007211565
-    }
-}

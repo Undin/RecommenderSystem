@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spect_test",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
-        "value": 0.10540925533894598
-    }
-}

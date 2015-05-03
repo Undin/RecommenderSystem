@@ -1,7 +1,0 @@
-{
-    "dataSetName": "hepatitis",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 8.157894736842104
-    }
-}

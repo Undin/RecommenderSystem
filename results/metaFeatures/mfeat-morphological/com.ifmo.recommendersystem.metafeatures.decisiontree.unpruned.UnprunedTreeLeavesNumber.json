@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mfeat-morphological",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeLeavesNumber",
-        "value": 121
-    }
-}

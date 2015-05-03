@@ -1,7 +1,0 @@
-{
-    "dataSetName": "waveform-5000",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 0.03545763225534891
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "squash-stored",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
-        "value": 0.16813541783076916
-    }
-}

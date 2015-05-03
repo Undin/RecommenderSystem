@@ -1,7 +1,0 @@
-{
-    "dataSetName": "lung-cancer",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
-        "value": 32
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "monks-problems-2_train",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMinAttr",
-        "value": 9
-    }
-}

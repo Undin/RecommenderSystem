@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kdd_JapaneseVowels_train",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 4.950510406412039
-    }
-}

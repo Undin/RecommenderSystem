@@ -1,7 +1,0 @@
-{
-    "dataSetName": "credit-a",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
-        "value": 0.7403702777314525
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "monks-problems-3_test",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanBranch",
-        "value": 2.2142857142857144
-    }
-}

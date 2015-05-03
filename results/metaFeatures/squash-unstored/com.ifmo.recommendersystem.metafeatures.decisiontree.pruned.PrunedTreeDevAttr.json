@@ -1,7 +1,0 @@
-{
-    "dataSetName": "squash-unstored",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevAttr",
-        "value": 0.408248290463863
-    }
-}

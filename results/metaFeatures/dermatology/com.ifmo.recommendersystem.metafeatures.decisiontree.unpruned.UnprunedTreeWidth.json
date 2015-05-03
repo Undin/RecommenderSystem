@@ -1,7 +1,0 @@
-{
-    "dataSetName": "dermatology",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeWidth",
-        "value": 15
-    }
-}

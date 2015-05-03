@@ -1,7 +1,0 @@
-{
-    "dataSetName": "balance-scale",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
-        "value": 0.21370947998775577
-    }
-}

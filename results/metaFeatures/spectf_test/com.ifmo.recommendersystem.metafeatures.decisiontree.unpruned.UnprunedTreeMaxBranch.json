@@ -1,7 +1,0 @@
-{
-    "dataSetName": "spectf_test",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMaxBranch",
-        "value": 14
-    }
-}

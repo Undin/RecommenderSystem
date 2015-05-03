@@ -1,7 +1,0 @@
-{
-    "dataSetName": "primary-tumor",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeNodeNumber",
-        "value": 123
-    }
-}

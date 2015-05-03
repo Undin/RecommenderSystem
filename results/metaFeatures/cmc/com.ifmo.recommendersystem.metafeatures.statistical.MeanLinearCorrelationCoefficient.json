@@ -1,7 +1,0 @@
-{
-    "dataSetName": "cmc",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanLinearCorrelationCoefficient",
-        "value": -0.019912856028244854
-    }
-}

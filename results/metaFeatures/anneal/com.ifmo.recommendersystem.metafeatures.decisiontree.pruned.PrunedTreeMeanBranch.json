@@ -1,7 +1,0 @@
-{
-    "dataSetName": "anneal",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanBranch",
-        "value": 3.8285714285714287
-    }
-}

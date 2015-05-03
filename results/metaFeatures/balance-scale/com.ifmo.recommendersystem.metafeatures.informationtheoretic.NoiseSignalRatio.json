@@ -1,7 +1,0 @@
-{
-    "dataSetName": "balance-scale",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": 1.8260923357498444
-    }
-}

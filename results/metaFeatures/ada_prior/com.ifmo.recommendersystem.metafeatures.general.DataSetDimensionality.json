@@ -1,7 +1,0 @@
-{
-    "dataSetName": "ada_prior",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 325.85714285714283
-    }
-}

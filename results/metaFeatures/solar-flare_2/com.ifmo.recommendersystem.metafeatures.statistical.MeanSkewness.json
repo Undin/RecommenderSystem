@@ -1,7 +1,0 @@
-{
-    "dataSetName": "solar-flare_2",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanSkewness",
-        "value": 3.6759539719498893
-    }
-}

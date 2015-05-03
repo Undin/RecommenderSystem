@@ -1,7 +1,0 @@
-{
-    "dataSetName": "iris",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 2.234317601046828
-    }
-}

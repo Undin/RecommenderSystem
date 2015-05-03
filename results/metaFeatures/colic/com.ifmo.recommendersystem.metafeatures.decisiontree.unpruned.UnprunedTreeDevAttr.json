@@ -1,7 +1,0 @@
-{
-    "dataSetName": "colic",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevAttr",
-        "value": 17.67766952966369
-    }
-}

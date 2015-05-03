@@ -1,7 +1,0 @@
-{
-    "dataSetName": "mfeat-morphological",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 2.4621042308529204
-    }
-}

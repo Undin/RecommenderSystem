@@ -1,7 +1,0 @@
-{
-    "dataSetName": "kdd_JapaneseVowels_test",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MeanMutualInformation",
-        "value": 5.433379384699111
-    }
-}

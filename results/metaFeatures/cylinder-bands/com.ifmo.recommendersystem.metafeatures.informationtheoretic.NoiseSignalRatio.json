@@ -1,7 +1,0 @@
-{
-    "dataSetName": "cylinder-bands",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
-        "value": -0.5265082133230359
-    }
-}

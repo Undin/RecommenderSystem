@@ -1,7 +1,0 @@
-{
-    "dataSetName": "colic.ORIG",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.868860793400371
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "cmc",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeNodeNumber",
-        "value": 665
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "dataSetName": "cylinder-bands",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NormalizedClassEntropy",
-        "value": 0.10823995225350383
-    }
-}

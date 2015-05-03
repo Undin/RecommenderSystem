@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sylva_prior",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 787.1076092262269
-    }
-}

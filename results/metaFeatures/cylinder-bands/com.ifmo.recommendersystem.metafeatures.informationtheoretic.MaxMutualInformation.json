@@ -1,7 +1,0 @@
-{
-    "dataSetName": "cylinder-bands",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.8356993072716381
-    }
-}

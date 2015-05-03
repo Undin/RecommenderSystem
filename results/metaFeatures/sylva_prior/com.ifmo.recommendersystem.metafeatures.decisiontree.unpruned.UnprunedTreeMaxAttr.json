@@ -1,7 +1,0 @@
-{
-    "dataSetName": "sylva_prior",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMaxAttr",
-        "value": 42
-    }
-}

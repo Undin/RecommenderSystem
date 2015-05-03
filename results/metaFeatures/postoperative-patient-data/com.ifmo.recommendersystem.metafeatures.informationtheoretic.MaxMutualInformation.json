@@ -1,7 +1,0 @@
-{
-    "dataSetName": "postoperative-patient-data",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
-        "value": 0.028642505635257276
-    }
-}

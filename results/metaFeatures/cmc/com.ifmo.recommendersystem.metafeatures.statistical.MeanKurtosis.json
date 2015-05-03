@@ -1,7 +1,0 @@
-{
-    "dataSetName": "cmc",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.statistical.MeanKurtosis",
-        "value": 3.9236985107252544
-    }
-}

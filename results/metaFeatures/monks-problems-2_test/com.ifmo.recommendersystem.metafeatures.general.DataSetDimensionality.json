@@ -1,7 +1,0 @@
-{
-    "dataSetName": "monks-problems-2_test",
-    "metaFeature": {
-        "className": "com.ifmo.recommendersystem.metafeatures.general.DataSetDimensionality",
-        "value": 72
-    }
-}
