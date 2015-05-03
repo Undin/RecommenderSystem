@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class RecommenderSystemBuilder {
 
     public static final String META_FEATURES_DIRECTORY = "results/metaFeatures";
-    public static final String PERFORMANCE_DIRECTORY = "results/test_performance";
+    public static final String PERFORMANCE_DIRECTORY = "results/performance";
 
     public final static int ROUNDS = 5;
     public final static int FOLDS = 10;
@@ -84,7 +84,7 @@ public class RecommenderSystemBuilder {
     }
 
     private void evaluatePerformance(ExecutorService executor, List<Pair<String, Instances>> instancesList) {
-        List<Future<PerformanceResult>> futurePerformanceResults = new ArrayList<>();
+        List<Future<List<PerformanceResult>>> futurePerformanceResults = new ArrayList<>();
         for (Pair<String, Instances> p : instancesList) {
             Instances instances = new Instances(p.second);
             for (int i = 0; i < ROUNDS; i++) {
@@ -93,27 +93,28 @@ public class RecommenderSystemBuilder {
                     int testNumber = i * FOLDS + j;
                     Instances train = instances.trainCV(FOLDS, j);
                     Instances test = instances.testCV(FOLDS, j);
-                    config.getClassifiers().stream()
-                            .forEach(classifier -> config.getAlgorithms().stream()
-                                    .map(alg -> executor.submit(new PerformanceTask(p.first, testNumber, train, test, alg, classifier)))
-                                    .forEach(futurePerformanceResults::add));
+                    config.getAlgorithms().stream()
+                                    .map(alg -> executor.submit(new PerformanceTask(config.getClassifiers(), alg, p.first, train, test, testNumber)))
+                            .forEach(futurePerformanceResults::add);
 
                 }
             }
         }
-        for (Future<PerformanceResult> future : futurePerformanceResults) {
+        for (Future<List<PerformanceResult>> future : futurePerformanceResults) {
             try {
-                PerformanceResult result = future.get();
-                File directory = new File(PathUtils.createPath(PERFORMANCE_DIRECTORY,
-                        result.classifierName,
-                        result.dataSetName,
-                        result.algorithmName));
-                directory.mkdirs();
-                String fileName = PathUtils.createName(result.classifierName, result.dataSetName, result.algorithmName, String.valueOf(result.testNumber));
-                try (PrintWriter writer = new PrintWriter(new File(directory, fileName + ".json"))) {
-                    writer.print(result.toJSON().toString(4));
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+                List<PerformanceResult> results = future.get();
+                for (PerformanceResult result : results) {
+                    File directory = new File(PathUtils.createPath(PERFORMANCE_DIRECTORY,
+                            result.classifierName,
+                            result.dataSetName,
+                            result.algorithmName));
+                    directory.mkdirs();
+                    String fileName = PathUtils.createName(result.classifierName, result.dataSetName, result.algorithmName, String.valueOf(result.testNumber));
+                    try (PrintWriter writer = new PrintWriter(new File(directory, fileName + ".json"))) {
+                        writer.print(result.toJSON().toString(4));
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
