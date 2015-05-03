@@ -122,7 +122,7 @@
         }
     },
     {
-        "algorithmName" : "Cons-SFS ",
+        "algorithmName" : "Cons-SFS",
         "search" : {
             "className" : "weka.attributeSelection.BestFirst",
             "options" : [
