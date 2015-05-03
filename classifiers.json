@@ -17,7 +17,9 @@
     {
         "classifierName" : "BayesNet",
         "className" : "weka.classifiers.bayes.BayesNet",
-        "options" : []
+        "options" : [
+            "-D"
+        ]
     },
     {
         "classifierName" : "IB3",
