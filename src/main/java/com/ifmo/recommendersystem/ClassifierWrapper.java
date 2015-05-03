@@ -12,6 +12,24 @@ import java.util.Arrays;
 
 public class ClassifierWrapper implements JSONConverted {
 
+    public static class Result {
+        public final String classifierName;
+        public final double accuracy;
+        public final double f1Measure;
+
+        public Result(String classifierName, double accuracy, double f1Measure) {
+            this.classifierName = classifierName;
+            this.accuracy = accuracy;
+            this.f1Measure = f1Measure;
+        }
+
+        public Result(String classifierName, Pair<Double, Double> accuracyAndF1measure) {
+            this.classifierName = classifierName;
+            this.accuracy = accuracyAndF1measure.first;
+            this.f1Measure = accuracyAndF1measure.second;
+        }
+    }
+
     private final String name;
     private final Classifier classifier;
     private final String[] options;
@@ -39,7 +57,7 @@ public class ClassifierWrapper implements JSONConverted {
         return JSONUtils.objectToJSON(classifier, options).put(JSONUtils.CLASSIFIER_NAME, name);
     }
 
-    public Pair<Double, Double> computeAccuracyAndF1Measure(Instances train, Instances test) {
+    public Result computeAccuracyAndF1Measure(Instances train, Instances test) {
         int[][] confusionMatrix = new int[train.numClasses()][train.numClasses()];
         double correct = 0;
         int sum = 0;
@@ -58,11 +76,11 @@ public class ClassifierWrapper implements JSONConverted {
                     confusionMatrix[estimatedClassIndex][expectedClassIndex]++;
                 }
             }
-            return Pair.of(correct / sum, computeF1Measure(confusionMatrix));
+            return new Result(name, correct / sum, computeF1Measure(confusionMatrix));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return Pair.of(0D, 0D);
+        return new Result(name, 0D, 0D);
     }
 
     public static double computeF1Measure(int[][] confusionMatrix) {
