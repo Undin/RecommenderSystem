@@ -29,7 +29,7 @@ public class BuildConfig extends Config {
         super(jsonObject);
         extractMetaFeatures = jsonObject.getBoolean(EXTRACT_META_FEATURES);
         evaluatePerformance = jsonObject.getBoolean(EVALUATE_PERFORMANCE);
-        parallelism = jsonObject.getInt(PARALLELISM) > 0 ? jsonObject.getInt(PARALLELISM) : Runtime.getRuntime().availableProcessors();
+        parallelism = jsonObject.optInt(PARALLELISM, Runtime.getRuntime().availableProcessors());
         datasetsPaths = getDatasets().stream()
                 .map(this::createPath)
                 .collect(Collectors.toList());
