@@ -6,12 +6,16 @@ import com.ifmo.recommendersystem.FSSAlgorithm;
 import com.ifmo.recommendersystem.JSONConverted;
 import org.json.JSONObject;
 
+import java.util.List;
+
 import static com.ifmo.recommendersystem.utils.JSONUtils.*;
 
 /**
  * Created by warrior on 20.11.14.
  */
 public class PerformanceResult implements JSONConverted {
+
+    public static final int MEAN = -1;
 
     public final String dataSetName;
     public final String algorithmName;
@@ -55,6 +59,38 @@ public class PerformanceResult implements JSONConverted {
                 .put(ATTRIBUTE_NUMBER, attributeNumber)
                 .put(RUNTIME, runtime)
                 .put(TEST_NUMBER, testNumber);
+    }
+
+    public static PerformanceResult average(List<PerformanceResult> results) {
+        if (results == null || results.size() == 0) {
+            throw new IllegalArgumentException();
+        }
+        PerformanceResult r = results.get(0);
+        String dataset = r.dataSetName;
+        String algorithm = r.algorithmName;
+        String classifier = r.classifierName;
+        double accuracy = 0;
+        double f1Measure = 0;
+        double attributeNumber = 0;
+        double runtime = 0;
+        for (PerformanceResult result : results) {
+            if (!same(r, result)) {
+                throw new IllegalArgumentException();
+            }
+            accuracy += result.accuracy;
+            f1Measure += result.f1Measure;
+            attributeNumber += result.attributeNumber;
+            runtime += result.runtime;
+        }
+        int size = results.size();
+        return new PerformanceResult(dataset, algorithm, classifier,
+                accuracy / size, f1Measure / size, runtime / size, attributeNumber / size, MEAN);
+    }
+
+    public static boolean same(PerformanceResult r1, PerformanceResult r2) {
+        return r1.dataSetName.equals(r2.dataSetName) &&
+               r1.classifierName.equals(r2.classifierName) &&
+               r1.algorithmName.equals(r2.algorithmName);
     }
 
     public static final AbstractJSONCreator<PerformanceResult> JSON_CREATOR = new AbstractJSONCreator<PerformanceResult>() {
