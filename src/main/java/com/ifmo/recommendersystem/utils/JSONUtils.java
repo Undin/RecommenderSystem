@@ -18,6 +18,7 @@ public class JSONUtils {
     public static final String ALGORITHMS = "algorithms";
     public static final String ALPHA = "alpha";
     public static final String ATTRIBUTE_NUMBER = "attributeNumber";
+    public static final String AVERAGE_RESULT = "averageResult";
     public static final String BETTA = "betta";
     public static final String CLASS_NAME = "className";
     public static final String CLASSIFIERS = "classifiers";

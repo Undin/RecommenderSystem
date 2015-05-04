@@ -28,6 +28,7 @@ public abstract class Config {
     private final List<String> datasets;
     private final List<MetaFeatureExtractor> extractors;
     private final String directory;
+    private final boolean averageResult;
 
     public Config(String configFilename) {
         this(readJSONObject(configFilename));
@@ -43,6 +44,7 @@ public abstract class Config {
         Set<String> algorithmNames = new HashSet<>(jsonArrayToStringList(jsonObject.getJSONArray(ALGORITHMS)));
         classifiers = get(CLASSIFIERS_FILE, ClassifierWrapper.JSON_CREATOR, c -> classifierNames.contains(c.getName()));
         algorithms = get(ALGORITHMS_FILE, FSSAlgorithm.JSON_CREATOR, a -> algorithmNames.contains(a.getName()));
+        averageResult = jsonObject.optBoolean(AVERAGE_RESULT, false);
     }
 
     public List<ClassifierWrapper> getClassifiers() {
@@ -63,6 +65,10 @@ public abstract class Config {
 
     public String getDirectory() {
         return directory;
+    }
+
+    public boolean isAverageResult() {
+        return averageResult;
     }
 
     private static <T extends JSONConverted> List<T> get(String filename, JSONConverted.JSONCreator<T> creator, Predicate<T> predicate) {
