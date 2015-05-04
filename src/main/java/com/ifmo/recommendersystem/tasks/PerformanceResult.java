@@ -104,7 +104,7 @@ public class PerformanceResult implements JSONConverted {
             double attributeNumber = jsonObject.getDouble(ATTRIBUTE_NUMBER);
             double runtime = jsonObject.getDouble(RUNTIME);
             int testNumber = jsonObject.getInt(TEST_NUMBER);
-            return new PerformanceResult(dataSetName, algorithmName, classifierName, accuracy, f1Measure, attributeNumber, runtime, testNumber);
+            return new PerformanceResult(dataSetName, algorithmName, classifierName, accuracy, f1Measure, runtime, attributeNumber, testNumber);
         }
     };
 }
