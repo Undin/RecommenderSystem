@@ -13,15 +13,14 @@ import weka.core.Instances;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 public class RecommenderSystemBuilder {
 
     public static final String META_FEATURES_DIRECTORY = "results/metaFeatures";
+    public static final String AVERAGE_PERFORMANCE_DIRECTORY = "results/performanceAverage";
     public static final String PERFORMANCE_DIRECTORY = "results/performance";
 
     public final static int ROUNDS = 5;
@@ -103,27 +102,54 @@ public class RecommenderSystemBuilder {
     }
 
     private void printPerformanceResults(List<Future<List<PerformanceResult>>> futurePerformanceResults) {
-        for (Future<List<PerformanceResult>> future : futurePerformanceResults) {
-            try {
-                List<PerformanceResult> results = future.get();
-                for (PerformanceResult result : results) {
-                    File directory = new File(PathUtils.createPath(PERFORMANCE_DIRECTORY,
-                            result.classifierName,
-                            result.dataSetName,
-                            result.algorithmName));
-                    directory.mkdirs();
-                    String fileName = PathUtils.createName(result.classifierName, result.dataSetName, result.algorithmName, String.valueOf(result.testNumber));
-                    try (PrintWriter writer = new PrintWriter(new File(directory, fileName + ".json"))) {
-                        writer.print(result.toJSON().toString(4));
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
+        if (config.isAverageResult()) {
+            Map<Pair<String, String>, List<PerformanceResult>> separatedResults = new HashMap<>();
+            for (Future<List<PerformanceResult>> future : futurePerformanceResults) {
+                try {
+                    List<PerformanceResult> results = future.get();
+                    for (PerformanceResult result : results) {
+                        List<PerformanceResult> mapList = separatedResults.get(Pair.of(result.classifierName, result.algorithmName));
+                        if (mapList == null) {
+                            mapList = new ArrayList<>();
+                            separatedResults.put(Pair.of(result.classifierName, result.algorithmName), mapList);
+                        }
+                        mapList.add(result);
                     }
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
                 }
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
+            }
+            for (List<PerformanceResult> results : separatedResults.values()) {
+                PerformanceResult average = PerformanceResult.average(results);
+                printResult(average);
+            }
+        } else {
+            for (Future<List<PerformanceResult>> future : futurePerformanceResults) {
+                try {
+                    List<PerformanceResult> results = future.get();
+                    results.forEach(this::printResult);
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
             }
         }
         futurePerformanceResults.clear();
+    }
+
+    private void printResult(PerformanceResult result) {
+        String perfirmanceDirectory = config.isAverageResult() ? AVERAGE_PERFORMANCE_DIRECTORY : PERFORMANCE_DIRECTORY;
+        String baseFilename = PathUtils.createName(result.classifierName, result.dataSetName, result.algorithmName);
+        String filename = config.isAverageResult() ? baseFilename : PathUtils.createName(baseFilename, String.valueOf(result.testNumber));
+        File directory = new File(PathUtils.createPath(perfirmanceDirectory,
+                result.classifierName,
+                result.dataSetName,
+                result.algorithmName));
+        directory.mkdirs();
+        try (PrintWriter writer = new PrintWriter(new File(directory, filename + ".json"))) {
+            writer.print(result.toJSON().toString(4));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public static RecommenderSystemBuilder createFromConfig(String configFilename) throws Exception {

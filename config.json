@@ -1,4 +1,5 @@
 {
+    "averageResult" : true,
     "parallelism" : 4,
     "evaluatePerformance" : true,
     "extractMetaFeatures" : true,
