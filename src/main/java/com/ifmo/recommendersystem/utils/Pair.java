@@ -30,6 +30,14 @@ public class Pair<F, S> {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "[" +
+                "first: " + first +
+                ", second: " + second +
+                ']';
+    }
+
     public static <F, S> Pair<F, S> of(F first, S second) {
         return new Pair<>(first, second);
     }
