@@ -61,7 +61,7 @@ public class RecommenderSystemEvaluation extends UnsupervisedSubsetEvaluator {
                 }
             }
 
-            RecommenderSystemV2 system = new RecommenderSystemV2(matrix, localMetaFeaturesList, algorithms);
+            RecommenderSystem system = new RecommenderSystem(matrix, localMetaFeaturesList, algorithms);
             Instance localMetaFeatures = localMetaFeaturesList.remove(dataIndex);
             FSSAlgorithm recAlgorithm = system.recommend(localMetaFeatures).get(0);
 

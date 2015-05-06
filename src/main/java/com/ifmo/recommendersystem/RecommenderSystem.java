@@ -19,7 +19,7 @@ import java.util.stream.IntStream;
 /**
  * Created by warrior on 06.05.15.
  */
-public class RecommenderSystemV2 {
+public class RecommenderSystem {
 
     private static final int RECOMMEND_RESULT_SIZE = 1;
     private static final int NEAREST_DATA_SET_NUMBER = 3;
@@ -28,7 +28,7 @@ public class RecommenderSystemV2 {
     private final List<FSSAlgorithm> algorithms;
     private final Instances metaFeaturesList;
 
-    public RecommenderSystemV2(double[][] earrMatrix, Instances metaFeaturesList, List<FSSAlgorithm> algorithms) {
+    public RecommenderSystem(double[][] earrMatrix, Instances metaFeaturesList, List<FSSAlgorithm> algorithms) {
         this.earrMatrix = earrMatrix;
         this.algorithms = algorithms;
         this.metaFeaturesList = metaFeaturesList;
