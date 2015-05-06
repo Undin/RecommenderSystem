@@ -40,8 +40,8 @@ public class InstancesUtils {
                 instances = reorder(instances, order);
             }
             instances.setClassIndex(instances.numAttributes() - 1);
+            instances.deleteWithMissingClass();
         }
-        instances.deleteWithMissingClass();
         boolean removeStringAttributes = (modifiedFlags & REMOVE_STRING_ATTRIBUTES) != 0;
         boolean removeUninformativeAttributes = (modifiedFlags & REMOVE_UNINFORMATIVE_ATTRIBUTES) != 0;
         if (removeStringAttributes || removeUninformativeAttributes) {
@@ -56,7 +56,7 @@ public class InstancesUtils {
                 }
             }
 
-            instances = removeAttribute(instances, removingAttributes.toArray());
+            instances = removeAttributes(instances, removingAttributes.toArray());
         }
         return instances;
     }
@@ -116,10 +116,10 @@ public class InstancesUtils {
                 removingAttributes.add(i);
             }
         }
-        return removeAttribute(instances, removingAttributes.toArray());
+        return removeAttributes(instances, removingAttributes.toArray());
     }
 
-    private static Instances removeAttribute(Instances instances, int[] removingAttributes) {
+    public static Instances removeAttributes(Instances instances, int[] removingAttributes) {
         Remove remove = new Remove();
         try {
             remove.setAttributeIndicesArray(removingAttributes);
