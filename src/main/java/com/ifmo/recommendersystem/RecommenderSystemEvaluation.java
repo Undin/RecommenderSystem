@@ -43,9 +43,7 @@ public class RecommenderSystemEvaluation extends UnsupervisedSubsetEvaluator {
 
     @Override
     public double evaluateSubset(BitSet subset) throws Exception {
-        BitSet inverseBitSet = new BitSet(subset.size());
-        inverseBitSet.andNot(subset);
-        Instances localMetaFeaturesList = InstancesUtils.removeAttributes(metaFeaturesList, inverseBitSet.stream().toArray());
+        Instances localMetaFeaturesList = InstancesUtils.removeAttributes(metaFeaturesList, subset.stream().toArray(), true);
         if (localMetaFeaturesList == null) {
             throw new IllegalStateException();
         }

@@ -120,7 +120,12 @@ public class InstancesUtils {
     }
 
     public static Instances removeAttributes(Instances instances, int[] removingAttributes) {
+        return removeAttributes(instances, removingAttributes, false);
+    }
+
+    public static Instances removeAttributes(Instances instances, int[] removingAttributes, boolean invert) {
         Remove remove = new Remove();
+        remove.setInvertSelection(invert);
         try {
             remove.setAttributeIndicesArray(removingAttributes);
             remove.setInputFormat(instances);
