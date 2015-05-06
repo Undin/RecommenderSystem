@@ -3,15 +3,18 @@ package com.ifmo.recommendersystem;
 import com.ifmo.recommendersystem.config.Config;
 import com.ifmo.recommendersystem.config.EvaluationConfig;
 import com.ifmo.recommendersystem.tasks.ExtractResult;
+import com.ifmo.recommendersystem.tasks.MetaFeature;
 import com.ifmo.recommendersystem.utils.JSONUtils;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
+import weka.core.Instance;
 import weka.core.Instances;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -37,7 +40,7 @@ public class MetaFeatureConverter {
 
     public static Instances createInstances(Config config, String sourceDirectory, String relationName) {
         ArrayList<Attribute> attributes = config.getExtractors().stream()
-                .map(e -> new Attribute(e.getName()))
+                .map(e -> new Attribute(e.getClass().getCanonicalName()))
                 .collect(Collectors.toCollection(ArrayList::new));
         int capacity = config.getDatasets().size();
         Instances instances = new Instances(relationName, attributes, capacity);
