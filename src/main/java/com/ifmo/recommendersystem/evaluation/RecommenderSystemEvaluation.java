@@ -6,8 +6,6 @@ import com.ifmo.recommendersystem.utils.InstancesUtils;
 import com.ifmo.recommendersystem.utils.Pair;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import weka.attributeSelection.UnsupervisedSubsetEvaluator;
-import weka.clusterers.Clusterer;
 import weka.core.Instance;
 import weka.core.Instances;
 
@@ -21,7 +19,7 @@ import static com.ifmo.recommendersystem.utils.JSONUtils.*;
 /**
  * Created by warrior on 06.05.15.
  */
-public class RecommenderSystemEvaluation extends UnsupervisedSubsetEvaluator {
+public class RecommenderSystemEvaluation extends AbstractRecommenderSystemEvaluator {
 
     private final double[][] earrMatrix; // datasets x algorithms
     private final Instances metaFeaturesList;
@@ -134,20 +132,5 @@ public class RecommenderSystemEvaluation extends UnsupervisedSubsetEvaluator {
 
     public JSONObject getResult() {
         return result;
-    }
-
-    @Override
-    public int getNumClusters() throws Exception {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public Clusterer getClusterer() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void setClusterer(Clusterer d) {
-        throw new UnsupportedOperationException();
     }
 }
