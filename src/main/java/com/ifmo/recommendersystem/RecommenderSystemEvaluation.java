@@ -43,6 +43,9 @@ public class RecommenderSystemEvaluation extends UnsupervisedSubsetEvaluator {
 
     @Override
     public double evaluateSubset(BitSet subset) throws Exception {
+        if (subset.cardinality() == 0) {
+            return 0;
+        }
         Instances localMetaFeaturesList = InstancesUtils.removeAttributes(metaFeaturesList, subset.stream().toArray(), true);
         if (localMetaFeaturesList == null) {
             throw new IllegalStateException();
@@ -117,8 +120,8 @@ public class RecommenderSystemEvaluation extends UnsupervisedSubsetEvaluator {
     }
 
     public double evaluate() {
-        BitSet bitSet = new BitSet(datasetSize);
-        bitSet.set(0, datasetSize, true);
+        BitSet bitSet = new BitSet(metaFeaturesList.numAttributes());
+        bitSet.set(0, metaFeaturesList.numAttributes(), true);
         try {
             return evaluateSubset(bitSet);
         } catch (Exception e) {
