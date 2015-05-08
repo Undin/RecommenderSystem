@@ -1,5 +1,7 @@
-package com.ifmo.recommendersystem;
+package com.ifmo.recommendersystem.evaluation;
 
+import com.ifmo.recommendersystem.FSSAlgorithm;
+import com.ifmo.recommendersystem.RecommenderSystem;
 import com.ifmo.recommendersystem.utils.InstancesUtils;
 import com.ifmo.recommendersystem.utils.Pair;
 import org.json.JSONArray;
