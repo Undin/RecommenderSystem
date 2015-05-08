@@ -38,10 +38,6 @@ public class RecommenderSystemEvaluation extends AbstractRecommenderSystemEvalua
     }
 
     @Override
-    public void buildEvaluator(Instances metaFeatures) throws Exception {
-    }
-
-    @Override
     public double evaluateSubset(BitSet subset) throws Exception {
         if (subset.cardinality() == 0) {
             return 0;
