@@ -1,16 +1,11 @@
 package com.ifmo.recommendersystem;
 
-import com.ifmo.recommendersystem.config.EvaluationConfig;
 import com.ifmo.recommendersystem.metafeatures.MetaFeatureExtractor;
 import com.ifmo.recommendersystem.utils.Pair;
-import com.ifmo.recommendersystem.utils.PathUtils;
 import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
@@ -116,24 +111,5 @@ public class RecommenderSystem {
             normalizedValues[i] = (values[i] - minValues[i]) / (maxValues[i] - minValues[i]);
         }
         return new DenseInstance(metaFeatures.weight(), normalizedValues);
-    }
-
-
-    private static final String EVALUATION_CONFIG = "evaluationConfig.json";
-    private static final String EVALUATION_RESULT_DIRECTORY = "evaluationResults/general";
-
-    public static void main(String[] args) throws IOException {
-        EvaluationConfig config = new EvaluationConfig(EVALUATION_CONFIG);
-        Instances metaFeaturesList = MetaFeatureConverter.createInstances(config, RecommenderSystemBuilder.META_FEATURES_DIRECTORY, "metaFeatures");
-        File file = new File(EVALUATION_RESULT_DIRECTORY);
-        file.mkdirs();
-        for (ClassifierWrapper classifier : config.getClassifiers()) {
-            double[][] matrix = config.createEarrMatrix(classifier);
-            RecommenderSystemEvaluation evaluation = new RecommenderSystemEvaluation(matrix, metaFeaturesList, config.getAlgorithms(), config.getDatasets());
-            evaluation.evaluate();
-            try (PrintWriter writer = new PrintWriter(PathUtils.createPath(EVALUATION_RESULT_DIRECTORY, classifier.getName() + ".json"))) {
-                writer.println(evaluation.getResult().toString(4));
-            }
-        }
     }
 }
