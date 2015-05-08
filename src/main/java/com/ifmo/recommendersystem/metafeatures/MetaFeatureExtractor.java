@@ -1,6 +1,5 @@
 package com.ifmo.recommendersystem.metafeatures;
 
-import com.ifmo.recommendersystem.tasks.MetaFeature;
 import weka.core.Attribute;
 import weka.core.Instances;
 

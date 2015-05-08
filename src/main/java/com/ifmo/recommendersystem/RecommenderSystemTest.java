@@ -1,6 +1,7 @@
 package com.ifmo.recommendersystem;
 
 import com.ifmo.recommendersystem.config.EvaluationConfig;
+import com.ifmo.recommendersystem.metafeatures.MetaFeatureConverter;
 import com.ifmo.recommendersystem.utils.InstancesUtils;
 import com.ifmo.recommendersystem.utils.PathUtils;
 import org.json.JSONArray;

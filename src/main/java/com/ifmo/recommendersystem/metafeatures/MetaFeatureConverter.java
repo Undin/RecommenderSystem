@@ -1,20 +1,18 @@
-package com.ifmo.recommendersystem;
+package com.ifmo.recommendersystem.metafeatures;
 
+import com.ifmo.recommendersystem.RecommenderSystemBuilder;
 import com.ifmo.recommendersystem.config.Config;
 import com.ifmo.recommendersystem.config.EvaluationConfig;
 import com.ifmo.recommendersystem.tasks.ExtractResult;
-import com.ifmo.recommendersystem.tasks.MetaFeature;
 import com.ifmo.recommendersystem.utils.JSONUtils;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
-import weka.core.Instance;
 import weka.core.Instances;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 
 /**

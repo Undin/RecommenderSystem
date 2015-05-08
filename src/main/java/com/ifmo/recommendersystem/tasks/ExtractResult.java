@@ -2,6 +2,7 @@ package com.ifmo.recommendersystem.tasks;
 
 import com.ifmo.recommendersystem.AbstractJSONCreator;
 import com.ifmo.recommendersystem.JSONConverted;
+import com.ifmo.recommendersystem.metafeatures.MetaFeature;
 import com.ifmo.recommendersystem.metafeatures.MetaFeatureExtractor;
 import com.ifmo.recommendersystem.utils.JSONUtils;
 import org.json.JSONObject;
