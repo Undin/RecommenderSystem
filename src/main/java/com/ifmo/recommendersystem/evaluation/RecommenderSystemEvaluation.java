@@ -25,7 +25,6 @@ public class RecommenderSystemEvaluation extends AbstractRecommenderSystemEvalua
     private final Instances metaFeaturesList;
     private final List<FSSAlgorithm> algorithms;
     private final List<String> datasets;
-    private final int datasetSize;
 
     private JSONObject result;
 
@@ -34,7 +33,6 @@ public class RecommenderSystemEvaluation extends AbstractRecommenderSystemEvalua
         this.metaFeaturesList = metaFeaturesList;
         this.algorithms = algorithms;
         this.datasets = datasets;
-        this.datasetSize = datasets.size();
     }
 
     @Override
@@ -46,6 +44,7 @@ public class RecommenderSystemEvaluation extends AbstractRecommenderSystemEvalua
         if (localMetaFeaturesList == null) {
             throw new IllegalStateException();
         }
+        int datasetSize = datasets.size();
         double meanRPR = 0;
         JSONArray separateResult = new JSONArray();
         for (int dataIndex = 0; dataIndex < datasetSize; dataIndex++) {
