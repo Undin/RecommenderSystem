@@ -7,7 +7,7 @@ import com.ifmo.recommendersystem.metafeatures.decisiontree.TreeMeanClass;
  */
 public class UnprunedTreeMeanClass extends TreeMeanClass {
 
-    private static final String NAME = "unpruned mean attr";
+    private static final String NAME = "unpruned mean class";
     private static final boolean PRUNE_TREE = false;
 
     public UnprunedTreeMeanClass() {

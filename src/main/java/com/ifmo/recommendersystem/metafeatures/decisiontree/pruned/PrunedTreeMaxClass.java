@@ -7,7 +7,7 @@ import com.ifmo.recommendersystem.metafeatures.decisiontree.TreeMaxClass;
  */
 public class PrunedTreeMaxClass extends TreeMaxClass {
 
-    private static final String NAME = "pruned max attr";
+    private static final String NAME = "pruned max class";
     private static final boolean PRUNE_TREE = true;
 
     public PrunedTreeMaxClass() {

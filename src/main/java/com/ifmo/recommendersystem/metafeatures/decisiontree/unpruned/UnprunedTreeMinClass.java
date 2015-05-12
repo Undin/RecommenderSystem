@@ -7,7 +7,7 @@ import com.ifmo.recommendersystem.metafeatures.decisiontree.TreeMinClass;
  */
 public class UnprunedTreeMinClass extends TreeMinClass {
 
-    private static final String NAME = "unpruned min attr";
+    private static final String NAME = "unpruned min class";
     private static final boolean PRUNE_TREE = false;
 
     public UnprunedTreeMinClass() {

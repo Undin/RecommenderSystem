@@ -7,7 +7,7 @@ import com.ifmo.recommendersystem.metafeatures.decisiontree.TreeDevClass;
  */
 public class PrunedTreeDevClass extends TreeDevClass {
 
-    private static final String NAME = "pruned dev attr";
+    private static final String NAME = "pruned dev class";
     private static final boolean PRUNE_TREE = true;
 
     public PrunedTreeDevClass() {
