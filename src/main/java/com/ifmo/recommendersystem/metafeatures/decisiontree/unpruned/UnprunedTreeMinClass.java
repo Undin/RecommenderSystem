@@ -1,16 +1,16 @@
 package com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned;
 
-import com.ifmo.recommendersystem.metafeatures.decisiontree.TreeMaxAttr;
+import com.ifmo.recommendersystem.metafeatures.decisiontree.TreeMinClass;
 
 /**
  * Created by warrior on 23.04.15.
  */
-public class UnprunedTreeMaxAttr extends TreeMaxAttr {
+public class UnprunedTreeMinClass extends TreeMinClass {
 
-    private static final String NAME = "unpruned max attr";
+    private static final String NAME = "unpruned min attr";
     private static final boolean PRUNE_TREE = false;
 
-    public UnprunedTreeMaxAttr() {
+    public UnprunedTreeMinClass() {
         super(PRUNE_TREE);
     }
 

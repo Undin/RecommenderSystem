@@ -1,16 +1,16 @@
 package com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned;
 
-import com.ifmo.recommendersystem.metafeatures.decisiontree.TreeMinAttr;
+import com.ifmo.recommendersystem.metafeatures.decisiontree.TreeDevClass;
 
 /**
  * Created by warrior on 23.04.15.
  */
-public class UnprunedTreeMinAttr extends TreeMinAttr {
+public class UnprunedTreeDevClass extends TreeDevClass {
 
-    private static final String NAME = "unpruned min attr";
+    private static final String NAME = "unpruned dev attr";
     private static final boolean PRUNE_TREE = false;
 
-    public UnprunedTreeMinAttr() {
+    public UnprunedTreeDevClass() {
         super(PRUNE_TREE);
     }
 

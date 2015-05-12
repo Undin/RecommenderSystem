@@ -111,35 +111,35 @@ public class WrappedC45DecisionTree extends C45PruneableClassifierTree {
         }
     }
 
-    public double maxAttr() {
-        return max(countAttrs());
+    public double maxClass() {
+        return max(countClass());
     }
 
-    public double minAttr() {
-        return min(countAttrs());
+    public double minClass() {
+        return min(countClass());
     }
 
-    public double meanAttr() {
-        return mean(countAttrs());
+    public double meanClass() {
+        return mean(countClass());
     }
 
-    public double devAttr() {
-        return dev(countAttrs());
+    public double devClass() {
+        return dev(countClass());
     }
 
-    private double[] countAttrs() {
+    private double[] countClass() {
         double[] attrs = new double[((WrappedC45ModelSelection) m_toSelectModel).getClassNumber()];
-        countAttrs(attrs);
+        countClass(attrs);
         return attrs;
     }
 
-    private void countAttrs(double[] attrs) {
+    private void countClass(double[] attrs) {
         if (m_isLeaf) {
             attrs[m_localModel.distribution().maxClass()]++;
         } else {
             for (ClassifierTree son : m_sons) {
                 WrappedC45DecisionTree child = (WrappedC45DecisionTree) son;
-                child.countAttrs(attrs);
+                child.countClass(attrs);
             }
         }
     }
