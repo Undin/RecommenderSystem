@@ -2,6 +2,7 @@ package com.ifmo.recommendersystem.metafeatures.decisiontree;
 
 import com.ifmo.recommendersystem.utils.StatisticalUtils;
 import weka.classifiers.trees.j48.C45PruneableClassifierTree;
+import weka.classifiers.trees.j48.C45Split;
 import weka.classifiers.trees.j48.ClassifierTree;
 import weka.classifiers.trees.j48.ModelSelection;
 import weka.core.Instances;
@@ -176,6 +177,39 @@ public class WrappedC45DecisionTree extends C45PruneableClassifierTree {
                 index = child.countBranches(branches, length + 1, index);
             }
             return index;
+        }
+    }
+
+    public double maxAttr() {
+        return max(countAttrs());
+    }
+
+    public double minAttr() {
+        return min(countAttrs());
+    }
+
+    public double meanAttr() {
+        return mean(countAttrs());
+    }
+
+    public double devAttr() {
+        return dev(countAttrs());
+    }
+
+    private double[] countAttrs() {
+        double[] attrs = new double[((WrappedC45ModelSelection) m_toSelectModel).getAttributeNumber()];
+        countAttrs(attrs);
+        return attrs;
+    }
+
+    private void countAttrs(double[] attrs) {
+        if (!m_isLeaf) {
+            C45Split splitModel = (C45Split) m_localModel;
+            attrs[splitModel.attIndex()]++;
+            for (ClassifierTree son : m_sons) {
+                WrappedC45DecisionTree child = (WrappedC45DecisionTree) son;
+                child.countAttrs(attrs);
+            }
         }
     }
 
