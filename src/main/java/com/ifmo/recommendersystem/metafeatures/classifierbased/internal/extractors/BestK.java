@@ -14,7 +14,7 @@ import java.util.stream.IntStream;
  */
 public class BestK implements Extractor {
 
-    private static final int MAX_K = 30;
+    private static final int MAX_K = 20;
     private static final int FOLDS = 5;
 
     @Override
@@ -37,6 +37,7 @@ public class BestK implements Extractor {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(bestK);
         return bestK;
     }
 
