@@ -1,32 +1,29 @@
 package com.ifmo.recommendersystem.metafeatures.classifierbased.internal.transform;
 
 import com.ifmo.recommendersystem.metafeatures.classifierbased.Transform;
-import com.ifmo.recommendersystem.utils.InstancesUtils;
 import weka.core.Instances;
 
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Created by warrior on 04.06.15.
  */
 public abstract class Part implements Transform {
 
-    private Random random = new Random();
-
     @Override
     public Instances transform(Instances instances) {
-        Set<Integer> indexes = new HashSet<>();
-        int number = resultAttributeNumber(instances);
-        while (indexes.size() < number) {
-            int index = random.nextInt(instances.size() - 1);
-            if (!indexes.contains(index)) {
-                indexes.add(index);
-            }
-        }
-        return InstancesUtils.removeAttributes(instances, indexes.stream().mapToInt(i -> i).toArray(), true);
+        int number = resultInstanceNumber(instances);
+        List<Integer> indexes = IntStream.range(0, instances.size()).boxed().collect(Collectors.toList());
+        Collections.shuffle(indexes);
+        Instances newInstances = new Instances(instances, number);
+        indexes.stream()
+                .map(instances::get)
+                .forEach(newInstances::add);
+        return newInstances;
     }
 
-    protected abstract int resultAttributeNumber(Instances instances);
+    protected abstract int resultInstanceNumber(Instances instances);
 }

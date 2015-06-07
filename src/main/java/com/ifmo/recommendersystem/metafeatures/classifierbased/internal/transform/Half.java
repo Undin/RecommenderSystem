@@ -8,7 +8,7 @@ import weka.core.Instances;
 public class Half extends Part {
 
     @Override
-    protected int resultAttributeNumber(Instances instances) {
-        return instances.numAttributes() / 2;
+    protected int resultInstanceNumber(Instances instances) {
+        return instances.numInstances() / 2;
     }
 }

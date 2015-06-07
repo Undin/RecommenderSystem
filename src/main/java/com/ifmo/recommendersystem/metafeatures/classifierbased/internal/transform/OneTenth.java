@@ -7,7 +7,7 @@ import weka.core.Instances;
  */
 public class OneTenth extends Part {
     @Override
-    protected int resultAttributeNumber(Instances instances) {
-        return (instances.numAttributes() + 9) / 10;
+    protected int resultInstanceNumber(Instances instances) {
+        return (instances.numInstances() + 9) / 10;
     }
 }

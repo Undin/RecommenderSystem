@@ -7,7 +7,7 @@ import weka.core.Instances;
  */
 public class Sqrt extends Part {
     @Override
-    protected int resultAttributeNumber(Instances instances) {
-        return (int) Math.round(Math.sqrt(instances.numAttributes()));
+    protected int resultInstanceNumber(Instances instances) {
+        return (int) Math.round(Math.sqrt(instances.numInstances()));
     }
 }
