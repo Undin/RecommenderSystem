@@ -13,17 +13,28 @@ public abstract class AbstractClassifierBasedExtractor extends MetaFeatureExtrac
     private final Extractor extractor;
     private final Transform transform;
     private final Aggregator aggregator;
+    private final int rounds;
 
-    public AbstractClassifierBasedExtractor(Extractor extractor, Transform transform, Aggregator aggregator) {
+    public AbstractClassifierBasedExtractor(Extractor extractor, Transform transform, Aggregator aggregator, int rounds) {
         this.extractor = extractor;
         this.transform = transform;
         this.aggregator = aggregator;
+        this.rounds = rounds;
+    }
+
+    public AbstractClassifierBasedExtractor(Extractor extractor, Transform transform, Aggregator aggregator) {
+        this(extractor, transform, aggregator, ROUNDS);
+    }
+
+    @Override
+    public String getName() {
+        return getClass().getSimpleName();
     }
 
     @Override
     protected double extractValue(Instances instances) {
-        double[] values = new double[ROUNDS];
-        for (int i = 0; i < ROUNDS; i++) {
+        double[] values = new double[rounds];
+        for (int i = 0; i < rounds; i++) {
             Instances subspace = transform.transform(instances);
             values[i] = extractor.extract(subspace);
         }
