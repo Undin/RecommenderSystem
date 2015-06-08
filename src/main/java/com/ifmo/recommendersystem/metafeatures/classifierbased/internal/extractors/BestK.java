@@ -37,7 +37,7 @@ public class BestK implements Extractor {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(bestK);
+        System.out.println("bestK: " + bestK);
         return bestK;
     }
 
