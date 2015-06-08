@@ -8,7 +8,7 @@ import weka.core.Instances;
  */
 public abstract class AbstractClassifierBasedExtractor extends MetaFeatureExtractor {
 
-    private static final int ROUNDS = 50;
+    private static final int ROUNDS = 20;
 
     private final Extractor extractor;
     private final Transform transform;
