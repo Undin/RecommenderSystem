@@ -17,21 +17,7 @@
         "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.StdDevHalfBestK",
         "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.StdDevSqrtBestK",
         "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.StdDevOneTenthBestK",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.FullBestK",
-
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MaxHalfPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MaxSqrtPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MaxOneTenthPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MinHalfPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MinSqrtPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MinOneTenthPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MeanHalfPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MeanSqrtPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MeanOneTenthPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.StdDevHalfPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.StdDevSqrtPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.StdDevOneTenthPerceptronWeightSum",
-        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.FullPerceptronWeightSum"
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.FullBestK"
     ],
     "classifiers" : [
         "NaiveBayes",
