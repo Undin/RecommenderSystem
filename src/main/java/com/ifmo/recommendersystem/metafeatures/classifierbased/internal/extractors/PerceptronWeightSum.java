@@ -10,7 +10,9 @@ public class PerceptronWeightSum implements Extractor {
     @Override
     public double extract(Instances instances) {
         MultilayerPerceptron perceptron = new MultilayerPerceptron();
+        int nodes = Math.min(20, (instances.numAttributes() + instances.numClasses()) / 2);
         try {
+            perceptron.setOptions(new String[]{"-N", "250", "-H", String.valueOf(nodes)});
             perceptron.buildClassifier(instances);
             return perceptron.weightSum();
         } catch (Exception e) {
