@@ -34,10 +34,9 @@ public abstract class AbstractClassifierBasedExtractor extends MetaFeatureExtrac
     @Override
     protected double extractValue(Instances instances) {
         String extractorName = getClass().getSimpleName();
-        String datasetName = instances.relationName();
         double[] values = new double[rounds];
         for (int i = 0; i < rounds; i++) {
-            System.out.format("%s %s %d\n", datasetName, extractorName, i);
+            System.out.format("%s %d\n", extractorName, i);
             Instances subspace = transform.transform(instances);
             values[i] = extractor.extract(subspace);
         }
