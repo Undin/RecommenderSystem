@@ -8,6 +8,6 @@ import com.ifmo.recommendersystem.metafeatures.classifierbased.internal.transfor
 public class FullBestK extends AbstractClassifierBasedExtractor {
 
     public FullBestK() {
-        super(new BestK(), new Full(), new First());
+        super(new BestK(), new Full(), new First(), 1);
     }
 }

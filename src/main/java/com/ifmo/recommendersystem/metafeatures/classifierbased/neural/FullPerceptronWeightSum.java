@@ -8,6 +8,6 @@ import com.ifmo.recommendersystem.metafeatures.classifierbased.internal.transfor
 public class FullPerceptronWeightSum extends AbstractClassifierBasedExtractor {
 
     public FullPerceptronWeightSum() {
-        super(new PerceptronWeightSum(), new Full(), new First());
+        super(new PerceptronWeightSum(), new Full(), new First(), 1);
     }
 }
