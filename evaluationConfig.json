@@ -1,4 +1,5 @@
 {
+    "averageResult" : true,
     "metaFeatureList" : [
         "com.ifmo.recommendersystem.metafeatures.general.NumberOfInstances",
         "com.ifmo.recommendersystem.metafeatures.general.NumberOfFeatures",
@@ -13,6 +14,10 @@
         "com.ifmo.recommendersystem.metafeatures.informationtheoretic.MaxMutualInformation",
         "com.ifmo.recommendersystem.metafeatures.informationtheoretic.EquivalentNumberOfFeatures",
         "com.ifmo.recommendersystem.metafeatures.informationtheoretic.NoiseSignalRatio",
+
+        "com.ifmo.recommendersystem.metafeatures.statistical.MeanStandardDeviation",
+        "com.ifmo.recommendersystem.metafeatures.statistical.MeanCoefficientOfVariation",
+
 
         "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevAttr",
         "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevBranch",
@@ -30,6 +35,13 @@
         "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeNodeNumber",
         "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeWidth",
 
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeDevClass",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMaxClass",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMinClass",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.pruned.PrunedTreeMeanClass",
+
+
+
         "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevAttr",
         "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevBranch",
         "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevLevel",
@@ -44,7 +56,42 @@
         "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMinAttr",
         "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMinBranch",
         "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeNodeNumber",
-        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeWidth"
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeWidth",
+
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeDevClass",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMaxClass",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMinClass",
+        "com.ifmo.recommendersystem.metafeatures.decisiontree.unpruned.UnprunedTreeMeanClass",
+
+
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.MaxHalfBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.MaxSqrtBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.MaxOneTenthBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.MinHalfBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.MinSqrtBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.MinOneTenthBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.MeanHalfBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.MeanSqrtBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.MeanOneTenthBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.StdDevHalfBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.StdDevSqrtBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.StdDevOneTenthBestK",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.knn.FullBestK",
+
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MaxHalfPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MaxSqrtPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MaxOneTenthPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MinHalfPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MinSqrtPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MinOneTenthPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MeanHalfPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MeanSqrtPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.MeanOneTenthPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.StdDevHalfPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.StdDevSqrtPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.StdDevOneTenthPerceptronWeightSum",
+        "com.ifmo.recommendersystem.metafeatures.classifierbased.neural.FullPerceptronWeightSum"
+
     ],
     "classifiers" : [
         "NaiveBayes",
