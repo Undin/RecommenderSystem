@@ -1,6 +1,7 @@
 package com.ifmo.recommendersystem;
 
 import com.ifmo.recommendersystem.config.EvaluationConfig;
+import com.ifmo.recommendersystem.evaluation.AbstractRecommenderSystemEvaluator;
 import com.ifmo.recommendersystem.evaluation.RecommenderSystemEvaluation;
 import com.ifmo.recommendersystem.evaluation.RecommenderSystemMeanEvaluator;
 import com.ifmo.recommendersystem.metafeatures.MetaFeatureConverter;
@@ -9,6 +10,7 @@ import weka.attributeSelection.GeneticSearch;
 import weka.core.Instances;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.List;
@@ -27,7 +29,7 @@ public class RecommenderSystemTest {
     private static final String EVALUATION_CONFIG = "evaluationConfig.json";
     private static final String EVALUATION_RESULT_DIRECTORY = "evaluationResults/geneticSearchSeparatedGeneral";
 
-    private static final int ROUNDS = 200;
+    private static final int ROUNDS = 100;
 
     public static void main(String[] args) throws IOException {
         EvaluationConfig config = new EvaluationConfig(EVALUATION_CONFIG);
@@ -35,15 +37,35 @@ public class RecommenderSystemTest {
                 .map(config::createEarrMatrix)
                 .collect(Collectors.toList());
         Instances metaFeaturesList = MetaFeatureConverter.createInstances(config, RecommenderSystemBuilder.META_FEATURES_DIRECTORY, "metaFeatures");
-        Pair<int[], Double> result = selectMetaFeatures(matrices, metaFeaturesList, config);
+        selectForClassifierSeparately(matrices, metaFeaturesList, config);
+    }
+
+
+
+    private static void selectForClassifierSeparately(List<double[][]> matrices, Instances metaFeaturesList, EvaluationConfig config) {
+        List<Double> results = new ArrayList<>();
+        for (int i = 0; i < matrices.size(); i++) {
+            System.out.println(config.getClassifiers().get(i).getName());
+            RecommenderSystemEvaluation evaluation = new RecommenderSystemEvaluation(matrices.get(i), metaFeaturesList, config.getAlgorithms(), config.getDatasets());
+            Pair<int[], Double> result = selectMetaFeatures(evaluation, metaFeaturesList, config);
+            results.add(result.second);
+        }
+        for (int i = 0; i < matrices.size(); i++) {
+            System.out.format("classifier: %s, RPR: %f\n", config.getClassifiers().get(i).getName(), results.get(i));
+        }
+    }
+
+    private static void selectForAllClassifier(List<double[][]> matrices, Instances metaFeaturesList, EvaluationConfig config) {
+        RecommenderSystemMeanEvaluator meanEvaluator = new RecommenderSystemMeanEvaluator(matrices, metaFeaturesList, config.getAlgorithms(), config.getDatasets());
+        Pair<int[], Double> result = selectMetaFeatures(meanEvaluator, metaFeaturesList, config);
 
         System.out.println("RPR: " + result.second);
         printSelectedMetaFeatures(config, result.first);
 
         for (int i = 0; i < matrices.size(); i++) {
             double[][] matrix = matrices.get(i);
-            RecommenderSystemEvaluation evaluation = new RecommenderSystemEvaluation(matrix, metaFeaturesList, config.getAlgorithms(), config.getDatasets());
             try {
+                RecommenderSystemEvaluation evaluation = new RecommenderSystemEvaluation(matrix, metaFeaturesList, config.getAlgorithms(), config.getDatasets());
                 double rpr = evaluation.evaluateSubset(result.first);
                 System.out.format("%s %f\n", config.getClassifiers().get(i).getName(), rpr);
             } catch (Exception e) {
@@ -58,8 +80,8 @@ public class RecommenderSystemTest {
                 .forEach(System.out::println);
     }
 
-    private static Pair<int[], Double> selectMetaFeatures(List<double[][]> matrices, Instances metaFeaturesList, EvaluationConfig config) {
-        EvaluateResult result = evaluateMetaFeatures(matrices, metaFeaturesList, config);
+    public static Pair<int[], Double> selectMetaFeatures(AbstractRecommenderSystemEvaluator evaluator, Instances metaFeaturesList, EvaluationConfig config) {
+        EvaluateResult result = evaluateMetaFeatures(evaluator, metaFeaturesList);
         System.out.println("maxRPR: " + result.maxRPR);
         printSelectedMetaFeatures(config, result.bestSubset);
 
@@ -69,7 +91,6 @@ public class RecommenderSystemTest {
         }
 
         int[] bestSubset = result.bestSubset;
-        RecommenderSystemMeanEvaluator evaluator = new RecommenderSystemMeanEvaluator(matrices, metaFeaturesList, config.getAlgorithms(), config.getDatasets());
         double maxRPR = -Double.MAX_VALUE;
 
         try {
@@ -99,13 +120,13 @@ public class RecommenderSystemTest {
         return Pair.of(bestSubset, maxRPR);
     }
 
-    private static EvaluateResult evaluateMetaFeatures(List<double[][]> matrices, Instances metaFeaturesList, EvaluationConfig config) {
+    public static EvaluateResult evaluateMetaFeatures(AbstractRecommenderSystemEvaluator evaluator, Instances metaFeaturesList) {
         ForkJoinPool pool = new ForkJoinPool();
         return pool.invoke(new RecursiveTask<EvaluateResult>() {
             @Override
             protected EvaluateResult compute() {
                 List<ForkJoinTask<Pair<Double, int[]>>> tasks = IntStream.range(0, ROUNDS)
-                        .mapToObj(i -> new EvaluationTask(matrices, metaFeaturesList, config.getAlgorithms(), config.getDatasets()).fork())
+                        .mapToObj(i -> new EvaluationTask(evaluator, metaFeaturesList).fork())
                         .collect(Collectors.toList());
 
                 double maxRPR = 0;
@@ -129,7 +150,7 @@ public class RecommenderSystemTest {
         });
     }
 
-    private static class EvaluateResult {
+    public static class EvaluateResult {
         public final double maxRPR;
         public final int[] bestSubset;
         public final double meanRPR;
@@ -145,29 +166,25 @@ public class RecommenderSystemTest {
 
     private static class EvaluationTask extends RecursiveTask<Pair<Double, int[]>> {
 
-        private final List<double[][]> matrices;
-        private final Instances metaFeaturesList;
-        private final List<FSSAlgorithm> algorithms;
-        private final List<String> datasets;
+        private final AbstractRecommenderSystemEvaluator evaluator;
 
-        public EvaluationTask(List<double[][]> matrices, Instances metaFeaturesList, List<FSSAlgorithm> algorithms, List<String> datasets) {
-            this.matrices = matrices;
+        private final Instances metaFeaturesList;
+
+        public EvaluationTask(AbstractRecommenderSystemEvaluator evaluator, Instances metaFeaturesList) {
+            this.evaluator = evaluator;
             this.metaFeaturesList = metaFeaturesList;
-            this.algorithms = algorithms;
-            this.datasets = datasets;
         }
 
         @Override
         protected Pair<Double, int[]> compute() {
             GeneticSearch search = new GeneticSearch();
             search.setSeed(ThreadLocalRandom.current().nextInt());
-            search.setMaxGenerations(50);
-            RecommenderSystemMeanEvaluator evaluation = new RecommenderSystemMeanEvaluator(matrices, metaFeaturesList, algorithms, datasets);
+//            search.setMaxGenerations(50);
             try {
-                int[] indexes = search.search(evaluation, metaFeaturesList);
+                int[] indexes = search.search(evaluator, metaFeaturesList);
                 BitSet subset = new BitSet(metaFeaturesList.numAttributes());
                 IntStream.of(indexes).forEach(subset::set);
-                double rpr = evaluation.evaluateSubset(subset);
+                double rpr = evaluator.evaluateSubset(subset);
                 return Pair.of(rpr, indexes);
             } catch (Exception e) {
                 e.printStackTrace();
